@@ -5,19 +5,20 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
 
-	site: 'https://denizkose.github.io',
+	site: 'https://rpgua.github.io',
+	base: 'pf2e',
 	integrations: [
 		starlight({
-			title: 'PFProject Україна',
+			title: 'PF2e Українською',
 			tableOfContents: {
 				minHeadingLevel: 2,
 				maxHeadingLevel: 6
 			},
 			social: {
-				github: 'https://github.com/',
-				discord: 'https://github.com/',
-				telegram: 'https://github.com/',
-				youtube: 'https://github.com/'
+				github: 'https://github.com/rpgua/pf2e',
+				// discord: 'https://github.com/',
+				telegram: 'https://t.me/+K0nrbUH7IowwZGEy',
+				// youtube: 'https://github.com/'
 			},
 			sidebar: [{
 				label: 'Правила',
