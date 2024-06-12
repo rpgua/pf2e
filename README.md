@@ -1,4 +1,4 @@
-# PF2e Українська локалізація правил
+# PF2e Українська локалізація правил (неофіційна)
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
@@ -10,3 +10,13 @@
 )](https://t.me/+K0nrbUH7IowwZGEy)
 [![](https://img.shields.io/badge/%D0%A7%D0%90%D0%A2-26A5E4?style=for-the-badge&logo=telegram
 )](https://t.me/+CkrhgLizpI8yMTgy)
+
+## Ліцензія | License
+
+__PF2e Українською__ uses trademarks and/or copyrights owned by Paizo Inc., used under Paizo's Community Use Policy ([paizo.com/communityuse](http://paizo.com/communityuse)). We are expressly prohibited from charging you to use or access this content. __PF2e Українською__ is not published, endorsed, or specifically approved by Paizo. For more information about Paizo Inc. and Paizo products, visit [paizo.com](http://paizo.com/).
+
+## For Paizo
+
+Hi, Paizo!
+
+If you have questions or you want  to complaint, please, open the issue.
