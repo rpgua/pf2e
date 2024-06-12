@@ -1,0 +1,21 @@
+---
+title: Sunburst
+description: Spell - Sunburst Чара - Sunburst
+sidebar:
+    order: 408
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Sunburst"} traits={[['Concentrate'], ['Fire'], ['Light'], ['Manipulate'], ['Vitality']]} action={2} pfs={"Standard"} level={7} url={"https://2e.aonprd.com/Spells.aspx?ID=1707"} area={"60-foot burst"} element={['Fire']} range={500} saving_throw={"Reflex"} source={['Player Core pg. 361']} spell_type={"Spell"} tradition={['Divine', 'Primal']} type={"Spell"}>
+A powerful globe of searing sunlight explodes in the area, dealing 8d10 fire damage to all creatures in the area, plus an additional 8d10 vitality damage to [undead](/Traits.aspx?ID=160) creatures. Each creature in the area must attempt a Reflex save.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** The creature takes half damage.<br />
+**Failure** The creature takes full damage.<br />
+**Critical Failure** The creature takes full damage and becomes [blinded](/Conditions.aspx?ID=1) permanently. If the globe overlaps with an area of magical [darkness](/Traits.aspx?ID=39), _sunburst_ attempts to [counteract](/Rules.aspx?ID=371) the darkness effect.
+
+---
+**Heightened (+1)** The fire damage increases by 1d10, and the vitality damage against undead increases by 1d10.
+
+</Spell>

@@ -1,0 +1,34 @@
+---
+import { Picture } from "astro:assets";
+import aonLogo from "../../../assets/logos/aon.png";
+
+const { title, url } = Astro.props;
+
+interface Props {
+  title: string;
+  url?: string;
+}
+
+---
+
+<div id="feat-title" class="border-2 rounded-lg border-blue-900">
+  <div class="flex flex-row justify-between p-2 items-center bg-blue-900">
+    <h3 class="flex flex-row space-x-2 items-center flex-wrap">
+      <span class="text-pretty">{title}</span>
+    </h3>
+  </div>
+  <div class="p-2">
+    <slot />
+    <div id="aon-button" class="flex flex-row-reverse">
+      <a href={url} class="max-w-fit px-3 py-1.5 text-white no-underline bg-blue-900 rounded hover:bg-blue-600 flex flex-row items-center justify-center space-x-2" target="_blank">
+        <Picture
+        src={aonLogo}
+        title={'AoN'}
+        alt={'AoN'}
+        pictureAttributes={{ class: "w-6 md:w-8" }}
+      /> <span class="text-xs md:text-lg  font-semibold">{title}</span>
+      </a>
+    </div>
+  </div>
+  
+</div>

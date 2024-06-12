@@ -1,0 +1,21 @@
+---
+title: Blood Vendetta
+description: Spell - Blood Vendetta Чара - Blood Vendetta
+sidebar:
+    order: 31
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Blood Vendetta"} traits={[['Curse']]} action={4} pfs={"Standard"} level={2} url={"https://2e.aonprd.com/Spells.aspx?ID=1454"} range={30} requirement={"You can bleed"} saving_throw={"Will"} source={['Player Core pg. 318']} spell_type={"Spell"} target={"the triggering creature"} tradition={['Arcane', 'Divine', 'Occult']} trigger={"A creature deals piercing, slashing, or persistent bleed damage to you"} type={"Spell"}>
+You curse the target, punishing it for having the audacity to spill your blood. The target takes 2d6 [persistent bleed damage](/Conditions.aspx?ID=29) and must attempt a Will save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target takes half the persistent bleed damage.<br />
+**Failure** The target takes the full persistent bleed damage. Until the bleeding stops, the target has weakness 1 to piercing and slashing damage.<br />
+**Critical Failure** As failure, but the target takes double the persistent bleed damage.
+
+---
+**Heightened (+2)** The persistent bleed damage increases by 2d6.
+
+</Spell>

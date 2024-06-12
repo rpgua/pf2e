@@ -1,0 +1,18 @@
+---
+title: Mariner's Curse
+description: Spell - Mariner's Curse Чара - Mariner's Curse
+sidebar:
+    order: 244
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Mariner's Curse"} traits={[['Concentrate'], ['Curse'], ['Manipulate']]} action={2} pfs={"Standard"} level={5} url={"https://2e.aonprd.com/Spells.aspx?ID=1593"} range={0} saving_throw={"Will"} source={['Player Core pg. 342']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Occult', 'Primal']} type={"Spell"}>
+You afflict the target with the curse of the roiling, unforgiving sea. The target must attempt a Will save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target becomes [sickened 1](/Conditions.aspx?ID=34). Reducing its sickened condition to 0 ends the curse.<br />
+**Failure** The target becomes sickened 1 and can't reduce its sickened condition below 1 while the curse remains. The curse can be lifted by 4th-rank [_cleanse affliction_](/Spells.aspx?ID=1467) or similar magic. Whenever the target is sickened and on the water at least a mile from shore, it is also [slowed 1](/Conditions.aspx?ID=35).<br />
+**Critical Failure** As failure, but the target becomes sickened 2.
+
+</Spell>

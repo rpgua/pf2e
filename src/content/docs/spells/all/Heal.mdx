@@ -1,0 +1,18 @@
+---
+title: Heal
+description: Spell - Heal Чара - Heal
+sidebar:
+    order: 183
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Heal"} traits={[['Healing'], ['Manipulate'], ['Vitality']]} action={1} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1554"} source={['Player Core pg. 335']} spell_type={"Spell"} target={"1 willing living creature or 1 undead creature"} tradition={['Divine', 'Primal']} type={"Spell"}>
+You channel vital energy to heal the living or damage the [undead](/Traits.aspx?ID=160). If the target is a willing living creature, you restore 1d8 Hit Points. If the target is undead, you deal that amount of vitality damage to it, and it gets a basic Fortitude save. The number of actions you spend when Casting this Spell determines its targets, range, area, and other parameters.
+
+ <actions string="Single Action" /> The spell has a range of touch.<br /> <actions string="Two Actions" /> ([concentrate](/Traits.aspx?ID=32)) The spell has a range of 30 feet. If you're healing a living creature, increase the Hit Points restored by 8.<br /> <actions string="Three Actions" /> ([concentrate](/Traits.aspx?ID=32)) You disperse vital energy in a 30-foot emanation. This targets all living and undead creatures in the burst.
+
+---
+**Heightened (+1)** The amount of healing or damage increases by 1d8, and the extra healing for the 2-action version increases by 8.
+
+</Spell>

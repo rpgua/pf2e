@@ -1,0 +1,18 @@
+---
+title: Heal Companion
+description: Spell - Heal Companion Чара - Heal Companion
+sidebar:
+    order: 185
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Heal Companion"} traits={[['Uncommon', 3], ['Focus'], ['Healing'], ['Ranger'], ['Vitality']]} action={1} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1864"} range={30} source={['Player Core pg. 383']} spell_type={"Focus"} target={"your animal companion"} type={"Spell"}>
+You heal your animal companion's wounds. You restore 1d10 Hit Points to your animal companion. The number of actions you spend Casting this Spell determines range and other parameters.
+
+ <actions string="Single Action" /> (manipulate) The spell has a range of touch.<br /> <actions string="Two Actions" /> ([concentrate](/Traits.aspx?ID=32), [manipulate](/Traits.aspx?ID=104)) The spell has a range of 30 feet and restores an additional 8 Hit Points to the target.
+
+---
+**Heightened (+1)** The amount of healing increases by 1d10, and the additional healing for the 2-action version increases by 8.
+
+</Spell>

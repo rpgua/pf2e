@@ -1,0 +1,23 @@
+---
+title: Animate Object
+description: Spell - Animate Object Чара - Animate Object
+sidebar:
+    order: 10
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Animate Object"} traits={[['Uncommon', 3]]} action={86400} pfs={"Standard"} level={2} url={"https://2e.aonprd.com/Rituals.aspx?ID=107"} cost={"rare oils, see Creature Creation Rituals"} range={10} source={['Player Core pg. 390']} target={"1 object"} type={"Ritual"} primary_check={" Arcana  (expert)"} secondary_casters={"1"} secondary_check={" Crafting "}>
+You transform the target into an animated object with a level up to that allowed by the Creature Creation Rituals table and of a type corresponding to the object (so a broom would become an [animated broom](/Monsters.aspx?ID=18)).
+
+## Creature Creation Rituals
+
+<table> <tr><td>**Creature Level**</td><td>**Ritual Rank**</td><td>**Required Cost**</td></tr> <tr><td>–1 or 0</td><td>2</td><td>15 gp</td></tr> <tr><td>1</td><td>2</td><td>60 gp</td></tr> <tr><td>2</td><td>3</td><td>105 gp</td></tr> <tr><td>3</td><td>3</td><td>180 gp</td></tr> <tr><td>4</td><td>4</td><td>300 gp</td></tr> <tr><td>5</td><td>4</td><td>480 gp</td></tr> <tr><td>6</td><td>5</td><td>750 gp</td></tr> <tr><td>7</td><td>5</td><td>1,080 gp</td></tr> <tr><td>8</td><td>6</td><td>1,500 gp</td></tr> <tr><td>9</td><td>6</td><td>2,100 gp</td></tr> <tr><td>10</td><td>7</td><td>3,000 gp</td></tr> <tr><td>11</td><td>7</td><td>4,200 gp</td></tr> <tr><td>12</td><td>8</td><td>6,000 gp</td></tr> <tr><td>13</td><td>8</td><td>9,000 gp</td></tr> <tr><td>14</td><td>9</td><td>13,500 gp</td></tr> <tr><td>15</td><td>9</td><td>19,500 gp</td></tr> <tr><td>16</td><td>10</td><td>30,000 gp</td></tr> <tr><td>17</td><td>10</td><td>45,000 gp</td></tr> </table>
+
+
+**Critical Success** The target becomes an animated object of the appropriate type. If it's at least 4 levels lower than you, you can make it a minion. This gives it the [minion](/Traits.aspx?ID=109) trait, meaning it can use 2 actions when you command it, and commanding it is a single action that has the [auditory](/Traits.aspx?ID=16) and [concentrate](/Traits.aspx?ID=32) traits. You can have a maximum of four minions under your control. If it doesn't become a minion, you can give it one simple command. It pursues that goal single-mindedly, ignoring any of your subsequent commands.<br />
+**Success** As critical success, except an animated object that doesn't become your minion stays in place and attacks anyone that attacks it or tries to steal or move it, rather than following your command.<br />
+**Failure** You fail to create the animated object.<br />
+**Critical Failure** You create the animated object, but it goes berserk and attempts to destroy you.
+
+</Spell>

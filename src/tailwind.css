@@ -1,0 +1,57 @@
+@import url(/styles/fonts.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Add additional Tailwind styles to this file, for example with @layer:
+https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
+*/
+
+
+.action-icon {
+    font-family: 'PF2';
+}
+
+#rules-actions-title h1,
+#rules-actions-title h2,
+#rules-actions-title h3,
+#rules-actions-title h4,
+#rules-actions-title h5,
+#rules-actions-title h6 {
+    color: white;
+}
+
+#legacy-title h1,
+#legacy-title h2,
+#legacy-title h3,
+#legacy-title h4,
+#legacy-title h5,
+#legacy-title h6 {
+    color: white;
+    font-weight: bolder;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'FixelText';
+}
+
+#feat-info img,
+#feat-info picture,
+#feat-info div,
+#aon-button img {
+    margin-top: unset;
+}
+
+/* #feat-title h1,
+#feat-title h2,
+#feat-title h3,
+#feat-title h4,
+#feat-title h5,
+#feat-title h6 {
+    font-size: unset;
+} */
+
+.hide-heading {
+    visibility: hidden;
+}

@@ -1,0 +1,21 @@
+---
+title: Waking Nightmare
+description: Spell - Waking Nightmare Чара - Waking Nightmare
+sidebar:
+    order: 471
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Waking Nightmare"} traits={[['Uncommon', 3], ['Cleric'], ['Concentrate'], ['Emotion'], ['Fear'], ['Focus'], ['Manipulate'], ['Mental']]} action={2} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1824"} domain={['Nightmares']} range={30} saving_throw={"Will"} source={['Player Core pg. 377']} spell_type={"Focus"} target={"1 creature"} type={"Spell"}>
+You fill the creature's mind with a terrifying vision. The target must attempt a Will save. A creature [frightened](/Conditions.aspx?ID=19) by this spell takes 1 additional mental damage each time it's hit by a Strike.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target is frightened 1.<br />
+**Failure** The target is frightened 2. If it's asleep, it wakes up and is [paralyzed](/Conditions.aspx?ID=28) for 1 round.<br />
+**Critical Failure** As failure, but frightened 3.
+
+---
+**Heightened (+1)** The mental damage increases by 1.
+
+</Spell>

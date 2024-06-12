@@ -1,0 +1,18 @@
+---
+title: Spider Sting
+description: Spell - Spider Sting Чара - Spider Sting
+sidebar:
+    order: 380
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Spider Sting"} traits={[['Concentrate'], ['Manipulate'], ['Poison']]} action={2} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1684"} deity={['Lamashtu']} range={0} saving_throw={"Fortitude"} source={['Player Core pg. 358']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Primal']} type={"Spell"}>
+You magically duplicate a spider's venomous sting. You deal 1d4 piercing damage to the touched creature and afflict it with spider venom. The target must attempt a Fortitude save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target takes 1d4 poison damage.<br />
+**Failure** The target is afflicted with spider venom at stage 1.<br />
+**Critical Failure** The target is afflicted with spider venom at stage 2. **Spider Venom** ([poison](/Traits.aspx?ID=126)) Level 1; **Maximum Duration** 4 rounds; **Stage 1** 1d4 poison damage and [enfeebled 1](/Conditions.aspx?ID=13) (1 round); **Stage 2** 1d4 poison damage and enfeebled 2 (1 round)
+
+</Spell>

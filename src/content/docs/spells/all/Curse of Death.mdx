@@ -1,0 +1,21 @@
+---
+title: Curse of Death
+description: Spell - Curse of Death Чара - Curse of Death
+sidebar:
+    order: 77
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Curse of Death"} traits={[['Uncommon', 3], ['Concentrate'], ['Curse'], ['Death'], ['Focus'], ['Hex'], ['Manipulate'], ['Void'], ['Witch']]} action={2} pfs={"Standard"} level={5} url={"https://2e.aonprd.com/Spells.aspx?ID=1876"} duration={60} lesson={['Lesson of Death']} range={30} saving_throw={"Fortitude"} source={['Player Core pg. 384']} spell_type={"Focus"} target={"1 creature"} type={"Spell"}>
+Your patron wraps a hand around your target's heart. The target must attempt a Fortitude saving throw. Regardless of the result, the target is temporarily immune to all _curses of death_ for 1 day. 
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target is afflicted with the curse of death at stage 1, and the stage of the curse can't increase beyond stage 1.<br />
+**Failure** The target is afflicted with the curse of death at stage 1.<br />
+**Critical Failure** The target is afflicted with the curse of death at stage 2. **Curse of Death** ([curse](/Traits.aspx?ID=38), [death](/Traits.aspx?ID=40), [void](/Traits.aspx?ID=510)) This curse ends when the spell ends; **Stage 1** 4d6 void damage and [fatigued](/Conditions.aspx?ID=15) (1 round); **Stage 2** 8d6 void damage and fatigued (1 round); **Stage 3** 12d6 void damage and fatigued (1 round); **Stage 4** death
+
+---
+**Heightened (+1)** Increase the void damage taken on a success and during the first three stages of the curse by 1d6.
+
+</Spell>

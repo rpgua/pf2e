@@ -1,0 +1,18 @@
+---
+title: Heal Animal
+description: Spell - Heal Animal Чара - Heal Animal
+sidebar:
+    order: 184
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Heal Animal"} traits={[['Uncommon', 3], ['Druid'], ['Focus'], ['Healing'], ['Manipulate'], ['Vitality']]} action={1} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1855"} range={30} source={['Player Core pg. 382']} spell_type={"Focus"} target={"1 willing living animal"} type={"Spell"}>
+You heal an animal's wounds, restoring 1d8 Hit Points to the target. The number of actions spent Casting this Spell determines its effect.
+
+ <actions string="Single Action" /> The spell has a range of touch.<br /> <actions string="Two Actions" /> ([concentrate](/Traits.aspx?ID=32)) The spell has a range of 30 feet and restores an additional 8 Hit Points to the target.
+
+---
+**Heightened (+1)** The amount of healing increases by 1d8, and the additional healing for the 2-action version increases by 8.
+
+</Spell>

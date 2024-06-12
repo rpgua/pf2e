@@ -1,0 +1,21 @@
+---
+title: Touch of Undeath
+description: Spell - Touch of Undeath Чара - Touch of Undeath
+sidebar:
+    order: 431
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Touch of Undeath"} traits={[['Uncommon', 3], ['Cleric'], ['Focus'], ['Manipulate'], ['Void']]} action={1} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1846"} domain={['Undeath']} range={0} saving_throw={"Fortitude"} source={['Player Core pg. 380']} spell_type={"Focus"} target={"1 living creature"} type={"Spell"}>
+You attack the target's life force with undeath, dealing 1d6 void damage. The target must attempt a Fortitude save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target takes half damage.<br />
+**Failure** The target takes full damage, and [vitality](/Traits.aspx?ID=509) effects heal it only half as much as normal for 1 round.<br />
+**Critical Failure** The target takes double damage, and vitality effects heal it only half as much as normal for 1 minute.
+
+---
+**Heightened (+1)** The damage increases by 1d6.
+
+</Spell>

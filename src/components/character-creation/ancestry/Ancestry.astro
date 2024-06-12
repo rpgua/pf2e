@@ -1,0 +1,110 @@
+---
+// TODO Refactor
+import { Picture } from "astro:assets";
+import pfsLogo from "../../../assets/logos/pfs.png";
+import aonLogo from "../../../assets/logos/aon.png";
+import Legacy from "../../tools/Legacy.astro";
+import Trait from "../../tools/traits/Trait.astro";
+
+const {
+    title,
+    legacy,
+    attribute,
+    attribute_flaw,
+    hp,
+    language,
+    legacy_name,
+    markdown,
+    size,
+    source,
+    spoilers,
+    speed,
+    traits,
+    type,
+    url,
+    vision
+} = Astro.props;
+
+interface Props {
+    title?: string;
+    legacy?: boolean;
+    attribute?: string[];
+    attribute_flaw?: string[];
+    hp?: string;
+    language?: string[];
+    legacy_name?: string;
+    markdown?: string;
+    size?: string;
+    source?: string;
+    speed?: object;
+    spoilers?: string;
+    summary?: string;
+    summary_markdown?: string;
+    text?: string;
+    traits?: string[];
+    type?: string;
+    url?: string;
+    vision?: string;
+}
+
+---
+
+  <!--TODO Improve style  -->
+{legacy && <Legacy />}
+<div id="feat-title" class="border-2 rounded-lg border-blue-900">
+  <div class="flex flex-row justify-between p-2 items-center bg-blue-900">
+    <h3 class="flex flex-row space-x-2 items-center flex-wrap">
+      <span class="text-pretty">{title}</span>
+    </h3>
+  </div>
+
+  <div id="feat-info" class="px-2 mt-1 flex flex-row flex-wrap items-center">
+    <Picture
+          src={pfsLogo}
+          title={`PFS: Standard`}
+          alt={`PFS: Standard`}
+          pictureAttributes={{ class: "m-1 w-8 xl:w-12 mr-2" }}
+        />
+    {
+      traits &&
+        traits.length > 0 &&
+        traits.map((trait) => (
+          <Trait title={trait[0]} rarity={Number(trait[1])} />
+        ))
+    }
+  </div>
+  <div class="p-2">
+    {title && <div>title: {title}</div>}
+    {legacy && <div>legacy: {legacy}</div>}
+    {attribute && <div>attribute: {attribute}</div>}
+    {attribute_flaw && <div>attribute_flaw: {attribute_flaw}</div>}
+    {hp && <div>hp: {hp}</div>}
+    {language && <div>language: {language}</div>}
+    {legacy_name && <div>legacy_name: {legacy_name}</div>}
+    {markdown && <div>markdown: {markdown}</div>}
+    {size && <div>size: {size}</div>}
+    {source && <div>source: {source}</div>}
+    {spoilers && <div>spoilers: {spoilers}</div>}
+    {speed && <div>speed: {speed}</div>}
+    {traits && <div>traits: {traits}</div>}
+    {type && <div>type: {type}</div>}
+    {url && <div>url: {url}</div>}
+    {vision && <div>vision: {vision}</div>}
+
+    <slot />
+    <div id="aon-button" class="flex flex-row-reverse">
+      <a
+        href={url}
+        class="max-w-fit px-3 py-1.5 text-white no-underline bg-blue-900 rounded hover:bg-blue-600 flex flex-row items-center justify-center space-x-2"
+        target="_blank">
+        <Picture
+          src={aonLogo}
+          title={"AoN"}
+          alt={"AoN"}
+          pictureAttributes={{ class: "w-6 md:w-8" }}
+        />
+        <span class="text-xs md:text-lg font-semibold">{title}</span>
+      </a>
+    </div>
+  </div>
+</div>

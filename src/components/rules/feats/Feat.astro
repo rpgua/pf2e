@@ -1,0 +1,90 @@
+---
+import { getActions } from "../../../utils";
+import Legacy from "../../tools/Legacy.astro";
+import { Picture } from "astro:assets";
+
+import pfsLogo from "../../../assets/logos/pfs.png";
+import pfsLogoLimited from "../../../assets/logos/pfs_limited.png";
+import pfsLogoRestricted from "../../../assets/logos/pfs_restricted.png";
+import aonLogo from "../../../assets/logos/aon.png";
+import Trait from "../../tools/traits/Trait.astro";
+
+const { title, traits, action, legacy, level, pfs, spoiler, url } = Astro.props;
+
+interface Props {
+  title: string;
+  traits?: [string, number][];
+  action?: number;
+  legacy?: boolean;
+  level?: number;
+  pfs?: string;
+  spoiler?: string;
+  url?: string;
+}
+
+const getPFS = (pfs: string | undefined) => {
+  switch (pfs) {
+    case "Limited":
+      return pfsLogoLimited;
+    case "Restricted":
+      return pfsLogoRestricted;
+    case "Standard":
+      return pfsLogo;
+    default:
+      return undefined;
+  }
+};
+
+const pfsImage = getPFS(pfs);
+---
+{legacy && <Legacy />}
+{spoiler && 
+<div class="bg-gray-500 text-white flex flex-row items-center justify-center">
+  <Fragment set:html={spoiler} />
+</div>}
+<div id="feat-title" class="border-2 rounded-lg border-blue-900">
+  <div class="flex flex-row justify-between p-2 items-center bg-blue-900">
+    <h3 class="flex flex-row space-x-2 items-center flex-wrap">
+      <span class="text-pretty">{title}</span>
+      {action !== undefined && (
+        <span class="action-icon text-xl xl:text-2xl text-white text-wrap">
+          {getActions(action)}
+        </span>
+      )} 
+    </h3>
+    <span class=" flex flex-row right-2 text-white text-2xl font-bold">
+      <span class="hidden md:block mr-2">Level</span> <span>{level}</span>
+    </span>
+  </div>
+
+  <div id="feat-info" class="px-2 mt-1 flex flex-row flex-wrap items-center">
+
+    {pfsImage && (
+      <Picture
+        src={pfsImage}
+        title={`PFS: ${pfs}`}
+        alt={`PFS: ${pfs}`}
+        pictureAttributes={{ class: "m-1 w-8 xl:w-12 mr-2" }}
+      />
+    )}
+    {traits && traits.length > 0 && (
+        traits.map((trait) => (
+          <Trait title={trait[0]} rarity={Number(trait[1])} />
+        ))
+    )}
+  </div>
+  <div class="p-2">
+    <slot />
+    <div id="aon-button" class="flex flex-row-reverse">
+      <a href={url} class="max-w-fit px-3 py-1.5 text-white no-underline bg-blue-900 rounded hover:bg-blue-600 flex flex-row items-center justify-center space-x-2" target="_blank">
+        <Picture
+        src={aonLogo}
+        title={'AoN'}
+        alt={'AoN'}
+        pictureAttributes={{ class: "w-6 md:w-8" }}
+      /> <span class="text-xs md:text-lg  font-semibold">{title}</span>
+      </a>
+    </div>
+  </div>
+  
+</div>

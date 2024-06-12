@@ -1,0 +1,18 @@
+---
+title: Enfeeble
+description: Spell - Enfeeble Чара - Enfeeble
+sidebar:
+    order: 127
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Enfeeble"} traits={[['Concentrate'], ['Manipulate']]} action={2} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1513"} legacy_name={"Ray of Enfeeblement"} patron_theme={['The Resentment']} range={30} saving_throw={"Fortitude"} source={['Player Core pg. 329']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Divine', 'Occult']} type={"Spell"}>
+You sap the target's strength, depending on its Fortitude save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target is [enfeebled 1](/Conditions.aspx?ID=13) until the start of your next turn.<br />
+**Failure** The target is enfeebled 2 for 1 minute.<br />
+**Critical Failure** The target is enfeebled 3 for 1 minute.
+
+</Spell>

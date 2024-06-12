@@ -1,0 +1,21 @@
+---
+title: Sleep
+description: Spell - Sleep Чара - Sleep
+sidebar:
+    order: 366
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Sleep"} traits={[['Concentrate'], ['Incapacitation'], ['Manipulate'], ['Mental'], ['Sleep']]} action={2} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1675"} area={"5-foot burst"} deity={['Desna']} lesson={['Lesson of Dreams']} range={30} saving_throw={"Will"} source={['Player Core pg. 357']} spell_type={"Spell"} tradition={['Arcane', 'Occult']} type={"Spell"}>
+Each creature in the area becomes drowsy, possibly nodding off. A creature that falls [unconscious](/Conditions.aspx?ID=38) from this spell doesn't fall [prone](/Conditions.aspx?ID=31) or release what it's holding. This spell doesn't prevent creatures from waking up due to a successful Perception check, limiting its utility in combat.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** The creature takes a –1 status penalty to Perception checks for 1 round.<br />
+**Failure** The creature falls unconscious. If it's still unconscious after 1 minute, it wakes up automatically.<br />
+**Critical Failure** The creature falls unconscious. If it's still unconscious after 1 hour, it wakes up automatically.
+
+---
+**Heightened (4th)** The creatures fall unconscious for 1 round on a failure or 1 minute on a critical failure. They fall [prone](/Conditions.aspx?ID=31) and release what they're holding, and they can't attempt Perception checks to wake up. When the duration ends, the creature is sleeping normally instead of automatically waking up.
+
+</Spell>

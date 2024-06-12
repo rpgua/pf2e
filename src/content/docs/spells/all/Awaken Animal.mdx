@@ -1,0 +1,23 @@
+---
+title: Awaken Animal
+description: Spell - Awaken Animal Чара - Awaken Animal
+sidebar:
+    order: 20
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Awaken Animal"} traits={[['Uncommon', 3], ['Mental']]} action={86400} pfs={"Standard"} level={6} url={"https://2e.aonprd.com/Rituals.aspx?ID=109"} cost={"herbs, 1/5 the value on Creature Creation Rituals"} range={10} source={['Player Core pg. 390']} target={"1 animal of up to the level on the table"} type={"Ritual"} primary_check={" Nature  (master)"} secondary_casters={"3"} secondary_check={" Lore  (any),  Society ,  Survival "}>
+You grant intelligence to the target, transforming it into a beast. If it was previously an animal companion or minion, it can no longer serve as one.
+
+## Creature Creation Rituals
+
+<table> <tr><td>**Creature Level**</td><td>**Ritual Rank**</td><td>**Required Cost**</td></tr> <tr><td>–1 or 0</td><td>2</td><td>15 gp</td></tr> <tr><td>1</td><td>2</td><td>60 gp</td></tr> <tr><td>2</td><td>3</td><td>105 gp</td></tr> <tr><td>3</td><td>3</td><td>180 gp</td></tr> <tr><td>4</td><td>4</td><td>300 gp</td></tr> <tr><td>5</td><td>4</td><td>480 gp</td></tr> <tr><td>6</td><td>5</td><td>750 gp</td></tr> <tr><td>7</td><td>5</td><td>1,080 gp</td></tr> <tr><td>8</td><td>6</td><td>1,500 gp</td></tr> <tr><td>9</td><td>6</td><td>2,100 gp</td></tr> <tr><td>10</td><td>7</td><td>3,000 gp</td></tr> <tr><td>11</td><td>7</td><td>4,200 gp</td></tr> <tr><td>12</td><td>8</td><td>6,000 gp</td></tr> <tr><td>13</td><td>8</td><td>9,000 gp</td></tr> <tr><td>14</td><td>9</td><td>13,500 gp</td></tr> <tr><td>15</td><td>9</td><td>19,500 gp</td></tr> <tr><td>16</td><td>10</td><td>30,000 gp</td></tr> <tr><td>17</td><td>10</td><td>45,000 gp</td></tr> </table>
+
+
+**Critical Success** The target's Intelligence, Wisdom, and Charisma modifiers each increase to +2 if they were lower, and it becomes [helpful](/Conditions.aspx?ID=21) to you for awakening it.<br />
+**Success** The target's Intelligence, Wisdom, and Charisma modifiers increase to +0 if they were lower and it becomes [friendly](/Conditions.aspx?ID=18) to you for awakening it.<br />
+**Failure** You fail to awaken the target.<br />
+**Critical Failure** You accidentally awaken the target with a pure bestial hatred toward you. The target's Intelligence, Wisdom, and Charisma modifiers increase to –2 if they were lower. It becomes [hostile](/Conditions.aspx?ID=23) to you, attempting to destroy you.
+
+</Spell>

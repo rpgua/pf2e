@@ -1,0 +1,22 @@
+---
+title: Mask of Terror
+description: Spell - Mask of Terror Чара - Mask of Terror
+sidebar:
+    order: 246
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Mask of Terror"} traits={[['Concentrate'], ['Emotion'], ['Fear'], ['Illusion'], ['Manipulate'], ['Mental'], ['Visual']]} action={2} pfs={"Standard"} level={7} url={"https://2e.aonprd.com/Spells.aspx?ID=1595"} deity={['Urgathoa']} duration={60} range={30} school={"illusion"} source={['Player Core pg. 342']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Occult', 'Primal']} type={"Spell"}>
+The target appears to be a gruesome and terrifying creature. The effect is unique to each observer, so a human viewing the target might see a [demon](/MonsterFamilies.aspx?ID=28) with bloody fangs, but a demon observing the target might see a glowing [angelic](/MonsterFamilies.aspx?ID=3) visage.
+
+ When any creature attempts a [hostile action](/Rules.aspx?ID=300) against the target, the creature must attempt a Will save. It is then temporarily immune until the end of its next turn.
+
+**Success** The creature is unaffected.<br />
+**Failure** The creature becomes [frightened 2](/Conditions.aspx?ID=19) before using its action.<br />
+**Critical Failure** The creature becomes frightened 2, and its action fails and is wasted.
+
+---
+**Heightened (8th)** You can target up to 5 creatures. If a creature uses a hostile action or reaction that affects multiple targets simultaneously, it needs to attempt only one save against _mask of terror_.
+
+</Spell>

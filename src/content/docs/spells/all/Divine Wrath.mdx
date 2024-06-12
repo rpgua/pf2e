@@ -1,0 +1,21 @@
+---
+title: Divine Wrath
+description: Spell - Divine Wrath Чара - Divine Wrath
+sidebar:
+    order: 107
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Divine Wrath"} traits={[['Concentrate'], ['Manipulate'], ['Sanctified'], ['Spirit']]} action={2} pfs={"Standard"} level={4} url={"https://2e.aonprd.com/Spells.aspx?ID=1499"} area={"20-foot burst"} range={120} saving_throw={"Fortitude"} source={['Player Core pg. 326']} spell_type={"Spell"} tradition={['Divine']} type={"Spell"}>
+You channel the fury of divinity against your foes. You deal 4d10 spirit damage to enemies in the area, depending on their Fortitude save.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** The creature takes half damage.<br />
+**Failure** The creature takes full damage and is [sickened 1](/Actions.aspx?ID=2187).<br />
+**Critical Failure** The creature takes full damage and is sickened 2; while it's sickened, it's also [slowed 1](/Actions.aspx?ID=2187).
+
+---
+**Heightened (+1)** The damage increases by 1d10.
+
+</Spell>

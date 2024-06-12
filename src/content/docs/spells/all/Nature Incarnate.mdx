@@ -1,0 +1,19 @@
+---
+title: Nature Incarnate
+description: Spell - Nature Incarnate Чара - Nature Incarnate
+sidebar:
+    order: 265
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Nature Incarnate"} traits={[['Concentrate'], ['Manipulate'], ['Polymorph']]} action={2} pfs={"Standard"} level={10} url={"https://2e.aonprd.com/Spells.aspx?ID=1612"} duration={60} source={['Player Core pg. 346']} spell_type={"Spell"} tradition={['Primal']} type={"Spell"}>
+The primal power of the world flows through you. You transform into an incarnation of nature, either a green man or a kaiju. Your battle form is Medium for a green man or Gargantuan (30-foot-by-30-foot space) for a kaiju. While in this form, you gain the [plant](/Traits.aspx?ID=125) trait (for a green man) or the [beast](/Traits.aspx?ID=20) trait (for a kaiju). You can Dismiss the spell.
+
+ You gain the following statistics and abilities regardless of which battle form you choose: 
+<ul><li>AC = 25 + your level. Ignore your armor's check penalty and Speed reduction.</li><li>30 temporary Hit Points.</li><li>[Darkvision](/Rules.aspx?ID=415).</li><li>One or more attacks specific to the battle form you choose, which are the only attacks you can Strike with. You're trained with them. Your attack modifier is +34, and you use the listed damage. These attacks are Strength based (for the purpose of the [enfeebled](/Conditions.aspx?ID=13) condition, for example). If your [unarmed](/Traits.aspx?ID=199) attack modifier is higher, you can use it instead.</li><li>[Athletics](/Skills.aspx?ID=3) modifier of +36, unless your own is higher.</li></ul> You gain specific abilities based on the incarnation you choose:
+
+- **Green Man** Speed 40 feet, climb 40 feet; **Melee** <actions string="Single Action" /> vines ([reach 30 feet](/Traits.aspx?ID=192), [versatile P](/Traits.aspx?ID=200)), **Damage** 6d8+12 bludgeoning; **Ranged** <actions string="Single Action" /> thorns ([range 100 feet](/Traits.aspx?ID=248)), **Damage** 6d6+6 piercing; **Green Caress** ([aura](/Traits.aspx?ID=206), [primal](/Traits.aspx?ID=134)) 60 feet. Enemies other than plants must succeed at a Fortitude save against your spell DC or become [clumsy 1](/Conditions.aspx?ID=3) for 1 round (clumsy 2 on a critical failure).
+- **Kaiju** Speed 50 feet; resistance 5 to physical damage; **Melee** <actions string="Single Action" /> jaws ([reach 30 feet](/Traits.aspx?ID=192)), **Damage** 6d10+10 piercing; **Melee** <actions string="Single Action" /> claws ([agile](/Traits.aspx?ID=170), [reach 30 feet](/Traits.aspx?ID=192)), **Damage** 6d8+8 slashing; **Melee** <actions string="Single Action" /> foot ([agile](/Traits.aspx?ID=170), [reach 15 feet](/Traits.aspx?ID=192)), **Damage** 6d6+10 bludgeoning; **Unstoppable** You are immune to being [immobilized](/Conditions.aspx?ID=24) and ignore [difficult terrain and greater difficult terrain](/Rules.aspx?ID=453); **Trample** <actions string="Three Actions" /> You move up to double your Speed and move through the spaces of Huge or smaller creatures, trampling each creature whose space you enter. A trampled creature takes foot damage with a [basic](/Rules.aspx?ID=329) Reflex save against your spell DC.
+
+</Spell>

@@ -1,0 +1,21 @@
+---
+title: Personal Blizzard
+description: Spell - Personal Blizzard Чара - Personal Blizzard
+sidebar:
+    order: 287
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Personal Blizzard"} traits={[['Uncommon', 3], ['Cold'], ['Focus'], ['Hex'], ['Witch']]} action={1} pfs={"Standard"} level={3} url={"https://2e.aonprd.com/Spells.aspx?ID=1883"} duration={60} lesson={['Lesson of Snow']} range={30} saving_throw={"Fortitude"} source={['Player Core pg. 385']} spell_type={"Focus"} target={"1 creature"} type={"Spell"}>
+Your patron's breath becomes a blizzard of obscuring, scouring ice that follows your target. The target attempts a Fortitude save.
+
+**Critical Success** The target is unaffected.<br />
+**Success** The target takes 1d6 cold damage, and the spell ends.<br />
+**Failure** The target takes 1d6 cold damage and 1d6 [persistent cold damage](/Conditions.aspx?ID=29). The persistent damage automatically ends when the spell ends. It is [concealed](/Conditions.aspx?ID=4) to other creatures, and other creatures are concealed to it.<br />
+**Critical Failure** As failure, but both the cold damage and the persistent cold damage are 2d6.
+
+---
+**Heightened (+1)** The cold damage and persistent cold damage increase by 1 (2 on a critical failure).
+
+</Spell>

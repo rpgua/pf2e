@@ -1,0 +1,22 @@
+---
+title: Plant Form
+description: Spell - Plant Form Чара - Plant Form
+sidebar:
+    order: 303
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Plant Form"} traits={[['Concentrate'], ['Manipulate'], ['Plant'], ['Polymorph'], ['Wood']]} action={2} pfs={"Standard"} level={5} url={"https://2e.aonprd.com/Spells.aspx?ID=1637"} duration={60} element={['Wood']} source={['Player Core pg. 350']} spell_type={"Spell"} tradition={['Primal']} type={"Spell"}>
+Taking inspiration from verdant creatures, you transform into a Large plant battle form. When you Cast this Spell, choose a listed battle form. You can substitute a similar specific plant to turn into (such as a pitcher plant instead of a flytrap), but this has no effect on the form's Size or statistics. While in this form, you gain the [plant](/Traits.aspx?ID=125) trait. You can Dismiss the spell.
+
+ You gain the following statistics and abilities regardless of which battle form you choose: 
+<ul><li>AC = 19 + your level. Ignore your armor's check penalty and Speed reduction.</li><li>12 temporary Hit Points.</li><li>Resistance 10 to [poison](/Traits.aspx?ID=126).</li><li>[Low-light vision](/Rules.aspx?ID=416).</li><li>One or more [unarmed](/Traits.aspx?ID=199) melee attacks specific to the battle form you choose, which are the only attacks you can Strike with. You're trained with them. Your attack modifier is +17, and your damage bonus is +11. These attacks are Strength based (for the purpose of the [enfeebled](/Conditions.aspx?ID=13) condition, for example). If your unarmed attack modifier is higher, you can use it instead.</li><li>[Athletics](/Skills.aspx?ID=3) modifier of +19, unless your own is higher.</li></ul> You gain specific abilities based on the plant you choose:
+
+- **Arboreal** Speed 30 feet; Melee <actions string="Single Action" /> branch ([reach 15 feet](/Traits.aspx?ID=192)), **Damage** 2d10 bludgeoning; Melee <actions string="Single Action" /> foot, **Damage** 2d8 bludgeoning; you can speak in this form.
+- **Flytrap** Speed 15 feet; resistance 10 to [acid](/Traits.aspx?ID=3); **Melee** <actions string="Single Action" /> leaf ([reach 10 feet](/Traits.aspx?ID=192)), **Damage** 2d8 piercing, and you can spend an action after a hit to [Grab](/MonsterAbilities.aspx?ID=18) the target.
+
+---
+**Heightened (6th)** Your battle form is Huge, and the reach of your attacks increases by 5 feet. You instead gain AC = 22 + your level, 24 temporary HP, attack modifier +21, damage bonus +16, and Athletics +22.
+
+</Spell>

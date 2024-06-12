@@ -1,0 +1,42 @@
+---
+title: Innate Spells
+description: Innate Spells
+sidebar:
+    order: 4
+    badge:
+        text: 1/2
+        variant: caution
+---
+
+__Source__ Player Core pg. 298
+Certain spells are natural to your character, typically coming from your ancestry or a magic item. They're called innate spells. Innate spells don't let you qualify for abilities that require you to be a spellcaster—those require you to have spell slots. The ability that gives you an innate spell tells you how often you can cast it—usually once per day—and its magical tradition. Innate spells are refreshed during your daily preparations. Innate cantrips are cast at will and automatically heightened as normal for cantrips (page 298) unless otherwise specified.
+
+When you gain an innate spell, you become trained in the spell attack modifier and spell DC statistics. At 12th level, these proficiencies increase to expert. Unless noted otherwise, Charisma is your spellcasting attribute modifier for innate spells.
+
+If you have an innate spell, you can cast it even if it's not of a spell rank you can normally cast. This is especially common for monsters.
+
+You can't use your spell slots to cast your innate spells, but you might have an innate spell and also be able to prepare or cast the same spell through your class. You also can't heighten innate spells, but some abilities that grant innate spells might give you the spell at a higher rank than its base rank or change the rank at which you cast the spell.
+
+## Magical Traditions
+
+Spellcasters cast spells from one of four different spell lists, each representing a different magical tradition: arcane, divine, occult, and primal.
+
+Your class determines which tradition of magic your spells use. In some cases, such as when a cleric gains spells from their deity or when a witch gets spells from their patron, you might be able to cast one or more select spells from a different spell list than the list you normally cast from; for instance, clerics of Sarenrae gain the power to summon their goddess's flames with a fireball spell. In these cases, the spell uses your magic tradition, not the list the spell normally comes from. When you cast a spell, add your tradition's trait to the spell.
+
+Some types of magic, such as that of most magic items, don't belong to any single tradition. These have the magical trait instead of a tradition trait.
+
+### Arcane
+
+Arcane spellcasters use logic and rationality to categorize the magic inherent in the world around them. Because of its far-reaching approach, the arcane tradition has the broadest spell list, though it's generally poor at affecting the spirit or the soul. Wizards are a prototypical arcane spellcaster, poring over tomes and grimoires.
+
+### Divine
+
+The power of the divine is steeped in faith, the unseen, and belief in a power Source from beyond the Universe. Clerics are an iconic divine spellcaster, beseeching the gods to grant them their magic.
+
+### Occult
+
+The practitioners of occult traditions seek to understand the unexplainable, categorize the bizarre, and otherwise access the ephemeral in a systematic way. Bards are a fundamental occult spellcaster, collecting strange esoterica and using their performances to influence the mind or elevate the soul.
+
+### Primal
+
+An instinctual connection to and faith in the world, the cycle of day and night, the turning of the seasons, and the natural selection of predator and prey drive the primal tradition. Druids are a great example of a primal spellcaster, calling upon the magic of nature through a deep connection to the plants and animals around them.

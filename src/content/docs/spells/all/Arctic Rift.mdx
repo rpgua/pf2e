@@ -1,0 +1,21 @@
+---
+title: Arctic Rift
+description: Spell - Arctic Rift Чара - Arctic Rift
+sidebar:
+    order: 14
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Arctic Rift"} traits={[['Cold'], ['Concentrate'], ['Manipulate']]} action={2} pfs={"Standard"} level={8} url={"https://2e.aonprd.com/Spells.aspx?ID=1444"} area={"120-foot line"} legacy_name={"Polar Ray"} saving_throw={"Fortitude"} source={['Player Core pg. 316']} spell_type={"Spell"} tradition={['Arcane', 'Primal']} type={"Spell"}>
+A jagged crack opens in the air, dealing 12d8 cold damage as it draws away warmth. Each creature along the rift must attempt a Fortitude save.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** The creature takes half damage.<br />
+**Failure** The creature takes full damage and is [slowed 1](/Conditions.aspx?ID=35) until the start of your next turn.<br />
+**Critical Failure** The creature takes double damage, is [immobilized](/Conditions.aspx?ID=24) by a layer of ice, and is slowed 1 as long as its immobilized. The ice is an object with 60 Hit Points, Hardness 5, immunity to cold damage, and vulnerability 10 to fire. It has object immunities (page 269) and is destroyed if the target [Escapes](/Actions.aspx?ID=79).
+
+---
+**Heightened (+1)** The damage increases by 1d8 and the ice's Hit Points increase by 5.
+
+</Spell>

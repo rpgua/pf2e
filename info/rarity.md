@@ -1,0 +1,6 @@
+# Rarity
+
+Common 1
+Uncommon 2
+Rare 3
+Unique 4

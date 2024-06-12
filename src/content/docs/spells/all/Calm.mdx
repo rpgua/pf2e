@@ -1,0 +1,18 @@
+---
+title: Calm
+description: Spell - Calm Чара - Calm
+sidebar:
+    order: 38
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Calm"} traits={[['Concentrate'], ['Emotion'], ['Incapacitation'], ['Manipulate'], ['Mental']]} action={2} pfs={"Standard"} level={2} url={"https://2e.aonprd.com/Spells.aspx?ID=1458"} area={"10-foot burst"} duration={60} legacy_name={"Calm Emotions"} range={120} saving_throw={"Will"} source={['Player Core pg. 319']} spell_type={"Spell"} tradition={['Divine', 'Occult']} type={"Spell"}>
+You forcibly calm creatures in the area, soothing them into a nonviolent state; each creature must attempt a Will save.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** Calming urges impose a –1 status penalty to the creature's attack rolls.<br />
+**Failure** Any [emotion](/Traits.aspx?ID=60) effects that would affect the creature are suppressed and the creature can't use [hostile actions](/Rules.aspx?ID=300). If the target is subject to hostility from any other creature, it ceases to be affected by _calm_.<br />
+**Critical Failure** As failure, but hostility doesn't end the effect.
+
+</Spell>

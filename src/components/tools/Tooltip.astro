@@ -1,0 +1,17 @@
+---
+const { content, bg, css } = Astro.props;
+interface Props {
+  content: string;
+  bg?: string;
+  css?: string
+}
+---
+
+<div class=`group relative inline-block ${css === undefined ? "" : css}`>
+  <slot />
+  <div
+    class={`hidden group-hover:block fixed w-9/12 md:w-fit bottom-4 font-semibold left-1/2 transform -translate-x-1/2 p-4 text-white shadow-xl z-50 border-2 border-[#d8c483] ` +
+      (bg === undefined ? " bg-black" : bg)}>
+    <Fragment set:html={content} />
+  </div>
+</div>

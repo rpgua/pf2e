@@ -1,0 +1,18 @@
+---
+title: Nightmare
+description: Spell - Nightmare Чара - Nightmare
+sidebar:
+    order: 270
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Nightmare"} traits={[['Concentrate'], ['Illusion'], ['Manipulate'], ['Mental']]} action={600} pfs={"Standard"} level={4} url={"https://2e.aonprd.com/Spells.aspx?ID=1615"} component={['10 minutes']} deity={['Lamashtu']} duration={86400} range={10000000} saving_throw={"Will"} school={"illusion"} source={['Player Core pg. 346']} spell_type={"Spell"} target={"1 creature you know by name"} tradition={['Arcane', 'Occult']} type={"Spell"}>
+You send disturbing nightmares to your target. The next time the target falls asleep, it must attempt a Will save. If you know the target only by name and have never met them, the target gets a +4 circumstance bonus to the Will save.
+
+**Critical Success** The target is unaffected and is temporarily immune for 1 week.<br />
+**Success** The target has the nightmares but has no adverse effects other than unpleasant memories.<br />
+**Failure** The target has the nightmares and awakens [fatigued](/Conditions.aspx?ID=15).<br />
+**Critical Failure** The target has the nightmares, awakens fatigued, and is [drained](/Conditions.aspx?ID=10) 2 until it is no longer fatigued.
+
+</Spell>

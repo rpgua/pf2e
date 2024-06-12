@@ -1,0 +1,33 @@
+---
+import {getActions} from '../../utils'
+const { action, type, level } = Astro.props;
+
+interface Props {
+  /**
+   * The action associated with the item (optional).
+   * @example 1 - action, 2 two actions, 3 - three actions, 4 - free action, 5 - reaction
+   */
+  action?: number;
+
+  /**
+   * The action associated with the item (optional).
+   * @example Item, Creature, Action, Feat
+   */
+  type?: string;
+
+  /**
+   * The action associated with the item (optional).
+   * @example 1 - action, 2 two actions, 3 - three actions, 4 - free action, 5 - reaction
+   */
+  level?: number;
+}
+---
+
+<div class:list={'flex flex-row items-center bg-red-900 dark:bg-green-900 py-1 px-2 rounded-sm justify-between mb-4'}>
+  <span id="element-title">
+  <span class="text-white"><slot/></span> {!action ? '' : <span class="action-icon ml-2 text-shadow text-shadow-y-md">{getActions(action)}</span>}
+</span>
+<span id="element-type">
+<span class="text-white">{type} {level}</span>  
+</span> 
+</div>

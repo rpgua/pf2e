@@ -1,0 +1,17 @@
+---
+title: Hypnotize
+description: Spell - Hypnotize Чара - Hypnotize
+sidebar:
+    order: 201
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Hypnotize"} traits={[['Illusion'], ['Manipulate'], ['Subtle'], ['Visual']]} action={2} pfs={"Standard"} level={3} url={"https://2e.aonprd.com/Spells.aspx?ID=1564"} area={"10-foot burst"} duration={60} legacy_name={"Hypnotic Pattern"} range={120} saving_throw={"Will"} school={"illusion"} source={['Player Core pg. 336']} spell_type={"Spell"} tradition={['Arcane', 'Occult']} type={"Spell"}>
+You create a cloud of mesmerizing patterns and colors that hovers in the air. Creatures are [dazzled](/Conditions.aspx?ID=7) while inside the cloud. In addition, a creature must attempt a Will saving throw if it is inside the cloud when you cast it, when it enters the cloud, when it ends its turn within the cloud, or if it uses a [Seek](/Actions.aspx?ID=84) or Interact action on the cloud. A creature currently [fascinated](/Conditions.aspx?ID=14) by _hypnotize_ doesn't attempt new saves.
+
+**Success** The target is unaffected.<br />
+**Failure** The target is fascinated by the cloud.<br />
+**Critical Failure** The target is fascinated by the cloud. While it remains fascinated, it can't use reactions.
+
+</Spell>

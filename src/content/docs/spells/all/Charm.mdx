@@ -1,0 +1,25 @@
+---
+title: Charm
+description: Spell - Charm Чара - Charm
+sidebar:
+    order: 44
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Charm"} traits={[['Concentrate'], ['Emotion'], ['Incapacitation'], ['Manipulate'], ['Mental'], ['Subtle']]} action={2} pfs={"Standard"} level={1} url={"https://2e.aonprd.com/Spells.aspx?ID=1463"} deity={['Asmodeus', 'Calistria']} duration={3600} range={30} saving_throw={"Will"} source={['Player Core pg. 320']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Occult', 'Primal']} type={"Spell"}>
+To the target, your words are honey and your visage seems bathed in a dreamy haze. It must attempt a Will save, with a +4 circumstance bonus if you or your allies recently threatened it or used [hostile actions](/Rules.aspx?ID=300) against it.
+
+ You can Dismiss the spell. If you use hostile actions against the target, the spell ends. When the spell ends, the target doesn't necessarily realize it was charmed unless its friendship with you or the actions you convinced it to take clash with its expectations, meaning you could potentially convince the target to continue being your friend via mundane means.
+
+**Critical Success** The target is unaffected and aware you tried to charm it.<br />
+**Success** The target is unaffected but thinks your spell was something harmless instead of _charm_, unless it identifies the spell (see Identifying Spells on page 303).<br />
+**Failure** The target's attitude becomes [friendly](/Conditions.aspx?ID=18) toward you. If it was friendly, it becomes [helpful](/Conditions.aspx?ID=21). It can't use hostile actions against you.<br />
+**Critical Failure** The target's attitude becomes helpful toward you, and it can't use hostile actions against you.
+
+---
+**Heightened (4th)** The duration lasts until your next daily preparations.
+
+**Heightened (8th)** The duration lasts until your next daily preparations, and you can target up to 10 creatures.
+
+</Spell>

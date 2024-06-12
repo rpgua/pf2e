@@ -1,0 +1,23 @@
+---
+title: Create Undead
+description: Spell - Create Undead Чара - Create Undead
+sidebar:
+    order: 71
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Create Undead"} traits={[['Uncommon', 3], ['Unholy']]} action={86400} pfs={"Standard"} level={2} url={"https://2e.aonprd.com/Rituals.aspx?ID=117"} cost={"black onyx, see Creature Creation Rituals"} range={10} source={['Player Core pg. 393']} target={"1 dead creature"} type={"Ritual"} primary_check={" Arcana  (expert),  Occultism  (expert), or  Religion  (expert)"} secondary_casters={"1"} secondary_check={"Religion"}>
+You transform the target into an [undead](/Traits.aspx?ID=160) creature with a level up to that allowed in the Creature Creation Rituals table. There are many versions of this ritual, each specific to a particular type of undead (one ritual for all [zombies](/MonsterFamilies.aspx?ID=103), one for [skeletons](/MonsterFamilies.aspx?ID=92), one for [ghouls](/MonsterFamilies.aspx?ID=52), and so on), and the rituals that create [rare](/Traits.aspx?ID=137) undead are also rare. Some forms of undead, such as [liches](/Monsters.aspx?ID=282), form using their own unique methods and can't be created with a version of _create undead_.
+
+## Creature Creation Rituals
+
+<table> <tr><td>**Creature Level**</td><td>**Ritual Rank**</td><td>**Required Cost**</td></tr> <tr><td>–1 or 0</td><td>2</td><td>15 gp</td></tr> <tr><td>1</td><td>2</td><td>60 gp</td></tr> <tr><td>2</td><td>3</td><td>105 gp</td></tr> <tr><td>3</td><td>3</td><td>180 gp</td></tr> <tr><td>4</td><td>4</td><td>300 gp</td></tr> <tr><td>5</td><td>4</td><td>480 gp</td></tr> <tr><td>6</td><td>5</td><td>750 gp</td></tr> <tr><td>7</td><td>5</td><td>1,080 gp</td></tr> <tr><td>8</td><td>6</td><td>1,500 gp</td></tr> <tr><td>9</td><td>6</td><td>2,100 gp</td></tr> <tr><td>10</td><td>7</td><td>3,000 gp</td></tr> <tr><td>11</td><td>7</td><td>4,200 gp</td></tr> <tr><td>12</td><td>8</td><td>6,000 gp</td></tr> <tr><td>13</td><td>8</td><td>9,000 gp</td></tr> <tr><td>14</td><td>9</td><td>13,500 gp</td></tr> <tr><td>15</td><td>9</td><td>19,500 gp</td></tr> <tr><td>16</td><td>10</td><td>30,000 gp</td></tr> <tr><td>17</td><td>10</td><td>45,000 gp</td></tr> </table>
+
+
+**Critical Success** The target becomes an undead creature of the appropriate type. If it's at least 4 levels lower than you, you can make it a minion. This gives it the [minion](/Traits.aspx?ID=109) trait, meaning it can use 2 actions when you command it, and commanding it is a single action that has the [auditory](/Traits.aspx?ID=16) and [concentrate](/Actions.aspx?ID=683) traits. You can have a maximum of four minions under your control. If it's intelligent and doesn't become a minion, the undead is [helpful](/Conditions.aspx?ID=21) to you for awakening it, though it's still a horrid and evil creature. If it's unintelligent and doesn't become a minion, you can give it one simple command. It pursues that goal single-mindedly, ignoring any of your subsequent commands.<br />
+**Success** As critical success, except an intelligent undead that doesn't become your minion is only [friendly](/Conditions.aspx?ID=18) to you, and an unintelligent undead that doesn't become your minion leaves you alone unless you attack it. It marauds the local area rather than following your command.<br />
+**Failure** You fail to create the undead.<br />
+**Critical Failure** You create the undead, but its soul, tortured by your foul necromancy, is full of nothing but hatred for you. It attempts to destroy you.
+
+</Spell>

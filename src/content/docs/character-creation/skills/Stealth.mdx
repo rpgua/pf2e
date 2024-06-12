@@ -1,0 +1,63 @@
+---
+title: Stealth
+description: Skills - Stealth Навички - Stealth
+sidebar:
+    order: 15
+---
+
+import Background from '../../../../components/character-creation/skills/Skill.astro'
+
+<Background title={"Stealth"}  source={['Player Core pg. 244']} url={"https://2e.aonprd.com/Skills.aspx?ID=48"} attribute={['Dexterity']} skill={['Stealth']}>
+ <title level="1" right="Skill " pfs="">[Stealth](/Skills.aspx?ID=48)</title>
+
+<row gap="tiny">**Source** [Player Core](/Sources.aspx?ID=216) pg. 244</row>
+
+You are skilled at avoiding detection, allowing you to slip past foes, hide, or conceal an item.
+
+<title level="3">Being Stealthy</title> If you want to sneak around when there are creatures that can see you, you can use a combination of [Hide](/Actions.aspx?ID=62) and [Sneak](/Actions.aspx?ID=63) to do so. 
+<ul><li>First, **Hide** behind something (either by taking advantage of [cover](/Rules.aspx?ID=459) or having the [concealed](/Conditions.aspx?ID=4) condition due to fog, a spell, or a similar effect). A successful Stealth check makes you [hidden](/Conditions.aspx?ID=22), though the creatures still know roughly where you are.</li><li>Second, now that you're hidden, you can **Sneak**. That means you can move at half your Speed and attempt another Stealth check. If it's successful, you're now [undetected](/Conditions.aspx?ID=39). That means the creatures don't know which square you're in anymore.</li></ul> If you were approaching creatures that didn't know you were there, you could begin Sneaking right away, since they didn't know your location to start with. Some actions can cause you to become [observed](/Conditions.aspx?ID=27) again, but they're mostly what you'd expect: standing out in the open, attacking someone, making a bunch of noise, and so forth. If you Strike someone after successfully Hiding or Sneaking, though, they're [off-guard](/Conditions.aspx?ID=58) to that Strike.
+
+ Creatures can try to find you using the [Seek](/Actions.aspx?ID=84) action.
+
+ Three conditions explain the states of detection. Remember that these conditions are relative to each creature—you can be observed by one creature while hidden to another and undetected by a third. [**Observed**](/Conditions.aspx?ID=27): You're in the creature's clear view. [**Hidden**](/Conditions.aspx?ID=22): The creature knows your location but can't see you. [**Undetected**](/Conditions.aspx?ID=39): The creature doesn't know your location.
+
+<title level="3">Unboservable Stealth</title> In some cases, it can be impossible for a creature to fully observe you. Typically this happens if you're [invisible](/Conditions.aspx?ID=26), the observer is [blinded](/Conditions.aspx?ID=1), or you're in [darkness](/Rules.aspx?ID=409) and the creature can't see in darkness. In such cases, any critical failure you roll on a check to Sneak is a failure instead. You also continue to be [undetected](/Conditions.aspx?ID=39) if you lose [cover or greater cover](/Rules.aspx?ID=459) against or are no longer [concealed](/Conditions.aspx?ID=4) from such a creature.
+
+<title level="2">Item Bonuses for Stealth</title>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Bonus</th>
+<th>Level</th>
+<th>Category</th>
+<th>Consumable</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>[Onyx Panther](/Equipment.aspx?ID=2988)</td>
+<td>+1</td>
+<td>2</td>
+<td>[Talismans](/equipment/consumables/talismans)</td>
+<td>Yes</td>
+<td>Stealth to Sneak</td>
+</tr>
+
+</tbody>
+</table>
+
+<title level="2">Related Feats</title>
+
+To see a list of Feats related to Stealth, [click here](/feats?include-traits=skill&amp;exclude-traits=archetype&amp;include-skills=stealth&amp;sort=level-asc%3Bname-asc).
+
+<title level="2">Stealth Untrained Actions</title>
+
+<document level="3" id="action-2403" />
+
+<document level="3" id="action-2404" />
+
+<document level="3" id="action-2405" />
+</Background>

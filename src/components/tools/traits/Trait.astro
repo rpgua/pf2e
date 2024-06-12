@@ -1,0 +1,33 @@
+---
+import list from "../../../assets/json_lists/traits.json";
+import Tooltip from "../Tooltip.astro";
+
+const { title, rarity } = Astro.props;
+interface Props {
+  title: string;
+  rarity?: number;
+}
+
+let bg = "";
+
+switch (rarity) {
+  case 2:
+    bg = "bg-[#c45500]";
+    break;
+  case 3:
+    bg = "bg-[#0c1466]";
+    break;
+  case 4:
+    bg = "bg-[#800080]";
+    break;
+  default:
+    bg = "bg-[#522e2c]";
+    break;
+}
+
+const content = list[title as keyof typeof list];
+---
+
+<Tooltip content={content} bg={bg} css="first-of-type:m-0 ml-1">
+    <span class:list={`p-1 border-2 border-[#d8c483] text-white select-auto ` + bg}>{title}</span>
+</Tooltip>

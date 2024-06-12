@@ -1,0 +1,21 @@
+---
+title: Wave of Despair
+description: Spell - Wave of Despair Чара - Wave of Despair
+sidebar:
+    order: 481
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Wave of Despair"} traits={[['Concentrate'], ['Emotion'], ['Manipulate'], ['Mental']]} action={2} pfs={"Standard"} level={5} url={"https://2e.aonprd.com/Spells.aspx?ID=1757"} area={"30-foot cone"} legacy_name={"Crushing Despair"} saving_throw={"Will"} source={['Player Core pg. 369']} spell_type={"Spell"} tradition={['Arcane', 'Occult']} type={"Spell"}>
+You inflict despair on creatures in the area. The effects for each creature are determined by its Will save.
+
+**Critical Success** The creature is unaffected.<br />
+**Success** For 1 round, the creature can't use reactions and must attempt another save at the start of its turn; on a failure, it is [slowed 1](/Conditions.aspx?ID=35) for that turn as it sobs uncontrollably.<br />
+**Failure** As success, but the duration is 1 minute.<br />
+**Critical Failure** As failure, and the creature is automatically slowed 1 for 1 minute.
+
+---
+**Heightened (7th)** The area increases to a 60-foot cone.
+
+</Spell>

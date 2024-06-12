@@ -1,0 +1,21 @@
+---
+title: Impaling Spike
+description: Spell - Impaling Spike Чара - Impaling Spike
+sidebar:
+    order: 210
+---
+
+import Spell from '../../../../components/spells/Spell.astro'
+
+<Spell title={"Impaling Spike"} traits={[['Concentrate'], ['Manipulate'], ['Metal']]} action={2} pfs={"Standard"} level={5} url={"https://2e.aonprd.com/Spells.aspx?ID=1571"} duration={60} element={['Metal']} range={30} saving_throw={"Reflex"} source={['Player Core pg. 338']} spell_type={"Spell"} target={"1 creature"} tradition={['Arcane', 'Primal']} type={"Spell"}>
+You conjure a spike that thrusts up from the earth beneath a target creature, potentially impaling it. The spike is made of [cold iron](/Equipment.aspx?ID=272) and deals 8d6 piercing damage. The target must attempt a Reflex save.
+
+**Critical Success** The target dodges the spike and is unaffected.<br />
+**Success** The target is struck by the spike and takes half damage.<br />
+**Failure** The target is impaled through a leg or another non-vital body part. The creature takes full damage and, if it's standing on solid ground, becomes [immobilized](/Conditions.aspx?ID=24). It can attempt to [Escape](/Actions.aspx?ID=79) (the DC is your spell DC). While it remains impaled, it takes damage from any weakness to cold iron it has at the end of each of its turns.<br />
+**Critical Failure** As failure, but the creature is impaled through a vital organ or its center of mass, taking double damage, and it is [off-guard](/Conditions.aspx?ID=58) as long as it's impaled.
+
+---
+**Heightened (+1)** The damage increases by 2d6.
+
+</Spell>
