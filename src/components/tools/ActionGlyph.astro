@@ -1,0 +1,11 @@
+---
+import { getActions } from './../../utils'
+const { actions } = Astro.props;
+interface Props {
+  actions: number;
+}
+
+
+---
+
+<Fragment set:html={getActions(actions)}/>

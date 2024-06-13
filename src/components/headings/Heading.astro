@@ -12,5 +12,6 @@ interface Props {
 ---
 
 <div class="flex flex-row items-center">
-  {!action ? '' : <span class="action-icon mr-2 text-xl">{getActions(action)}</span>}<span><slot/></span>
+  <!-- {!action ? '' : <span class="action-icon mr-2 text-xl">{getActions(action)}</span>}<span><slot/></span> -->
+  {!action ? '' : <span class="mr-2 text-xl"><Fragment set:html={getActions(action,'1.75rem')} /></span>}<span><slot/></span>
 </div>

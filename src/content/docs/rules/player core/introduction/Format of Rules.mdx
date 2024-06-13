@@ -1,110 +1,107 @@
 ---
-title: Format of Rules
+title: Формат правил | Format of Rules
 description: Format of Rules
 sidebar:
     order: 6
-    badge:
-        text: 1/2
-        variant: caution
 ---
 
 import Heading from '../../../../../components/headings/Heading.astro'
 import ElementHeading from '../../../../../components/headings/ElementHeading.astro'
 import Trait from '../../../../../components/tools/traits/Trait.astro'
+import ActionGlyph from '../../../../../components/tools/ActionGlyph.astro'
 import { Aside } from '@astrojs/starlight/components';
+import Action from '../../../../../components/rules/actions/Action.astro'
 
+__Джерело__ Player Core с. 15
 
-__Source__ Player Core pg. 15
+У цій книзі правил ви побачите стандарти форматування, які спочатку можуть виглядати дещо незвично. Ці стандарти застосовуються для того, щоб полегшити розпізнавання елементів правил у цій книзі.
 
-Throughout this rulebook, you will see formatting standards that might look a bit unusual at first. These standards are in place to make the rules elements in this book easier to recognize.
+Назви певних статистичних даних, навичок, подвигів, дій та деяких інших механічних елементів у Pathfinder пишуться з великої літери. Таким чином, коли ви бачите твердження "Удар по Класу Броні", ви знаєте, що і Удар, і Клас Броні посилаються на правила.
 
-The names of specific statistics, skills, feats, actions, and some other mechanical elements in Pathfinder are capitalized. This way, when you see the statement "a Strike targets Armor Class," you know that both Strike and Armor Class are referring to rules.
+Якщо слово або словосполучення виділено курсивом, це означає, що воно описує чари або магічний предмет. Таким чином, коли ви бачите твердження "двері замкнені на _замок_", ви знаєте, що це слово позначає чари _замка_, а не фізичний предмет.
 
-If a word or a phrase is italicized, it's describing a spell or a magic item. This way, when you see the statement "the door is sealed by lock," you know that the word denotes the lock spell, rather than a physical item.
-
-Pathfinder also uses many terms that are typically expressed as abbreviations, like AC for Armor Class, DC for Difficulty Class, and HP for Hit Points. If you're ever confused about a game term or an abbreviation, you can always turn to the Glossary and Index, beginning on page 452, and look it up.
+У Pathfinder також використовується багато термінів, які зазвичай виражаються абревіатурами, наприклад, КБ - клас броні, КС - клас складності, ОЗ - кількість очок здоров'я. Якщо ви коли-небудь заплутаєтесь в ігровому терміні або абревіатурі, ви завжди можете звернутися до Глосарію та Покажчика, що починається на сторінці 452, і подивитися, що це таке.
 
 <Heading>
-## Understanding Actions
+## Розуміння Дій | Understanding Actions
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-Characters and their adversaries affect the world of Pathfinder by using actions and producing effects. This is especially the case during encounters, when every action counts. When you use an action, you generate an effect. This effect might be automatic, but sometimes actions necessitate that you roll a die, and the effect is based on what you rolled.
+Персонажі та їхні супротивники впливають на світ Pathfinder, використовуючи дії та створюючи ефекти. Це особливо важливо під час сутичок, коли кожна дія має значення. Коли ви використовуєте дію, ви генеруєте ефект. Цей ефект може бути автоматичним, але іноді дії вимагають, щоб ви кинули кубик, і ефект базується на тому, що ви викинули.
 
-Throughout this book, you will see special icons to denote actions.
+У цій книжці ви побачите спеціальні значки, що позначають дії.
 
 <Heading action={1}>
-### Single Actions
+### Одноразові Дії
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-Single actions use this symbol: <span class="action-icon">[one-action]</span>. They're the simplest, most common type of action. You can use three single actions on your turn in an encounter, in any order you see fit.
+Цей символ використовується для одноразових дій: <ActionGlyph actions={1}/>. Це найпростіший і найпоширеніший тип дій. Ви можете використовувати три окремі дії у свій хід у сутичці, у будь-якому порядку, який вважаєте за потрібне.
 
 <Heading action={4}>
-### Reactions
+### Реакції | Reactions
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-Reactions use this symbol: <span class="action-icon">[reaction]</span>. These actions can be used even when it's not your turn. You only get one reaction per encounter round, and you can use it only when its specific trigger is fulfilled. Often, the trigger is another creature's action.
+Реакції використовують цей символ: <ActionGlyph actions={4}/>. Ці дії можна використовувати навіть тоді, коли не ваша черга. Ви отримуєте лише одну реакцію за раунд зустрічі, і ви можете використати її лише тоді, коли виконується певна умова, що її викликає. Часто такою умовою є дія іншої істоти.
 
 <Heading action={0}>
-### Free Actions
+### Вільні дії | Free Actions
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-Free actions use this symbol: <span class="action-icon">[free-action]</span>. Free actions don't require you to spend any of your three single actions or your reaction. A free action might have a trigger like a reaction does. If so, you can use it just like a reaction—even if it's not your turn. However, you can use only one free action per trigger, so if you have multiple free actions with the same trigger, you have to decide which to use. If a free action doesn't have a trigger, you use it like a single action, just without spending any of your actions for the turn.
+Вільні дії використовують цей символ: <ActionGlyph actions={0}/>. Вільні дії не вимагають від вас витрачати жодної з трьох ваших окремих дій або реакції. Вільна дія може мати умову, як і реакція. Якщо так, ви можете використати її так само, як і реакцію, навіть якщо зараз не ваша черга. Однак ви можете використати лише одну вільну дію з однією умовою, тому, якщо у вас є кілька вільних дій з однаковою умовою, вам доведеться вирішити, яку з них використати. Якщо вільна дія не має умови, ви використовуєте її як окрему дію, просто не витрачаючи жодної з ваших дій за хід.
 
 <Heading action={3}>
-### Activities
+### Активності
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-Activities are special tasks that you complete by spending one or more of your actions together. Usually, an activity uses two or more actions and lets you do more than a single action would allow. You have to spend all the actions an activity requires for its effects to happen. Spellcasting is one of the most common activities, as most spells take more than a single action to cast.
+Активності - це спеціальні завдання, які ви виконуєте, поєднуючи одну або кілька ваших дій. Зазвичай, активність використовує дві або більше дій і дозволяє вам зробити більше, ніж можна було б зробити за допомогою однієї дії. Ви повинні виконати всі дії, яких вимагає активність, щоб досягти її ефекту. Чарування - один з найпоширеніших видів активності, оскільки більшість чарів вимагають більше, ніж однієї дії для їх створення.
 
-Activities that use two actions use this symbol: <span class="action-icon">[two-actions]</span>. Activities that use three actions use this symbol: <span class="action-icon">[three-actions]</span>. A few special activities, such as spells you can cast in an instant, use a free action or a reaction.
+Активності, які використовують дві дії, використовують цей символ: <ActionGlyph actions={2}/>. Активності, які використовують три дії, використовують цей символ: <ActionGlyph actions={3}/>. Кілька особливих дій, таких як чари, які ви можете застосувати миттєво, використати вільну дію або реакцію.
 
-All tasks that take longer than a turn are activities. If an activity is meant to be done during exploration, it has the exploration trait. An activity that takes a day or more of commitment and that can be done only during downtime has the downtime trait.
+Усі завдання, які тривають довше, ніж один хід, є активністю. Якщо активність призначена для виконання під час дослідження, вона має рису дослідження. Активність, яка вимагає дня або більше і може бути виконана лише під час простою, має ознаку простою.
 
-<Aside title={'Action Icon Key'}>
+<Aside title={'Дії та їх іконки'}>
+<span class="flex flex-column items-center space-x-1">
+<span class="flex space-x-1"><ActionGlyph actions={1}/> <span>Одноразова Дія</span></span>
 
-<span class="action-icon">[one-action]</span> Single Action
+<span class="flex space-x-1"><ActionGlyph actions={2}/> <span>Активність двох дій</span></span>
 
-<span class="action-icon">[two-actions]</span> Two-Action Activity
+<span class="flex space-x-1"><ActionGlyph actions={3}/> <span>Активність трьох дій</span></span>
 
-<span class="action-icon">[three-actions]</span> Three-Action Activity
+<span class="flex space-x-1"><ActionGlyph actions={4}/> <span>Реакція</span></span>
 
-<span class="action-icon">[reaction]</span> Reaction
-
-<span class="action-icon">[free-action]</span> Free Action
-
+<span class="flex space-x-1"><ActionGlyph actions={0}/> <span>Вільна Дія</span></span>
+</span>
 </Aside>
 
 <Heading >
-## Reading Rules
+## Читання Правил | Reading Rules
 </Heading>
 
-__Source__ Player Core pg. 15
+__Джерело__ Player Core с. 15
 
-<ElementHeading type={'Level'}>Action or Feat Name</ElementHeading>
+<Action traits={[['Риси']]} level={-1} action={1} title='Назва Дії або Уміння'>
 
-<Trait title={'Trait'} rarity={4}/>
+__Передумови__ Тут перераховані всі мінімальні атрибути, уміння, ранги майстерності і т.д., які ви повинні мати, щоб вибрати цей елемент правил. Уміння також мають передумови рівня, які вказані вище.
 
-__Prerequisites__ Any minimum attributes, feats, proficiency ranks, and so forth you must have to select this rules element are here. Feats also have a level prerequisite, listed above.
+__Частота__ Обмеження на те, як часто ви можете використовувати здібності.
 
-__Frequency__ The limit on how often you can use the ability.
+__Умова__ Реакції та деякі вільні дії мають умови, які повинні бути виконані, перш ніж вони можуть бути використані.
 
-__Trigger__ Reactions and some free actions have triggers that must be met before they can be used.
+__Вимоги__ Іноді, щоб використати здібність, вам потрібно мати певний предмет або перебувати в певних обставинах.
+Цей розділ описує ефекти або переваги того чи іншого елемента правил. Якщо правило є дією, воно пояснює, що це за ефект або що ви повинні кинути. Якщо це уміння, яке змінює існуючу дію або надає постійний ефект, то тут пояснюється його перевага.
 
-__Requirements__ Sometimes you must have a certain item or be in a certain circumstance to use an ability.
-This section describes the effects or benefits of a rules element. If the rule is an action, it explains what the effect is or what you must roll. If it's a feat that modifies an existing action or grants a constant effect, the benefit is explained here.
+__Особливе__ Будь-які особливі властивості правила пояснюються в цьому розділі. Зазвичай цей розділ з'являється в уміннях, які можна вибрати більше одного разу, з поясненням того, що відбувається при цьому.
+</Action>
 
-__Special__ Any special qualities of the rule are explained in this section. Usually this section appears in feats you can select more than once, explaining what happens when you do.
+Іноді здібність надає кілька дій або дію на додаток до інших переваг. Вони стиснуті в коротший формат з використанням тих самих категорій.
 
-Sometimes an ability will grant multiple actions or an action in addition to other benefits. These are condensed into a shorter format using the same categories.
-
-__Action Name <span class="action-icon">[one-action]</span>__ (traits) __Frequency__ how often it can be used; __Trigger__ when a reaction or free action can be used; Requirements some actions require specific circumstances, listed here; __Effect__ this section explains how the ability changes the world.
+__Назва Дії <ActionGlyph actions={1}/>__ (риси) __Частота__ як часто її можна використовувати; __Умова__ коли можна використовувати реакцію або вільну дію; __Вимоги__ деякі дії вимагають певних обставин, перелічених тут; __Ефект__ цей розділ пояснює, як здібності змінюють світ.

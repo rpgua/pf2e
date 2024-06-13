@@ -5,7 +5,7 @@ import Picture from "astro/components/Picture.astro";
 import Legacy from "../../tools/Legacy.astro";
 import aonLogo from "../../../assets/logos/aon.png"
 import Trait from "../../tools/traits/Trait.astro";
-const { title, traits, action, legacy, spoiler, url } = Astro.props;
+const { title, traits, action, legacy, spoiler, url, level } = Astro.props;
 
 interface Props {
   title: string;
@@ -27,16 +27,13 @@ interface Props {
 <div id="feat-title" class="border-2 rounded-lg border-blue-900">
   <div class="flex flex-row justify-between p-2 items-center bg-blue-900">
     <h3 class="flex flex-row space-x-2 items-center flex-wrap">
-      <span class="text-pretty">{title}</span>
-      {action !== undefined && (
-        <span class="action-icon text-xl xl:text-2xl text-white text-wrap">
-          {getActions(action)}
-        </span>
-      )} 
+      <span class="text-pretty text-white">{title}</span>
+      {action !== undefined && <Fragment set:html={getActions(action)} />} 
     </h3>
-    <!-- <span class=" flex flex-row right-2 text-white text-2xl font-bold">
-      <span class="hidden md:block mr-2">Level</span> <span>{level}</span>
-    </span> -->
+    {level !== undefined ? 
+      (<span class=" flex flex-row right-2 text-white text-2xl font-bold"> 
+      {level === -1 ? <span class="hidden md:block mr-2">Рівень</span> :  
+      (level === 0 ? '' : <span class="hidden md:block mr-2">Рівень</span><span>{level}</span>)} </span>) : ''}
   </div>
 
   <div id="feat-info" class="px-2 mt-1 flex flex-row flex-wrap items-center">
@@ -48,16 +45,16 @@ interface Props {
   </div>
   <div class="p-2">
     <slot />
-    <div id="aon-button" class="flex flex-row-reverse">
-      <a href={url} class="max-w-fit px-3 py-1.5 text-white no-underline bg-blue-900 rounded hover:bg-blue-600 flex flex-row items-center justify-center space-x-2" target="_blank">
+    {url && <div id="aon-button" class="flex flex-row-reverse">
+      <a href={url} class="max-w-fit px-3 py-1.5 no-underline bg-blue-900 rounded hover:bg-blue-600 flex flex-row items-center justify-center space-x-2" target="_blank">
         <Picture
         src={aonLogo}
         title={'AoN'}
         alt={'AoN'}
         pictureAttributes={{ class: "w-6 md:w-8" }}
-      /> <span class="text-xs md:text-lg  font-semibold">{title}</span>
+      /> <span class="text-xs md:text-lg text-white font-semibold">{title}</span>
       </a>
-    </div>
+    </div>}
   </div>
   
 </div>

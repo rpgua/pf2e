@@ -54,7 +54,7 @@ When your foes are defeated, some sort of truce is reached, or some other event 
 
 __Source__ Player Core pg. 435
 
-When it’s your turn to act, you can use single actions ( <span class="action-icon">[one-action]</span> ), short activities ( <span class="action-icon">[two-actions]</span> and <span class="action-icon">[three-actions]</span> ), reactions ( <span class="action-icon">[reaction]</span> ), and free actions ( <span class="action-icon">[free-action]</span> ). When you’re finished, your turn ends and the character next in the initiative order begins their turn. Sometimes it’s important to note when during your turn something happens, so a turn is divided into three steps.
+When it’s your turn to act, you can use single actions ( <ActionGlyph actions={1}/> ), short activities ( <ActionGlyph actions={2}/> and <ActionGlyph actions={3}/> ), reactions ( <ActionGlyph actions={4}/> ), and free actions ( <ActionGlyph actions={0}/> ). When you’re finished, your turn ends and the character next in the initiative order begins their turn. Sometimes it’s important to note when during your turn something happens, so a turn is divided into three steps.
 
 ### Step 1: Start Your Turn
 

@@ -35,17 +35,17 @@ export default defineConfig({
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/introduction'
+							directory: 'rules/player core/introduction'
 						},
 						collapsed: true
 					}, {
-						label: "👶 Походження та придісторії",
+						label: "👶 Походження та передісторії",
 						badge: {
 							text: 'WIP',
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/ancestries and backgrounds'
+							directory: 'rules/player core/ancestries and backgrounds'
 						},
 						collapsed: true
 					}, {
@@ -57,28 +57,28 @@ export default defineConfig({
 						items: [
 							{
 								label: 'Chapter intro',
-								link: 'pf2e/rules/player-core/classes/intro/',
+								link: 'rules/player-core/classes/intro/',
 								badge: { text: '1/2', variant: 'caution' },
 							},
 							{
 								label: 'Reading Class Entries',
-								link: 'pf2e/rules/player-core/classes/Reading Class Entries/',
+								link: 'rules/player-core/classes/Reading Class Entries/',
 								badge: { text: '1/2', variant: 'caution' },
 							},
 							{
 								label: 'Companion',
-								link: 'pf2e/rules/player-core/classes/Companions/',
+								link: 'rules/player-core/classes/Companions/',
 								badge: { text: '1/2', variant: 'caution' },
 							},
 							{
 								label: 'Список класів',
 								autogenerate: {
-									directory: 'pf2e/rules/player core/classes/list'
+									directory: 'rules/player core/classes/list'
 								}
 							}
 						],
 						autogenerate: {
-							directory: 'pf2e/rules/player core/classes'
+							directory: 'rules/player core/classes'
 						},
 						collapsed: true
 					}, {
@@ -88,17 +88,17 @@ export default defineConfig({
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/skills'
+							directory: 'rules/player core/skills'
 						},
 						collapsed: true
 					}, {
-						label: "💪 Здібності",
+						label: "💪 Уміння",
 						badge: {
 							text: 'WIP',
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/feats'
+							directory: 'rules/player core/feats'
 						},
 						collapsed: true
 					}, {
@@ -108,7 +108,7 @@ export default defineConfig({
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/equipment'
+							directory: 'rules/player core/equipment'
 						},
 						collapsed: true
 					}, {
@@ -118,7 +118,7 @@ export default defineConfig({
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/spells'
+							directory: 'rules/player core/spells'
 						},
 						collapsed: true
 					}, {
@@ -128,7 +128,7 @@ export default defineConfig({
 							variant: 'caution'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/player core/playing the game'
+							directory: 'rules/player core/playing the game'
 						},
 						collapsed: true
 					}],
@@ -146,7 +146,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/introduction'
+							directory: 'rules/gm core/introduction'
 						},
 						collapsed: true
 					}, {
@@ -156,7 +156,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/running the game'
+							directory: 'rules/gm core/running the game'
 						},
 						collapsed: true
 					}, {
@@ -166,7 +166,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/building games'
+							directory: 'rules/gm core/building games'
 						},
 						collapsed: true
 					}, {
@@ -176,7 +176,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/age of lost omens'
+							directory: 'rules/gm core/age of lost omens'
 						},
 						collapsed: true
 					}, {
@@ -186,7 +186,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/subsystems'
+							directory: 'rules/gm core/subsystems'
 						},
 						collapsed: true
 					}, {
@@ -196,7 +196,7 @@ export default defineConfig({
 							variant: 'danger'
 						},
 						autogenerate: {
-							directory: 'pf2e/rules/gm core/treasure trove'
+							directory: 'rules/gm core/treasure trove'
 						},
 						collapsed: true
 					}],
@@ -209,7 +209,7 @@ export default defineConfig({
 						variant: 'danger'
 					},
 					autogenerate: {
-						directory: 'pf2e/rules/actions'
+						directory: 'rules/actions'
 					},
 					collapsed: true
 				},
@@ -220,7 +220,7 @@ export default defineConfig({
 						variant: 'danger'
 					},
 					autogenerate: {
-						directory: 'pf2e/rules/traits'
+						directory: 'rules/traits'
 					},
 					collapsed: true
 				},
@@ -231,7 +231,7 @@ export default defineConfig({
 						variant: 'danger'
 					},
 					autogenerate: {
-						directory: 'pf2e/rules/conditions'
+						directory: 'rules/conditions'
 					},
 					collapsed: true
 				}

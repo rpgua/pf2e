@@ -3,9 +3,6 @@ title: Граючи у гру | Playing the Game
 description: Граючи у гру | Playing the Game
 sidebar:
     order: 3
-    badge:
-        text: Clarificate
-        variant: caution
 ---
 
 __Джерело__ Player Core с. 8

@@ -8,11 +8,6 @@ Add additional Tailwind styles to this file, for example with @layer:
 https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
 */
 
-
-.action-icon {
-    font-family: 'PF2';
-}
-
 #rules-actions-title h1,
 #rules-actions-title h2,
 #rules-actions-title h3,

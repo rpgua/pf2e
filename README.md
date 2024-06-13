@@ -6,6 +6,11 @@
 ![Static Badge](https://img.shields.io/badge/%D0%A1%D1%82%D0%B0%D0%BD-5%25-red?style=for-the-badge)
 
 
+Player Core
+Введення
+
+
+
 [![](https://img.shields.io/badge/%D0%9A%D0%90%D0%9D%D0%90%D0%9B-26A5E4?style=for-the-badge&logo=telegram
 )](https://t.me/+K0nrbUH7IowwZGEy)
 [![](https://img.shields.io/badge/%D0%A7%D0%90%D0%A2-26A5E4?style=for-the-badge&logo=telegram
