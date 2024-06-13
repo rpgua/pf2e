@@ -1,6 +1,6 @@
 ---
-title: Вступ до глави
-description: Вступ до глави
+title: Вступ до глави | Chapter Intro
+description: Вступ до глави | Chapter Intro
 sidebar:
     order: 0
 ---

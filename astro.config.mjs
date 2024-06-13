@@ -10,6 +10,15 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'PF2e Українською',
+			head: [
+				{
+				  tag: 'script',
+				  attrs: {
+					src: "https://telegram.org/js/telegram-web-app.js",
+					defer: true,
+				  },
+				},
+			  ],
 			tableOfContents: {
 				minHeadingLevel: 2,
 				maxHeadingLevel: 6
@@ -93,16 +102,12 @@ export default defineConfig({
 						collapsed: true
 					}, {
 						label: "💪 Уміння",
-						badge: {
-							text: 'WIP',
-							variant: 'caution'
-						},
 						autogenerate: {
 							directory: 'rules/player core/feats'
 						},
 						collapsed: true
 					}, {
-						label: "🎒 Обладнання",
+						label: "🎒 Спорядження",
 						badge: {
 							text: 'WIP',
 							variant: 'caution'

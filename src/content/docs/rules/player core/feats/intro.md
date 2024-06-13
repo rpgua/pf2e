@@ -1,19 +1,16 @@
 ---
-title: Chapter Intro
-description: Chapter Intro
+title: Вступ до глави | Chapter Intro
+description: Вступ до глави | Chapter Intro
 sidebar:
     order: 0
-    badge:
-        text: 1/2
-        variant: caution
 ---
 
-__Source__ Player Core pg. 249
+__Джерело__ Player Core с. 249
 
-All kinds of experiences and training can shape your character beyond what you learn by advancing in your class. Abilities that require a degree of training but can be learned by anyone—not only members of certain ancestries or classes—are called general feats.
+Різноманітний досвід і тренування можуть сформувати ваш характер більше, ніж те, чого ви навчитесь, просуваючись у своєму класі. Здібності, які вимагають певної підготовки, але можуть бути засвоєні будь-ким, а не лише представниками певних родів чи класів, називаються загальними уміннями.
 
-For most classes, you gain a general feat when you reach 3rd level and every 4 levels thereafter. Each time you gain a general feat, you can select any feat with the general trait whose prerequisites you satisfy.
+Для більшості класів ви отримуєте загальне уміння, коли досягаєте 3-го рівня і кожні 4 рівні після цього. Щоразу, коли ви отримуєте загальне уміння, ви можете вибрати будь-яке уміння з загальною рисою, умовам якого ви задовольняєте.
 
-General feats also include a subcategory of skill feats, which expand on what you can accomplish via skills. These feats also have the skill trait. Most characters gain skill feats at 2nd level and every 2 levels thereafter. When you gain a skill feat, you must select a general feat with the skill trait; you can't select a general feat that lacks the skill trait. The level of a skill feat is typically the minimum level at which a character could meet its proficiency prerequisite.
+Загальні уміння також включають в себе підкатегорію умінь навичок, які розширюють те, що ви можете досягти за допомогою навичок. Ці уміння також мають рису навички. Більшість персонажів отримують уміння навичок на 2-му рівні і кожні 2 рівні після цього. Коли ви отримуєте уміння навички, ви повинні вибрати загальне уміння з ознакою навички; ви не можете вибрати загальне уміння, яке не має ознаки навички. Рівень навички, як правило, є мінімальним рівнем, на якому персонаж може виконати необхідну для неї умову майстерності.
 
-In addition to the skill feats specifically associated with each skill, there are some that can be taken with various skills or even all skills, like Assurance.
+На додачу до умінь навичок, які пов'язані з кожною навичкою, існують такі, що можуть бути використані з різними навичками або навіть з усіма навичками, як, наприклад, Впевненість.

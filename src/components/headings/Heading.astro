@@ -5,7 +5,7 @@ const { action } = Astro.props;
 interface Props {
   /**
    * The action associated with the item (optional).
-   * @example 1 - action, 2 two actions, 3 - three actions, 4 - free action, 5 - reaction
+   * @example 0 - free action, 1 - action, 2 two actions, 3 - three actions, 4 - reaction
    */
   action?: number;
 }
@@ -13,5 +13,5 @@ interface Props {
 
 <div class="flex flex-row items-center">
   <!-- {!action ? '' : <span class="action-icon mr-2 text-xl">{getActions(action)}</span>}<span><slot/></span> -->
-  {!action ? '' : <span class="mr-2 text-xl"><Fragment set:html={getActions(action,'1.75rem')} /></span>}<span><slot/></span>
+  {action === undefined ? '' : <span class="mr-2 text-xl"><Fragment set:html={getActions(action,'1.75rem')} /></span>}<span><slot/></span>
 </div>
