@@ -1,7 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "mdx": {
-    // Enable strict type checking in MDX files.
-    "checkMdx": true
-  }
+  "extends": "astro/tsconfigs/strict"
 }

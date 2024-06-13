@@ -9,6 +9,8 @@ sidebar:
 ---
 
 import Action from '../../../../../components/rules/actions/Action.astro' 
+import ActionGlyph from '../../../../../components/tools/ActionGlyph.astro'
+
 
 __Source__ Player Core pg. 414
 
@@ -127,7 +129,7 @@ In addition to the actions in these two sections, the actions for spellcasting c
 
 __Delay and Ready:__ If you want to change when you take actions, two basic actions let you do so. Delay shifts your entire turn later in the round, and Ready lets you prepare to take one specific action when a trigger you choose is met.
 
-<Action action={4}>
+<Action action={4} title='Aid'>
 ### Aid
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -150,7 +152,7 @@ __Critical Failure__ Your ally takes a –1 circumstance penalty to the triggeri
 </Action>
 
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Crawl'>
 ### Crawl
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -163,7 +165,7 @@ You move 5 feet by crawling and continue to stay prone.
 </div>
 </Action>
 
-<Action action={0}>
+<Action action={0} title='Delay'>
 ### Delay
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -178,7 +180,7 @@ When you Delay, any persistent damage or other negative effects that normally oc
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Drop Prone'>
 ### Drop Prone
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -189,7 +191,7 @@ You fall prone.
 </div>
 </Action>
 
-<Action traits={[['Attack']]} action={1}>
+<Action traits={[['Attack']]} action={1} title='Escape'>
 ### Escape
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -206,7 +208,7 @@ __Critical Failure__ You don’t get free, and you can’t attempt to Escape aga
 </div>
 </Action>
 
-<Action traits={[['Manipulate']]} action={1}>
+<Action traits={[['Manipulate']]} action={1} title='Interact'>
 ### Interact
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -217,7 +219,7 @@ You use your hand or hands to manipulate an object or the terrain. You can grab 
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Leap'>
 ### Leap
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -232,7 +234,7 @@ Jumping a greater distance requires using the Athletics skill.
 </div>
 </Action>
 
-<Action traits={[['Concentrate']]} action={2}>
+<Action traits={[['Concentrate']]} action={2} title='Ready'>
 ### Ready
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -245,7 +247,7 @@ If you have a multiple attack penalty and your readied action is an attack actio
 </div>
 </Action>
 
-<Action traits={[['Manipulate']]} action={0}>
+<Action traits={[['Manipulate']]} action={0} title='Release'>
 ### Release
 <div slot="content">
 __Source__ Core Rulebook pg. 470 4.0
@@ -258,7 +260,7 @@ If you want to prepare to Release something outside of your turn, use the Ready 
 </div>
 </Action>
 
-<Action traits={[['Concentrate'],['Secret']]} action={1}>
+<Action traits={[['Concentrate'],['Secret']]} action={1} title='Seek'>
 ### Seek
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -276,7 +278,7 @@ __Success__ If you were searching for creatures, any undetected creature you suc
 </div>
 </Action>
 
-<Action traits={[['Concentrate'],['Secret']]} action={1}>
+<Action traits={[['Concentrate'],['Secret']]} action={1} title='Sense Motive'>
 ### Sense Motive
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -295,7 +297,7 @@ __Critical Failure__ You get a false sense of the creature’s intentions.
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Stand'>
 ### Stand
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -306,7 +308,7 @@ You stand up from prone.
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Step'>
 ### Step
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -321,7 +323,7 @@ You can't Step into difficult terrain, and you can't Step using a Speed other th
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Stride'>
 ### Stride
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -332,7 +334,7 @@ You move up to your Speed.
 </div>
 </Action>
 
-<Action traits={[['Attack']]} action={1}>
+<Action traits={[['Attack']]} action={1} title='Strike'>
 ### Strike
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -347,7 +349,7 @@ __Success__ You deal damage according to the weapon or unarmed attack, including
 </div>
 </Action>
 
-<Action action={1}>
+<Action action={1} title='Take Cover'>
 ### Take Cover
 <div slot="content">
 __Source__ Core Rulebook pg. 471 4.0
@@ -366,7 +368,7 @@ __Source__ Player Core pg. 418
 
 These actions are useful under specific circumstances. The Arrest a Fall, Burrow, and Fly actions require you to have a special movement type (page 420). The climb and swim Speeds use the corresponding actions from the Athletics skill (pages 234–235).
 
-<Action action={4}>
+<Action action={4} title='Arrest a Fall'>
 ### Arrest a Fall
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -383,7 +385,7 @@ __Success__ You fall gently, taking no damage from the fall.
 </div>
 </Action>
 
-<Action action={1}>
+<Action action={1} title='Avert Gaze'>
 ### Avert Gaze
 <div slot="content">
 
@@ -396,7 +398,7 @@ You avert your gaze from danger. You gain a +2 circumstance bonus to saves again
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Burrow'>
 ### Burrow
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -409,7 +411,7 @@ You dig your way through dirt, sand, or a similar loose material at a rate up to
 </div>
 </Action>
 
-<Action traits={[['Concentrate']]} action={1}>
+<Action traits={[['Concentrate']]} action={1} title='Dismiss'>
 ### Dismiss
 <div slot="content">
 __Source__ Core Rulebook pg. 305 4.0
@@ -420,7 +422,7 @@ You end one spell effect or magic item effect. This must be an effect you are al
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Fly'>
 ### Fly
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -433,7 +435,7 @@ You move through the air up to your fly Speed. Moving upward (straight up or dia
 </div>
 </Action>
 
-<Action traits={[['Manipulate']]} action={4}>
+<Action traits={[['Manipulate']]} action={4} title='Grab an Edge'>
 ### Grab an Edge
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -454,7 +456,7 @@ __Critical Failure__ You continue to fall, and if you’ve fallen 20 feet or mor
 </div>
 </Action>
 
-<Action traits={[['Move']]} action={1}>
+<Action traits={[['Move']]} action={1} title='Mount'>
 ### Mount
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -467,7 +469,7 @@ You move onto the creature and ride it. If you’re already mounted, you can ins
 </div>
 </Action>
 
-<Action traits={[['Auditory'], ['Manipulate'], ['Visual']]} action={1}>
+<Action traits={[['Auditory'], ['Manipulate'], ['Visual']]} action={1} title='Point Out'>
 ### Point Out
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -479,7 +481,7 @@ You indicate a creature that you can see to one or more allies, gesturing in a d
 </div>
 </Action>
 
-<Action action={1}>
+<Action action={1} title='Raise a Shield'>
 ### Raise a Shield
 <div slot="content">
 __Source__ Core Rulebook pg. 472 4.0
@@ -492,7 +494,7 @@ You position your shield to protect yourself. When you have Raised a Shield, you
 </div>
 </Action>
 
-<Action traits={[['Concentrate']]} action={1}>
+<Action traits={[['Concentrate']]} action={1} title='Sustain an Activation'>
 ### Sustain an Activation
 <div slot="content">
 __Source__ Core Rulebook pg. 534 4.0
