@@ -294,7 +294,7 @@ export default defineConfig({
 					text: 'WIP',
 					variant: 'caution'
 				},
-				collapsed: true,
+				// collapsed: true,
 				link: 'glossary'
 			}],
 			customCss: ['./src/tailwind.css'],
