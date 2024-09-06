@@ -2,7 +2,7 @@
   "name": "pf2eua",
   "type": "module",
   "version": "0.1",
-  "packageManager": "pnpm@9.0.6",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,15 +11,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/starlight": "^0.23.4",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/starlight": "^0.26.3",
     "@astrojs/starlight-tailwind": "^2.0.3",
     "@astrojs/tailwind": "^5.1.0",
-    "@designbycode/tailwindcss-text-shadow": "^2.0.0",
-    "@types/node": "^20.14.2",
-    "astro": "^4.10.1",
-    "sharp": "^0.32.6",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.4.5"
+    "@designbycode/tailwindcss-text-shadow": "^2.1.0",
+    "@types/node": "^22.5.4",
+    "astro": "^4.15.3",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
   }
 }

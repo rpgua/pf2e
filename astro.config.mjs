@@ -9,16 +9,24 @@ export default defineConfig({
 	base: 'pf2e',
 	integrations: [
 		starlight({
+			defaultLocale: 'uk-UA',
+			locales: {
+				root: {
+				  label: 'Українська',
+				  lang: 'uk-UA',
+				}
+			},
+			credits: true,
 			title: 'PF2e Українською',
 			head: [
 				{
-				  tag: 'script',
-				  attrs: {
-					src: "https://telegram.org/js/telegram-web-app.js",
-					defer: true,
-				  },
+					tag: 'script',
+					attrs: {
+						src: "https://telegram.org/js/telegram-web-app.js",
+						defer: true,
+					},
 				},
-			  ],
+			],
 			tableOfContents: {
 				minHeadingLevel: 2,
 				maxHeadingLevel: 6
@@ -71,12 +79,12 @@ export default defineConfig({
 							},
 							{
 								label: 'Reading Class Entries',
-								link: 'rules/player-core/classes/Reading Class Entries/',
+								link: 'rules/player-core/classes/reading-class-entries',
 								badge: { text: '1/2', variant: 'caution' },
 							},
 							{
-								label: 'Companion',
-								link: 'rules/player-core/classes/Companions/',
+								label: 'Companions',
+								link: 'rules/player-core/classes/companions',
 								badge: { text: '1/2', variant: 'caution' },
 							},
 							{
@@ -86,9 +94,6 @@ export default defineConfig({
 								}
 							}
 						],
-						autogenerate: {
-							directory: 'rules/player core/classes'
-						},
 						collapsed: true
 					}, {
 						label: "‍🎓 Навички",
@@ -244,51 +249,51 @@ export default defineConfig({
 				// autogenerate: { directory: 'rules' }
 			},
 			{
-				label: 'CC',badge: {
-						text: 'WIP',
-						variant: 'caution'
-					},
-					autogenerate: {
-						directory: 'character-creation/'
-					},
-					collapsed: true
+				label: 'CC', badge: {
+					text: 'WIP',
+					variant: 'caution'
+				},
+				autogenerate: {
+					directory: 'character-creation/'
+				},
+				collapsed: true
 			},
 			{
-				label: 'Spells',badge: {
-						text: 'WIP',
-						variant: 'caution'
-					},
-					autogenerate: {
-						directory: 'spells/'
-					},
-					collapsed: true
+				label: 'Spells', badge: {
+					text: 'WIP',
+					variant: 'caution'
+				},
+				autogenerate: {
+					directory: 'spells/'
+				},
+				collapsed: true
 			},
 			{
-				label: 'Feats',badge: {
-						text: 'WIP',
-						variant: 'caution'
-					},
-					autogenerate: {
-						directory: 'feats/'
-					},
-					collapsed: true
+				label: 'Feats', badge: {
+					text: 'WIP',
+					variant: 'caution'
+				},
+				autogenerate: {
+					directory: 'feats/'
+				},
+				collapsed: true
 			},
 			{
-				label: 'Equipment',badge: {
-						text: 'WIP',
-						variant: 'caution'
-					},
-					autogenerate: {
-						directory: 'equipment/'
-					},
-					collapsed: true
+				label: 'Equipment', badge: {
+					text: 'WIP',
+					variant: 'caution'
+				},
+				autogenerate: {
+					directory: 'equipment/'
+				},
+				collapsed: true
 			},
 			{
 				label: 'Glossary',
 				badge: {
-						text: 'WIP',
-						variant: 'caution'
-					},
+					text: 'WIP',
+					variant: 'caution'
+				},
 				collapsed: true,
 				link: 'glossary'
 			}],

@@ -37,11 +37,11 @@ __Source__ Player Core pg. 274
 
 Whenever a shield takes damage, the amount of damage it takes is reduced by this amount. This number is particularly relevant for shields because of the Shield Block feat (page 262). The rules for Hardness appear on page 269.
 
-### HP (BT)
+### ОЗ (ПР)
 
 __Source__ Player Core pg. 274
 
-This column lists the shield’s Hit Points (HP) and Broken Threshold (BT). These measure how much damage the shield can take before it’s destroyed (its total HP) and how much it can take before being broken and unusable its BT). These matter primarily for the Shield Block reaction.
+Ця колонка вказує Очки Здоров'я (ОЗ) щита та Поріг Руйнування (ПР). Вони вимірюють, скільки ушкоджень щит може витримати перед тим, як буде знищений (його загальні ОЗ), і скільки ушкоджень він може витримати перед тим, як зламатися і стати непридатним (його ПР). Це важливо головним чином для реакції Блок Щитом.
 
 ## Attacking with a Shield
 
