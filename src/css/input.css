@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.mjs';
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 h1 {
   @apply text-3xl font-extrabold
@@ -40,7 +58,7 @@ h6 {
 }
 
 .pagefind-ui__search-input {
-  @apply flex-grow focus:outline-none py-2 max-w-xs;
+  @apply grow focus:outline-hidden py-2 max-w-xs;
 }
 
 .pagefind-ui__search-clear {
@@ -68,11 +86,11 @@ h6 {
 }
 
 .pagefind-ui__result-thumb {
-  @apply max-w-12 max-h-12 rounded-md bg-base-300 flex-shrink-0;
+  @apply max-w-12 max-h-12 rounded-md bg-base-300 shrink-0;
 }
 
 .pagefind-ui__result-inner {
-  @apply flex-grow;
+  @apply grow;
 }
 
 .pagefind-ui__result-title a {
