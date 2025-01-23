@@ -7,25 +7,25 @@ export default {
 	},
 	plugins: [
 		require('@tailwindcss/typography'),
-		require('daisyui')		
+		// require('daisyui')		
 	],
-	daisyui: {
-		themes: [
-		  "light",
-		  "dark",
-		  "synthwave",
-		  "retro",
-		  "cyberpunk",
-		  "valentine",
-		  "halloween",
-		  "forest",
-		  "lofi",
-		  "pastel",
-		  "fantasy",
-		  "dracula",
-		  "autumn",
-		  "night",
-		  "winter"
-		],
-	  },
+	// daisyui: {
+	// 	themes: [
+	// 	  "light",
+	// 	  "dark",
+	// 	  "synthwave",
+	// 	  "retro",
+	// 	  "cyberpunk",
+	// 	  "valentine",
+	// 	  "halloween",
+	// 	  "forest",
+	// 	  "lofi",
+	// 	  "pastel",
+	// 	  "fantasy",
+	// 	  "dracula",
+	// 	  "autumn",
+	// 	  "night",
+	// 	  "winter"
+	// 	],
+	//   },
 }
