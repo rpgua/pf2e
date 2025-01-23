@@ -1,0 +1,39 @@
+---
+
+---
+<style>
+  .btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 50;
+  }
+
+  .btn.hidden {
+    display: none;
+  }
+</style>
+
+<button class="btn hidden btn-active btn-accent" id="scrollToTop">UP</button>
+
+<script>
+  const button = document.getElementById('scrollToTop');
+
+  const handleScroll = () => {
+    if (
+      document.body.scrollTop > 80 ||
+      document.documentElement.scrollTop > 80
+    ) {
+      button?.classList.remove('hidden');
+    } else {
+      button?.classList.add('hidden');
+    }
+  };
+
+  const toTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  button?.addEventListener('click', toTop);
+</script>

@@ -1,0 +1,21 @@
+---
+import TableListAncestries from "@components/tables/TableListAncestries.astro";
+import Layout from "@layouts/Layout.astro";
+import pb from "@lib/db";
+import type { Ancestry } from "@types";
+export async function getStaticPaths() {
+  return [];
+}
+const ancestries: Ancestry[] = await pb
+  .collection("Ancestry")
+  .getFullList({
+    expand: "rarity,source_id,type,language,language.source_id,vision",
+  });
+---
+
+<Layout>
+  <div class="overflow-x-auto col-span-full">
+    <h1>Ancestries</h1>
+    <TableListAncestries data={ancestries} />
+  </div>
+</Layout>

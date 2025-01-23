@@ -1,0 +1,33 @@
+---
+import type { Chapter, Rule } from "@types";
+import slug from "slug";
+import RBCMenuList from "@components/utils/RBCMenuList.astro";
+
+type Props = {
+  chapter?: Chapter;
+  heading: Rule;
+  single?: boolean;
+};
+
+const { chapter, heading, single } = Astro.props;
+---
+
+<li>
+  {
+    heading.expand?.subrules ? (
+      <RBCMenuList subchapter={heading} chapter={chapter} single={single} />
+    ) : (
+      <a
+        href={
+          single
+            ? `#${heading.id}`
+            : "/rulebooks/" +
+              slug(heading.expand?.source_id.original_name || "") +
+              `/${heading.id}`
+        }
+        class={chapter?.rule.id === heading.id ? "text-primary" : ""}>
+        {heading.name}
+      </a>
+    )
+  }
+</li>

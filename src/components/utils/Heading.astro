@@ -1,0 +1,16 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = {
+  level: number;
+  props?: HTMLAttributes<'h1'>;
+}
+
+const { level, props } = Astro.props;
+
+const Tag = `h${level}` as keyof HTMLElementTagNameMap;
+---
+
+<Tag {...props}>
+  <slot />
+</Tag>

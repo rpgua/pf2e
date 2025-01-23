@@ -1,0 +1,39 @@
+---
+import type { Translation } from "@types";
+
+interface Props {
+  translations: Translation[];
+}
+
+const { translations } = Astro.props;
+
+---
+
+<div class="container mx-auto col-span-12">
+  <h1 class="text-3xl font-bold">Vocabulary</h1>
+  <div class="grid grid-cols-12">
+    <table class="table col-span-8">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Original</th>
+          <th>Translation</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        {translations &&
+          translations
+            .sort((a, b) => a.term.localeCompare(b.original_term))
+            .map((item, index) => (
+              <tr>
+                <th>{index + 1}</th>
+                <td>{item.original_term}</td>
+                <td>{item.term}</td>
+                <td>{item.comment}</td>
+              </tr>
+            ))}
+      </tbody>
+    </table>
+  </div>
+</div>

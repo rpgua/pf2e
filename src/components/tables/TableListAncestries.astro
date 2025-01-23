@@ -1,0 +1,146 @@
+---
+import RemasterBadge from '@components/ui/RemasterBadge.astro';
+import type { Ancestry } from '@types';
+import type Handsontable from 'handsontable/base';
+
+type Props = {
+  data: Ancestry[];
+};
+
+const {data} = Astro.props;
+
+const headers = [
+'Name',
+'Rarity',
+'Source',
+'Remaster',
+'Language',
+'Vision'
+]
+
+const columns:Handsontable.ColumnSettings[] = [
+  
+    {type:'text', data: 'name' },
+    {type:'text', data: 'rarity' },
+    {type:'text', data: 'source' },
+    {type:'checkbox', data: 'remaster' },
+    {type:'text', data: 'language' },
+    {type:'text', data: 'vision' },
+  ]
+
+const clearData = data.map((d,index)=>{
+  return {
+    id:index+1,
+    name: d.name,
+    rarity: d.expand?.rarity.name,
+    source: d.expand?.source_id.name,
+    remaster: d.expand?.source_id.remaster,
+    language: d.expand?.language ? d.expand?.language.map(lang=>lang.name).join(',') : '',
+    vision: d.expand?.vision ? d.expand?.vision.map(v=>v.name).join(',') : ''
+  }
+})
+---
+
+<div id="example" class="ht-theme-main-dark-auto" data-cleardata={JSON.stringify(clearData)} data-headers={JSON.stringify(headers)} data-columns={JSON.stringify(columns)}></div>
+
+<script  >
+  import Handsontable from "handsontable/base";
+  import {
+    AutoColumnSize,
+    Autofill,
+    ContextMenu,
+    CopyPaste,
+    DropdownMenu,
+    Filters,
+    HiddenRows,
+    registerPlugin,
+    MultiColumnSorting
+  } from 'handsontable/plugins';
+  import {
+    CheckboxCellType,
+    NumericCellType,
+    registerCellType,
+  } from 'handsontable/cellTypes';
+  import 'handsontable/styles/handsontable.min.css';
+  import 'handsontable/styles/ht-theme-main.min.css';
+
+  registerCellType(CheckboxCellType);
+  registerCellType(NumericCellType);
+  registerPlugin(AutoColumnSize);
+  registerPlugin(Autofill);
+  registerPlugin(ContextMenu);
+  registerPlugin(CopyPaste);
+  registerPlugin(DropdownMenu);
+  registerPlugin(Filters);
+  registerPlugin(HiddenRows);
+  registerPlugin(MultiColumnSorting);
+  
+  const example = document.getElementById("example");
+  if (example) {
+    const {columns,headers,cleardata} = example?.dataset
+  new Handsontable(example, {
+    readOnly: true,
+    data:JSON.parse(cleardata || '[]'),
+    // colWidths: [140, 126, 192, 100, 100, 90, 90, 110, 97],
+    colHeaders: JSON.parse(headers || '[]'),
+    columns: JSON.parse(columns || '[]'),
+    dropdownMenu: ['filter_by_condition','filter_by_condition2','filter_by_value','filter_operators','filter_action_bar'],
+    contextMenu: false,
+    multiColumnSorting: true,
+    filters: true,
+    manualRowMove: false,
+    navigableHeaders: true,
+    width: 'auto',
+    height: 'auto',
+    rowHeaders: true,
+    autoWrapRow: true,
+    autoWrapCol: true,
+    licenseKey: "non-commercial-and-evaluation"
+  });
+  }
+</script>
+
+<!-- <table class="table table-zebra">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Rarity</th>
+      <th>Source</th>
+      <th>Remaster</th>
+      <th>Language</th>
+      <th>Vision</th>
+    </tr>
+  </thead>
+  <tbody>
+    {data.map((item, index) => {
+      return (
+        <tr>
+          <th>{index + 1}</th>
+          <td>{item.name}</td>
+          <td>{item.expand?.rarity.name}</td>
+          <td>{item.expand?.source_id.name}</td>
+          <td>
+            <RemasterBadge remaster={item.expand?.source_id.remaster} />
+          </td>
+          <td>
+            <div class="flex gap-2">
+              {item.expand?.language &&
+                item.expand?.language.filter(lang=>lang.expand?.source_id.remaster).map((lang) => (
+                  <div class="badge badge-neutral">{lang.name}</div>
+                ))}
+            </div>
+          </td>
+          <td>
+            <div class="flex gap-2">
+              {item.expand?.vision &&
+                item.expand?.vision.map((vision) => (
+                  <div class="badge badge-neutral">{vision.name}</div>
+                ))}
+            </div>
+          </td>
+        </tr>
+      );
+    })}
+  </tbody>
+</table> -->

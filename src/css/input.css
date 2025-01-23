@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-3xl font-extrabold
+}
+
+h2 {
+  @apply text-2xl font-bold
+}
+
+h3 {
+  @apply text-xl font-bold
+}
+
+h4 {
+  @apply text-lg font-semibold
+}
+
+h5 {
+  @apply font-semibold
+}
+
+h6 {
+  @apply text-sm
+}
+
+/* 
+#mobile-search {
+  @apply max-w-32
+} */
+
+.pagefind-ui {
+  @apply max-w-xs md:relative;
+}
+
+.pagefind-ui__form {
+  @apply flex items-center gap-2 max-w-xs input input-bordered;
+}
+
+.pagefind-ui__search-input {
+  @apply flex-grow focus:outline-none py-2 max-w-xs;
+}
+
+.pagefind-ui__search-clear {
+  @apply btn btn-outline btn-sm;
+}
+
+.pagefind-ui__drawer {
+  @apply absolute top-16 left-0 md:top-full md:mt-4 w-full rounded-lg shadow-xl bg-base-200 z-50;
+}
+
+.pagefind-ui__results-area {
+  @apply h-[calc(100vh-64px)] md:max-h-96 overflow-auto p-4 gap-2 flex flex-col;
+}
+
+.pagefind-ui__message {
+  @apply font-medium text-accent;
+}
+
+.pagefind-ui__results {
+  @apply grid gap-4;
+}
+
+.pagefind-ui__result {
+  @apply flex gap-3 p-2 border border-accent rounded-lg bg-base-100;
+}
+
+.pagefind-ui__result-thumb {
+  @apply max-w-12 max-h-12 rounded-md bg-base-300 flex-shrink-0;
+}
+
+.pagefind-ui__result-inner {
+  @apply flex-grow;
+}
+
+.pagefind-ui__result-title a {
+  @apply link link-primary link-hover font-semibold;
+}
+
+.pagefind-ui__result-excerpt {
+  @apply text-sm text-base-content;
+}
+
+.pagefind-ui__result-excerpt mark {
+  @apply bg-accent;
+}
+
+.pagefind-ui__button {
+  @apply btn btn-secondary w-full mt-4;
+}

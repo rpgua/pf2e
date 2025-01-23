@@ -1,0 +1,62 @@
+---
+import { getBook } from "@api/utils";
+import { type Book } from "@types";
+import pb from "@lib/db";
+import slug from "slug";
+import RuleCard from "@components/cards/RuleCard.astro";
+import Layout from "@layouts/Layout.astro";
+import RulebookContentSide from "@components/RulebookContentSide.astro";
+
+const { rulebook } = Astro.params;
+const currentBook = await getBook(rulebook);
+
+  export async function getStaticPaths() {
+  try {
+    // Fetch all rulebooks from the PocketBase collection.
+    const rulebooks:Book[] = await pb.collection("Book").getFullList({
+    expand:
+        "source_id,content.subrules,content.source_id,content.type," +
+        "content.subrules.subrules,content.subrules.source_id,content.subrules.type," +
+        "content.subrules.subrules.subrules,content.subrules.subrules.source_id,content.subrules.subrules.type," +
+        "content.subrules.subrules.subrules.subrules,content.subrules.subrules.subrules.source_id,content.subrules.subrules.subrules.type," +
+        "content.subrules.subrules.subrules.subrules.subrules,content.subrules.subrules.subrules.subrules.source_id,content.subrules.subrules.subrules.subrules.type",
+    });
+
+    // Ensure rulebooks are fetched and processed before returning.
+    if (!rulebooks || rulebooks.length === 0) {
+      console.error("No rulebooks found.");
+      return [];
+    }
+
+    // Map rulebooks to static paths.
+    return rulebooks.map((rulebook) => ({
+      params: {
+        rulebook: slug(rulebook.expand?.source_id?.original_name || ""),
+      },
+    }));
+  } catch (error) {
+    // Handle potential errors during fetch.
+    console.error("Error fetching rulebooks:", error);
+    return [];
+  }
+}
+
+
+---
+
+<Layout>
+    <!-- <h1>{currentBook?.expand?.source_id.name}</h1> -->
+    {currentBook &&
+    <div class="flex flex-col gap-4 col-span-full lg:col-span-9">
+      
+          {currentBook.expand?.content.map((chapter) => (
+            <RuleCard rule={chapter} size={2} />
+          ))}
+      </div>
+      <div class="flex flex-col gap-4 col-span-full lg:col-span-3">
+      <RulebookContentSide
+          book={currentBook}
+          single
+        />
+      </div>}
+</Layout>

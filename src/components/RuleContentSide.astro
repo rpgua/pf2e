@@ -1,0 +1,23 @@
+---
+import type { Rule } from "@types";
+
+type Props = {
+  rule: Rule;
+};
+const { rule } = Astro.props;
+---
+
+<ul class="menu bg-base-200 rounded-box w-full">
+  <li>
+    <h2 class="menu-title">{rule.name}</h2>
+  <ul>
+  {rule.expand?.subrules &&
+    rule?.expand.subrules.map((subrule) => (
+      <li>
+        <a href={"#"+subrule.id}>{subrule.name}</a>
+      </li>
+    ))}
+  </ul>
+
+  </li>
+</ul>

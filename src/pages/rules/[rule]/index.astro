@@ -1,0 +1,32 @@
+---
+import RuleCard from "@components/cards/RuleCard.astro";
+import RuleContentSide from "@components/RuleContentSide.astro";
+import Layout from "@layouts/Layout.astro";
+import pb from "@lib/db";
+import type { Rule } from "@types";
+
+export async function getStaticPaths() {
+    const rules = await pb.collection("Rule").getFullList();
+    const pages = rules.map((rule) => {
+        return { params: { rule: rule.id } };
+    });
+    return pages;
+}
+
+const { rule } = Astro.params;
+
+const currentRule: Rule = await pb
+    .collection("Rule")
+    .getFirstListItem(`id='${rule}'`, {
+        expand: "type,source_id,subrules,subrules.source_id,subrules.type",
+    });
+---
+
+<Layout>
+    <div class="flex flex-col gap-4 col-span-full lg:col-span-9">
+        <RuleCard rule={currentRule} />
+    </div>
+    <div class="flex flex-col gap-4 col-span-full lg:col-span-3">
+        <RuleContentSide rule={currentRule} />
+    </div>
+</Layout>

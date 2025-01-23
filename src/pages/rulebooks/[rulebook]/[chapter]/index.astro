@@ -1,0 +1,119 @@
+---
+import pb from "@lib/db";
+import type { Book, Rule } from "@types";
+import RuleCard from "@components/cards/RuleCard.astro";
+import RulebookContentSide from "@components/RulebookContentSide.astro";
+import ButonRuleBottomNavigation from "@components/ui/ButonRuleBottomNavigation.astro";
+import { getChapter } from "@api/utils";
+import slug from "slug";
+import Layout from "@layouts/Layout.astro";
+
+
+
+export async function getStaticPaths() {
+
+  async function fetchAllRulebooks(): Promise<Book[]> {
+  try {
+    const books: Book[] = await pb.collection("Book").getFullList({
+      expand:
+        "source_id,content.subrules,content.source_id,content.type,content.subrules.subrules,content.subrules.source_id,content.subrules.type, content.subrules.subrules.subrules,content.subrules.subrules.source_id,content.subrules.subrules.type, content.subrules.subrules.subrules.subrules,content.subrules.subrules.subrules.source_id,content.subrules.subrules.subrules.type, content.subrules.subrules.subrules.subrules.subrules,content.subrules.subrules.subrules.subrules.source_id,content.subrules.subrules.subrules.subrules.type",
+    });
+
+    return books;
+  } catch (error) {
+    console.error("Error fetching rulebooks:", error);
+    return [];
+  }
+}
+  
+  const rulebooks = await fetchAllRulebooks();
+  const allChapters: {params:{
+    rulebook: string | undefined;
+    chapter: string | undefined;
+  }}[] = [];
+
+  const diveIn = async (
+    chapters: Rule[],
+    rulebook: string,
+    parentContent: Rule[] = []
+  ): Promise<void> => {
+    try {
+      for (const chapter of chapters) {
+        // Process the current chapter
+        const result = await getChapter(rulebook, chapter.id);
+
+        if (result?.chapter?.rule.id) {
+          // console.log({
+          //   rulebook: rulebook,
+          //   chapter: result.chapter.rule.id,
+          // })
+          allChapters.push({params:{
+            rulebook: rulebook,
+            chapter: result.chapter.rule.id,
+          }});
+        }
+
+        // If the chapter has subrules, dive deeper recursively
+        if (chapter.expand?.subrules) {
+          await diveIn(chapter.expand.subrules, rulebook, [
+            ...parentContent,
+            chapter,
+          ]);
+        }
+      }
+    } catch (error) {
+      console.error("Error in diveIn:", error);
+    }
+  };
+
+  for (const rulebook of rulebooks) {
+    if (rulebook.expand?.content) {
+      // Start diving into the rulebook's content
+      await diveIn(
+        rulebook.expand.content,
+        slug(rulebook.expand.source_id.original_name)
+      );
+    }
+  }
+  return allChapters.length > 0 ? allChapters : [];
+}
+
+
+const { rulebook, chapter } = Astro.params;
+
+const content = await getChapter(rulebook, chapter);
+
+---
+
+<Layout>
+  {content?.chapter && 
+<div class="flex flex-col gap-4 col-span-full lg:col-span-9">
+  <h1 class="w-full">{content.chapter.rule.expand?.source_id.name}</h1>
+  <RuleCard
+    rule={content.chapter.rule}
+    size={2}
+  />
+</div>
+<div class="flex flex-col gap-4 col-span-full lg:col-span-3">
+  {content.rulebook && <RulebookContentSide
+    book={content.rulebook}
+    chapter={content.chapter}
+  />}
+</div>
+<div class="flex flex-row justify-between col-span-full">
+  {content.chapter.prev_rule && (
+    <ButonRuleBottomNavigation
+      id={content.chapter.prev_rule.id}
+      name={content.chapter.prev_rule.name}
+      type="prev"
+    />
+  )}
+  {content.chapter.next_rule && (
+    <ButonRuleBottomNavigation
+      id={content.chapter.next_rule.id}
+      name={content.chapter.next_rule.name}
+      type="next"
+    />
+  )}
+</div>}
+</Layout>

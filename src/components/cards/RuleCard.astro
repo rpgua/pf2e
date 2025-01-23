@@ -1,0 +1,53 @@
+---
+import slug from "slug";
+import type { Rule } from "@types";
+import Heading from "@components/utils/Heading.astro";
+import RuleCardSelf from "@components/cards/RuleCard.astro";
+
+type Props = {
+  rule: Rule;
+  size?: number;
+  next?: string;
+  previous?: string;
+};
+
+const {rule, size, next, previous} = Astro.props;
+
+const remaster = rule.expand?.source_id?.remaster || false;
+const currentSize = size || 1;
+---
+<div class="flex flex-col gap-4" data-pagefind-body>
+  {currentSize === 1 ? (
+    <Heading level={currentSize}>
+      {rule?.name}
+    </Heading>
+  ) : (
+    <Heading level={currentSize} props={{id:rule.id}}>
+      <a class="link link-hover" href={"/rules/" + rule.id}>
+        {rule?.name}
+      </a>
+    </Heading>
+  )}
+
+  <div class="flex flex-row flex-wrap gap-4">
+    <div class="badge badge-neutral">
+      {rule.expand?.source_id.name}
+      {rule.page !== 0 && " | " + rule.page}
+    </div>
+    <div class="badge badge-neutral">{rule.expand?.type.name}</div>
+    <div class={`badge badge-neutral`}>
+      {remaster ? "remaster" : "legacy"}
+    </div>
+    <div class="text-sm font-mono text-accent">{rule?.original_name}</div>
+  </div>
+
+  <article
+    class="prose max-w-[100ch]"
+    set:html={rule.content}>
+  </article>
+
+  {rule.expand?.subrules &&
+    rule.expand?.subrules?.map((subrule) => (
+    <RuleCardSelf rule={subrule} size={currentSize + 1}  ></RuleCardSelf>
+    ))}
+</div>

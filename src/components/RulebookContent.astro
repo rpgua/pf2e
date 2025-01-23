@@ -1,0 +1,59 @@
+---
+import type { Book } from "@types";
+import slug from "slug";
+
+type Props = {
+  book: Book;
+};
+
+const { book } = Astro.props;
+---
+
+<div class="collapse bg-base-200 collapse-plus">
+  <input type="checkbox" name="rulebooks" />
+  <div class="collapse-title text-xl font-medium" id={book.id}>
+    {book.expand?.source_id.name}
+  </div>
+  <div class="collapse-content">
+    <table class="table table-pin-rows">
+      {book.expand?.content &&
+        book?.expand.content.map((chapter) => (
+            <thead>
+              <tr>
+                <th>
+                  <a
+                    href={
+                      "/rulebooks/" +
+                      slug(chapter.expand?.source_id.original_name || "") +
+                      `/${chapter.id}`
+                    }
+                  >
+                    {chapter.original_name}
+                  </a>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {chapter.expand?.subrules &&
+                chapter.expand.subrules.map((heading) => (
+                  <tr>
+                    <td>
+                      <a
+                        href={
+                          "/rulebooks/" +
+                          slug(
+                            heading.expand?.source_id.original_name || ""
+                          ) +
+                          `/${heading.id}`
+                        }
+                      >
+                        {heading.name}
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+        ))}
+    </table>
+  </div>
+</div>

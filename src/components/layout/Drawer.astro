@@ -1,0 +1,25 @@
+---
+import LeftSide from "@components/layout/LeftSide.astro";
+import Footer from "@components/layout/Footer.astro";
+import Navbar from "@components/layout/Navbar.astro";
+import DrawerSide from "@components/layout/DrawerSide.astro";
+import ButtonUp from "@components/ui/ButtonUp.astro";
+---
+
+<div class="drawer">
+  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content flex flex-col min-h-screen">
+    <Navbar />
+    <main class="grid grid-cols-12 relative flex-grow">
+      <section class="hidden lg:block lg:col-span-3 p-4">
+        <LeftSide />
+      </section>
+      <section class="grid grid-cols-12 col-span-full lg:col-span-9 p-4 gap-4">
+        <slot />
+      </section>
+      <Footer />
+      <ButtonUp />
+    </main>
+  </div>
+  <DrawerSide />
+</div>

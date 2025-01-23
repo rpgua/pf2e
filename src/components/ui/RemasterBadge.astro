@@ -1,0 +1,17 @@
+---
+interface Props {
+    remaster?: boolean;
+}
+const { remaster } = Astro.props;
+
+let badgeClass:string = 'badge-neutral'
+
+if (remaster === true){
+  badgeClass = 'badge-accent'
+} else if (remaster === false){
+  badgeClass = 'badge-primary'
+}
+---
+<div class={`badge ${badgeClass}`}>
+   {remaster === undefined ? 'Legacy' : remaster ? 'Remaster' : 'Legacy'}
+</div>

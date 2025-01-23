@@ -1,0 +1,25 @@
+---
+import { mainMenu } from "@lib/config";
+---
+
+<ul class="menu bg-base-200 rounded-box w-full">
+  <li>
+    <span class="menu-title text-2xl">PF2DB</span>
+  <ul>
+  {mainMenu &&
+    mainMenu.sort((a, b) => a.order - b.order).map((menu) => (
+      menu.submenu && (
+        <li>
+            <details>
+            <summary class="font-bold text-xl">{menu.name}</summary>
+            <ul>
+                {menu.submenu.sort((a, b) => a.order - b.order).map(submenu=><li class="text-xl"><a href={submenu.link}>{submenu.name}</a></li>)}
+            </ul>
+            </details>
+        </li>
+      )
+    ))}
+  </ul>
+
+  </li>
+</ul>

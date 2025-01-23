@@ -1,0 +1,29 @@
+---
+import slug from "slug";
+import type { Book, Chapter } from "@types";
+import RBCMenuList from "@components/utils/RBCMenuList.astro";
+
+type Props = {
+  book: Book;
+  chapter?: Chapter;
+  single?: boolean;
+};
+
+const { book, chapter, single } = Astro.props;
+---
+
+<ul class="menu bg-base-200 rounded-box w-full">
+  <li>
+    <a href={"/rulebooks/" + slug(book.expand?.source_id.original_name || "")}>
+      {book.expand?.source_id.name}
+    </a>
+  </li>
+  {
+    book.expand?.content &&
+      book?.expand.content.map((ch) => (
+        <li>
+          <RBCMenuList subchapter={ch} chapter={chapter} single={single} />
+        </li>
+      ))
+  }
+</ul>

@@ -1,0 +1,73 @@
+---
+import type { Chapter, Rule } from "@types";
+import slug from "slug";
+import RBCMenuItem from "@components/utils/RBCMenuItem.astro";
+
+type Props = {
+  subchapter: Rule;
+  chapter?: Chapter;
+  single?: boolean;
+};
+
+const isChapterInSubrules = (subrules: Rule[], chapterId: string): boolean => {
+  return subrules.some(
+    (rule) =>
+      rule.id === chapterId ||
+      (rule.expand?.subrules &&
+        isChapterInSubrules(rule.expand.subrules, chapterId)),
+  );
+};
+
+const { subchapter, chapter, single } = Astro.props;
+---
+
+{
+  subchapter.expand?.subrules ? (
+    <details
+      open={
+        (chapter &&
+          isChapterInSubrules(
+            subchapter.expand?.subrules || [],
+            chapter?.rule.id,
+          )) ||
+        subchapter.id === chapter?.rule.id
+      }>
+      <summary class={chapter?.rule.id === subchapter.id ? "text-primary" : ""}>
+        {subchapter.name}
+        <a
+          href={
+            single
+              ? `#${subchapter.id}`
+              : "/rulebooks/" +
+                slug(subchapter.expand?.source_id.original_name || "") +
+                `/${subchapter.id}`
+          }
+          class="max-w-min">
+          <button class="btn btn-neutral btn-xs">
+            {single ? "Go" : "Open"}
+          </button>
+        </a>
+      </summary>
+      <ul>
+        {subchapter.expand?.subrules.map((heading) => (
+          <RBCMenuItem chapter={chapter} heading={heading} single={single} />
+        ))}
+      </ul>
+    </details>
+  ) : (
+    <summary class={chapter?.rule.id === subchapter.id ? "text-primary" : ""}>
+      {subchapter.original_name}
+      <a
+        href={
+          single
+            ? `#${subchapter.id}`
+            : "/rulebooks/" +
+              slug(subchapter.expand?.source_id.original_name || "") +
+              `/${subchapter.id}`
+        }
+        class="max-w-min">
+        <button class="btn btn-neutral btn-xs">Open</button>
+      </a>
+    </summary>
+  )
+}

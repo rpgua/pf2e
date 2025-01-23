@@ -1,0 +1,76 @@
+---
+import slug from "slug";
+import pb from "@lib/db"; // Adjust the path as needed
+import type { Book } from "@types"; // Adjust the path as needed
+import Layout from "@layouts/Layout.astro";
+
+// Fetch the rulebooks data
+const rulebooks: Book[] = await pb.collection("Book").getFullList({
+  expand:
+    "source_id,content,content.subrules,content.subrules.source_id,content.source_id",
+});
+
+export async function getStaticPaths() {
+  const rulebooks:Book[] = await pb.collection("Book").getFullList();
+  console.log(rulebooks.length)
+  return rulebooks.map((rulebook) => ({
+    params: { rulebook: rulebook.id },
+  }));
+}
+---
+<Layout>
+<div class="gap-4 col-span-full grid grid-cols-1 lg:grid-cols-3">
+  {rulebooks.map((book) => (
+    <div class="collapse bg-base-200 collapse-plus w-full max-h-min">
+      <input type="checkbox" name="rulebooks" id={book.id} />
+      <label class="collapse-title text-xl font-medium" for={book.id}>
+        {book.expand?.source_id.name}
+      </label>
+      <div class="collapse-content">
+        <table class="table table-pin-rows">
+          {book.expand?.content &&
+            book.expand.content.map((chapter) => (
+              <Fragment key={chapter.id}>
+                <thead>
+                  <tr>
+                    <th>
+                      <a
+                        href={
+                          "/rulebooks/" +
+                          slug(chapter.expand?.source_id.original_name || "") +
+                          `/${chapter.id}`
+                        }
+                      >
+                        {chapter.original_name}
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {chapter.expand?.subrules &&
+                    chapter.expand.subrules.map((heading) => (
+                      <tr>
+                        <td>
+                          <a
+                            href={
+                              "/rulebooks/" +
+                              slug(
+                                heading.expand?.source_id.original_name || ""
+                              ) +
+                              `/${heading.id}`
+                            }
+                          >
+                            {heading.name}
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
+              </Fragment>
+            ))}
+        </table>
+      </div>
+    </div>
+  ))}
+</div>
+</Layout>
