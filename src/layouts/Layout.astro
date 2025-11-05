@@ -1,0 +1,34 @@
+---
+import "../styles/global.sass";
+import Search from "astro-pagefind/components/Search";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <nav>
+          <ul>
+            <li><strong><a href="/">PF2DB</a></strong></li>
+          </ul>
+          <ul>
+            <li><a href="#" class="contrast">About</a></li>
+            <li><a href="#" class="contrast">Services</a></li>
+            <li><a href="#" class="contrast">Products</a></li>
+          </ul>
+		  <Search id="search" uiOptions={{ showImages: false }} />
+
+        </nav>
+      </header>
+      <slot />
+    </main>
+  </body>
+</html>

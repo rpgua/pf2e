@@ -1,0 +1,82 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+  const actions = await getCollection("action");
+  const ancestries = await getCollection("ancestry");
+  const archetypes = await getCollection("archetype");
+  const armors = await getCollection("armor");
+  const backgrounds = await getCollection("background");
+  const classes = await getCollection("classes");
+  const conditions = await getCollection("condition");
+  const creatures = await getCollection("creature");
+  const creatureFamilies = await getCollection("creatureFamily");
+  const deities = await getCollection("deity");
+  const equipments = await getCollection("equipment");
+  const feats = await getCollection("feat");
+  const hazards = await getCollection("hazard");
+  const rules = await getCollection("rules");
+  const shields = await getCollection("shield");
+  const skills = await getCollection("skill");
+  const sources = await getCollection("source");
+  const spells = await getCollection("spell");
+  const traits = await getCollection("trait");
+  const weapons = await getCollection("weapon");
+
+const allPosts = [
+  ...actions,
+  ...ancestries,
+  ...archetypes,
+  ...armors,
+  ...backgrounds,
+  ...classes,
+  ...conditions,
+  ...creatures,
+  ...creatureFamilies,
+  ...deities,
+  ...equipments,
+  ...feats,
+  ...hazards,
+  ...rules,
+  ...shields,
+  ...skills,
+  ...sources,
+  ...spells,
+  ...traits,
+  ...weapons,
+];
+
+const postsByCategory = allPosts.reduce((acc, post) => {
+  const category = post.data?.category;
+  if (!category) return acc;
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(post);
+  return acc;
+}, {} as Record<string, typeof allPosts>);
+---
+
+<Layout>
+  <div>
+    <h1>Database</h1>
+    {
+      Object.entries(postsByCategory).map(([category, posts]) => (
+        <div>
+          <h2>{category.toUpperCase()}</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Remaster</th>
+              </tr>
+            </thead>
+            <tbody>{posts.map(post => (<tr>
+                <td><a href={`/posts/${post.id}`}>{post.data.name}</a></td>
+                <td>{post.data.remaster && "+"}</td>
+              </tr>))}</tbody>
+          </table>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
