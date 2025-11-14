@@ -1,189 +1,187 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-  const actions = await getCollection("action");
-const action = await getCollection('action')
-const ancestry = await getCollection('ancestry')
-const animalCompanion = await getCollection('animalCompanion')
-const apparition = await getCollection('apparition')
-const arcaneSchool = await getCollection('arcaneSchool')
-const arcaneThesis = await getCollection('arcaneThesis')
-const archetype = await getCollection('archetype')
-const armor = await getCollection('armor')
-const armorGroup = await getCollection('armorGroup')
-const article = await getCollection('article')
-const background = await getCollection('background')
-const bloodline = await getCollection('bloodline')
-const campsiteMeal = await getCollection('campsiteMeal')
-const cause = await getCollection('cause')
-const classes = await getCollection('classes')
-const classKit = await getCollection('classKit')
-const classSample = await getCollection('classSample')
-const condition = await getCollection('condition')
-const consciousMind = await getCollection('consciousMind')
-const creature = await getCollection('creature')
-const creatureAbility = await getCollection('creatureAbility')
-const creatureAdjustment = await getCollection('creatureAdjustment')
-const creatureFamily = await getCollection('creatureFamily')
-const cultActivity = await getCollection('cultActivity')
-const curse = await getCollection('curse')
-const deity = await getCollection('deity')
-const deityCategory = await getCollection('deityCategory')
-const disease = await getCollection('disease')
-const doctrine = await getCollection('doctrine')
-const domain = await getCollection('domain')
-const druidicOrder = await getCollection('druidicOrder')
-const eidolon = await getCollection('eidolon')
-const element = await getCollection('element')
-const epithet = await getCollection('epithet')
-const equipment = await getCollection('equipment')
-const equipmentCategory = await getCollection('equipmentCategory')
-const familiarAbility = await getCollection('familiarAbility')
-const familiarSpecific = await getCollection('familiarSpecific')
-const feat = await getCollection('feat')
-const hazard = await getCollection('hazard')
-const hellknightOrder = await getCollection('hellknightOrder')
-const heritage = await getCollection('heritage')
-const huntersEdge = await getCollection('huntersEdge')
-const hybridStudy = await getCollection('hybridStudy')
-const ikon = await getCollection('ikon')
-const implement = await getCollection('implement')
-const innovation = await getCollection('innovation')
-const instinct = await getCollection('instinct')
-const kingdomEvent = await getCollection('kingdomEvent')
-const kingdomStructure = await getCollection('kingdomStructure')
-const language = await getCollection('language')
-const lesson = await getCollection('lesson')
-const methodology = await getCollection('methodology')
-const monsters = await getCollection('monsters')
-const muse = await getCollection('muse')
-const mystery = await getCollection('mystery')
-const mythicCalling = await getCollection('mythicCalling')
-const patron = await getCollection('patron')
-const plane = await getCollection('plane')
-const practice = await getCollection('practice')
-const racket = await getCollection('racket')
-const relic = await getCollection('relic')
-const researchField = await getCollection('researchField')
-const ritual = await getCollection('ritual')
-const rules = await getCollection('rules')
-const setRelic = await getCollection('setRelic')
-const shield = await getCollection('shield')
-const siegeWeapon = await getCollection('siegeWeapon')
-const skill = await getCollection('skill')
-const source = await getCollection('source')
-const spell = await getCollection('spell')
-const style = await getCollection('style')
-const subconsciousMind = await getCollection('subconsciousMind')
-const tactic = await getCollection('tactic')
-const tenet = await getCollection('tenet')
-const tradition = await getCollection('tradition')
-const trait = await getCollection('trait')
-const vehicle = await getCollection('vehicle')
-const warfareArmy = await getCollection('warfareArmy')
-const warfareTactic = await getCollection('warfareTactic')
-const way = await getCollection('way')
-const weapon = await getCollection('weapon')
-const weaponGroup = await getCollection('weaponGroup')
-const weatherHazard = await getCollection('weatherHazard')
-
+import Trait from "@components/Trait.astro";
+const actions = await getCollection("action");
+const ancestry = await getCollection("ancestry");
+const animalCompanion = await getCollection("animalCompanion");
+const apparition = await getCollection("apparition");
+const arcaneSchool = await getCollection("arcaneSchool");
+const arcaneThesis = await getCollection("arcaneThesis");
+const archetype = await getCollection("archetype");
+const armor = await getCollection("armor");
+const armorGroup = await getCollection("armorGroup");
+const article = await getCollection("article");
+const background = await getCollection("background");
+const bloodline = await getCollection("bloodline");
+const campsiteMeal = await getCollection("campsiteMeal");
+const cause = await getCollection("cause");
+const classes = await getCollection("classes");
+const classKit = await getCollection("classKit");
+const classSample = await getCollection("classSample");
+const condition = await getCollection("condition");
+const consciousMind = await getCollection("consciousMind");
+const creature = await getCollection("creature");
+const creatureAbility = await getCollection("creatureAbility");
+const creatureAdjustment = await getCollection("creatureAdjustment");
+const creatureFamily = await getCollection("creatureFamily");
+const cultActivity = await getCollection("cultActivity");
+const curse = await getCollection("curse");
+const deity = await getCollection("deity");
+const deityCategory = await getCollection("deityCategory");
+const disease = await getCollection("disease");
+const doctrine = await getCollection("doctrine");
+const domain = await getCollection("domain");
+const druidicOrder = await getCollection("druidicOrder");
+const eidolon = await getCollection("eidolon");
+const element = await getCollection("element");
+const epithet = await getCollection("epithet");
+const equipment = await getCollection("equipment");
+const familiarAbility = await getCollection("familiarAbility");
+const familiarSpecific = await getCollection("familiarSpecific");
+const feat = await getCollection("feat");
+const hazard = await getCollection("hazard");
+const hellknightOrder = await getCollection("hellknightOrder");
+const heritage = await getCollection("heritage");
+const huntersEdge = await getCollection("huntersEdge");
+const hybridStudy = await getCollection("hybridStudy");
+const ikon = await getCollection("ikon");
+const implement = await getCollection("implement");
+const innovation = await getCollection("innovation");
+const instinct = await getCollection("instinct");
+const kingdomEvent = await getCollection("kingdomEvent");
+const kingdomStructure = await getCollection("kingdomStructure");
+const language = await getCollection("language");
+const lesson = await getCollection("lesson");
+const methodology = await getCollection("methodology");
+const muse = await getCollection("muse");
+const mystery = await getCollection("mystery");
+const mythicCalling = await getCollection("mythicCalling");
+const patron = await getCollection("patron");
+const plane = await getCollection("plane");
+const practice = await getCollection("practice");
+const racket = await getCollection("racket");
+const relic = await getCollection("relic");
+const researchField = await getCollection("researchField");
+const ritual = await getCollection("ritual");
+const rules = await getCollection("rules");
+const setRelic = await getCollection("setRelic");
+const shield = await getCollection("shield");
+const siegeWeapon = await getCollection("siegeWeapon");
+const skill = await getCollection("skill");
+const source = await getCollection("source");
+const spell = await getCollection("spell");
+const style = await getCollection("style");
+const subconsciousMind = await getCollection("subconsciousMind");
+const tactic = await getCollection("tactic");
+const tenet = await getCollection("tenet");
+const tradition = await getCollection("tradition");
+const trait = await getCollection("trait");
+const vehicle = await getCollection("vehicle");
+const warfareArmy = await getCollection("warfareArmy");
+const warfareTactic = await getCollection("warfareTactic");
+const way = await getCollection("way");
+const weapon = await getCollection("weapon");
+const weaponGroup = await getCollection("weaponGroup");
+const weatherHazard = await getCollection("weatherHazard");
 
 const allPosts = [
-...action,
-...ancestry,
-...animalCompanion,
-...apparition,
-...arcaneSchool,
-...arcaneThesis,
-...archetype,
-...armor,
-...armorGroup,
-...article,
-...background,
-...bloodline,
-...campsiteMeal,
-...cause,
-...classes,
-...classKit,
-...classSample,
-...condition,
-...consciousMind,
-...creature,
-...creatureAbility,
-...creatureAdjustment,
-...creatureFamily,
-...cultActivity,
-...curse,
-...deity,
-...deityCategory,
-...disease,
-...doctrine,
-...domain,
-...druidicOrder,
-...eidolon,
-...element,
-...epithet,
-...equipment,
-...equipmentCategory,
-...familiarAbility,
-...familiarSpecific,
-...feat,
-...hazard,
-...hellknightOrder,
-...heritage,
-...huntersEdge,
-...hybridStudy,
-...ikon,
-...implement,
-...innovation,
-...instinct,
-...kingdomEvent,
-...kingdomStructure,
-...language,
-...lesson,
-...methodology,
-...monsters,
-...muse,
-...mystery,
-...mythicCalling,
-...patron,
-...plane,
-...practice,
-...racket,
-...relic,
-...researchField,
-...ritual,
-...rules,
-...setRelic,
-...shield,
-...siegeWeapon,
-...skill,
-...source,
-...spell,
-...style,
-...subconsciousMind,
-...tactic,
-...tenet,
-...tradition,
-...trait,
-...vehicle,
-...warfareArmy,
-...warfareTactic,
-...way,
-...weapon,
-...weaponGroup,
-...weatherHazard,
+  ...actions,
+  ...ancestry,
+  ...animalCompanion,
+  ...apparition,
+  ...arcaneSchool,
+  ...arcaneThesis,
+  ...archetype,
+  ...armor,
+  ...armorGroup,
+  ...article,
+  ...background,
+  ...bloodline,
+  ...campsiteMeal,
+  ...cause,
+  ...classes,
+  ...classKit,
+  ...classSample,
+  ...condition,
+  ...consciousMind,
+  ...creature,
+  ...creatureAbility,
+  ...creatureAdjustment,
+  ...creatureFamily,
+  ...cultActivity,
+  ...curse,
+  ...deity,
+  ...deityCategory,
+  ...disease,
+  ...doctrine,
+  ...domain,
+  ...druidicOrder,
+  ...eidolon,
+  ...element,
+  ...epithet,
+  ...equipment,
+  ...familiarAbility,
+  ...familiarSpecific,
+  ...feat,
+  ...hazard,
+  ...hellknightOrder,
+  ...heritage,
+  ...huntersEdge,
+  ...hybridStudy,
+  ...ikon,
+  ...implement,
+  ...innovation,
+  ...instinct,
+  ...kingdomEvent,
+  ...kingdomStructure,
+  ...language,
+  ...lesson,
+  ...methodology,
+  ...muse,
+  ...mystery,
+  ...mythicCalling,
+  ...patron,
+  ...plane,
+  ...practice,
+  ...racket,
+  ...relic,
+  ...researchField,
+  ...ritual,
+  ...rules,
+  ...setRelic,
+  ...shield,
+  ...siegeWeapon,
+  ...skill,
+  ...source,
+  ...spell,
+  ...style,
+  ...subconsciousMind,
+  ...tactic,
+  ...tenet,
+  ...tradition,
+  ...trait,
+  ...vehicle,
+  ...warfareArmy,
+  ...warfareTactic,
+  ...way,
+  ...weapon,
+  ...weaponGroup,
+  ...weatherHazard,
 ];
 
-const postsByCategory = allPosts.reduce((acc, post) => {
-  const category = post.data?.category;
-  if (!category) return acc;
-  if (!acc[category]) {
-    acc[category] = [];
-  }
-  acc[category].push(post);
-  return acc;
-}, {} as Record<string, typeof allPosts>);
+const postsByCategory = allPosts.reduce(
+  (acc, post) => {
+    const category = post.data?.category;
+    if (!category) return acc;
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(post);
+    return acc;
+  },
+  {} as Record<string, typeof allPosts>
+);
 ---
 
 <Layout>
@@ -193,17 +191,40 @@ const postsByCategory = allPosts.reduce((acc, post) => {
       Object.entries(postsByCategory).map(([category, posts]) => (
         <div>
           <h2>{category.toUpperCase()}</h2>
-          <table>
+          <table class="table">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Remaster</th>
+                <th>Traits</th>
+                <th>actions</th>
               </tr>
             </thead>
-            <tbody>{posts.map(post => (<tr>
-                <td><a href={`/posts/${post.id}`}>{post.data.name}</a></td>
-                <td>{post.data.remaster && "+"}</td>
-              </tr>))}</tbody>
+            <tbody>
+              {posts.map((post) => (
+                <tr>
+                  <td>
+                    <a href={`/${post.data.category}/${post.id}`}>
+                      {post.data.name}
+                    </a>
+                  </td>
+                  <td>{post.data.legacy_id && "+"}</td>
+                  <td>
+                    <Trait
+                      trait={[
+                        post.data.rarity === "common"
+                          ? "Common"
+                          : post.data.rarity,
+                        ...(post.data.traits || []),
+                      ]}
+                    />
+                  </td>
+                  <td>
+                    {post.data?.actions}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       ))

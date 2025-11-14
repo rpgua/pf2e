@@ -1,0 +1,16 @@
+---
+import AonLogo from "@assets/NethysMask.svg";
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<a
+  id="original_name"
+  href={`https://2e.aonprd.com${url}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="opacity-30 hover:opacity-100"><AonLogo width={32} height={32} /></a
+>

@@ -3,16 +3,27 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "copy:pagefind:dev": "bunx shx cp -r dist/pagefind public/",
+    "dev:astro": "astro dev",
+    "dev": "npm-run-all -s build:pagefind copy:pagefind:dev dev:astro",
+    "build:astro": "astro build",
+    "build:pagefind": "npx pagefind",
+    "build": "npm-run-all -s build:astro build:pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@picocss/pico": "^2.1.1",
+    "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.15.3",
     "astro-pagefind": "^1.8.5",
+    "daisyui": "^5.5.2",
     "marked": "^16.4.1",
-    "sass": "^1.93.3"
+    "sass": "^1.93.3",
+    "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "npm-run-all": "^4.1.5",
+    "pagefind": "^1.4.0"
   }
 }

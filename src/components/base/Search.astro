@@ -1,0 +1,27 @@
+---
+import SearchLogo from "../../assets/lucide--search.svg";
+---
+
+<button type="button" class="btn" onclick="search_modal.showModal()">
+    <SearchLogo />
+</button>
+<dialog id="search_modal" class="modal">
+  <div class="modal-box">
+    <p class="py-4">Press ESC key or click outside to close</p>
+    <input
+      type="search"
+      name="search"
+      id="search"
+      placeholder="Пошук..."
+      aria-label="Пошук"
+      class="input input-bordered w-full search"
+    />
+    <div
+      id="searchContainer"
+      class="max-h-60 md:max-h-96 overflow-y-scroll mt-2">
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

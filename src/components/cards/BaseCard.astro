@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import type { BaseItem } from "../../types";
+import AoN from "@components/AoN.astro";
+import Trait from "@components/Trait.astro";
+import { marked } from "marked";
+
+interface Props {
+  item: BaseItem;
+}
+
+const { item } = Astro.props;
+
+const rulebook = await getCollection(
+  "source",
+  (source) => source.data.id === item.rulebook_id
+);
+
+const totalTraits = [
+  item.rarity === "common" ? "Common" : item.rarity,
+  ...(item.traits || []),
+];
+---
+
+<article class="prose lg:prose-xl">
+  <header>
+    <h1 id="name" class="flex flex-row gap-2 items-center mb-2">
+     <slot name="before-title" /> {item.name ? item.name : "No title"} <slot name="after-title" />
+    </h1>
+    <h2 id="original_name" class="flex flex-row gap-2">
+      {item.original_name}
+      <AoN url={item.aon} />
+    </h2>
+    {totalTraits && <Trait trait={totalTraits} />}
+    <div id="info">
+      <p>{rulebook[0].data.name} pg. {item.page_number}</p>
+    </div>
+    <slot name="header" />
+  </header>
+  <hr class="not-prose my-2" />
+
+  <slot name="before-content" />
+  {item.content && <div id="content" set:html={marked.parse(item.content)} />}
+  <slot name="after-content" />
+  <slot name="footer"/>
+</article>

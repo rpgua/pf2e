@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@font-face {
+  font-family: PFIcons;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/Pathfinder-Icons.ttf") format("truetype");
+}

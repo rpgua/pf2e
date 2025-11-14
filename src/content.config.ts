@@ -107,9 +107,9 @@ const epithet = defineCollection({
 const equipment = defineCollection({
   loader: file("src/data/equipment.json", {parser: (text) => JSON.parse(text)})
 })
-const equipmentCategory = defineCollection({
-  loader: file("src/data/equipment-category.json", {parser: (text) => JSON.parse(text)})
-})
+// const equipmentCategory = defineCollection({
+//   loader: file("src/data/equipment-category.json", {parser: (text) => JSON.parse(text)})
+// })
 const familiarAbility = defineCollection({
   loader: file("src/data/familiar-ability.json", {parser: (text) => JSON.parse(text)})
 })
@@ -161,9 +161,9 @@ const lesson = defineCollection({
 const methodology = defineCollection({
   loader: file("src/data/methodology.json", {parser: (text) => JSON.parse(text)})
 })
-const monsters = defineCollection({
-  loader: file("src/data/monsters.json", {parser: (text) => JSON.parse(text)})
-})
+// const monsters = defineCollection({
+//   loader: file("src/data/monsters.json", {parser: (text) => JSON.parse(text)})
+// })
 const muse = defineCollection({
   loader: file("src/data/muse.json", {parser: (text) => JSON.parse(text)})
 })
@@ -255,4 +255,4 @@ const weatherHazard = defineCollection({
   loader: file("src/data/weather-hazard.json", {parser: (text) => JSON.parse(text)})
 })
 
-export const collections = { action, ancestry, animalCompanion, apparition, arcaneSchool, arcaneThesis, archetype, armor, armorGroup, article, background, bloodline, campsiteMeal, cause, classes, classKit, classSample, condition, consciousMind, creature, creatureAbility, creatureAdjustment, creatureFamily, cultActivity, curse, deity, deityCategory, disease, doctrine, domain, druidicOrder, eidolon, element, epithet,equipment, equipmentCategory, familiarAbility, familiarSpecific, feat, hazard, hellknightOrder, heritage, huntersEdge, hybridStudy, ikon, implement, innovation, instinct, kingdomEvent, kingdomStructure, language, lesson, methodology, monsters, muse,mystery, mythicCalling, patron, plane, practice, racket, relic, researchField, ritual, rules, setRelic, shield, siegeWeapon,skill, source, spell, style, subconsciousMind, tactic, tenet, tradition, trait, vehicle, warfareArmy, warfareTactic, way, weapon, weaponGroup, weatherHazard };
+export const collections = { action, ancestry, animalCompanion, apparition, arcaneSchool, arcaneThesis, archetype, armor, armorGroup, article, background, bloodline, campsiteMeal, cause, classes, classKit, classSample, condition, consciousMind, creature, creatureAbility, creatureAdjustment, creatureFamily, cultActivity, curse, deity, deityCategory, disease, doctrine, domain, druidicOrder, eidolon, element, epithet,equipment, familiarAbility, familiarSpecific, feat, hazard, hellknightOrder, heritage, huntersEdge, hybridStudy, ikon, implement, innovation, instinct, kingdomEvent, kingdomStructure, language, lesson, methodology, muse,mystery, mythicCalling, patron, plane, practice, racket, relic, researchField, ritual, rules, setRelic, shield, siegeWeapon,skill, source, spell, style, subconsciousMind, tactic, tenet, tradition, trait, vehicle, warfareArmy, warfareTactic, way, weapon, weaponGroup, weatherHazard };

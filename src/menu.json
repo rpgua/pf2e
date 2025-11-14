@@ -1,0 +1,24 @@
+[
+    {
+        "name": "About",
+        "link": "#"
+    },
+    {
+        "name": "Rulebooks",
+        "link": "#",
+        "children": [
+            {
+                "name": "Rulebook 1",
+                "link": "#"
+            },
+            {
+                "name": "Rulebook 2",
+                "link": "#"
+            },
+            {
+                "name": "Rulebook 3",
+                "link": "#"
+            }
+        ]
+    }
+]

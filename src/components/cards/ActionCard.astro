@@ -1,0 +1,79 @@
+---
+import BaseCard from "@components/cards/BaseCard.astro";
+import type { Action } from "../../types";
+import type { CollectionEntry } from "astro:content";
+import ActionIcons from "@components/ActionIcons.astro";
+
+interface Props {
+  item: CollectionEntry<"action">;
+}
+
+const { item } = Astro.props;
+
+const action: Action = item.data;
+
+---
+
+<BaseCard item={action}>
+  <Fragment slot="after-title">
+  <ActionIcons actions={action.actions}/>
+  </Fragment>
+  <Fragment slot="before-content">
+    {
+      action.frequency && (
+        <p id="frequency">
+          <b>Frequency: </b>
+          {action.frequency}
+        </p>
+      )
+    }
+    {
+      action.triggers && (
+        <p id="triggers">
+          <b>Trigger: </b>
+          {action.triggers}
+        </p>
+      )
+    }
+    {
+      action.requirements && (
+        <p id="requirements">
+          <b>Requirements: </b>
+          {action.requirements}
+        </p>
+      )
+    }
+    {
+      action.critical_success && (
+        <p id="critical_success">
+          <b>Critical Success: </b>
+          {action.critical_success}
+        </p>
+      )
+    }
+    {
+      action.success && (
+        <p id="success">
+          <b>Success: </b>
+          {action.success}
+        </p>
+      )
+    }
+    {
+      action.failure && (
+        <p id="failure">
+          <b>Failure: </b>
+          {action.failure}
+        </p>
+      )
+    }
+    {
+      action.critical_failure && (
+        <p id="critical_failure">
+          <b>Critical Failure: </b>
+          {action.critical_failure}
+        </p>
+      )
+    }
+  </Fragment>
+</BaseCard>
