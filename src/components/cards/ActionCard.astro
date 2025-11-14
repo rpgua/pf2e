@@ -3,20 +3,16 @@ import BaseCard from "@components/cards/BaseCard.astro";
 import type { Action } from "../../types";
 import type { CollectionEntry } from "astro:content";
 import ActionIcons from "@components/ActionIcons.astro";
-
 interface Props {
   item: CollectionEntry<"action">;
 }
-
 const { item } = Astro.props;
-
 const action: Action = item.data;
-
 ---
 
 <BaseCard item={action}>
   <Fragment slot="after-title">
-  <ActionIcons actions={action.actions}/>
+    <ActionIcons actions={action.actions} />
   </Fragment>
   <Fragment slot="before-content">
     {
