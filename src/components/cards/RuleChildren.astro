@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import type { Rules } from "../../types";
+import { marked } from "marked";
+
+interface Props {
+  parentId: number;
+  allRules: Rules[];
+  heading: number;
+}
+
+type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+
+const { parentId, allRules, heading } = Astro.props;
+const children = allRules.filter((rule) => rule.parent.includes(parentId));
+
+const TitleElement = ("h" + String(heading+1)) as Heading;
+const SubTitleElement = ("h" + String(heading+2)) as Heading;
+
+const rulebook = await getCollection(
+  "source",
+  (source) => source.data.id === children[0]?.rulebook_id
+);
+
+
+---
+
+{
+  children.length > 0 && (
+    <div class="nested-rules">
+      {children.map((child) => (
+        <Fragment>
+          <TitleElement>{child.name}</TitleElement>
+          <SubTitleElement>{child.original_name}</SubTitleElement>
+          <div id="info">
+            <p>{rulebook[0].data.name} pg. {child.page_number}</p>
+            </div>
+          <hr class="not-prose"/>
+          <div set:html={marked.parse(child.content)} />
+          <Astro.self parentId={child.id} allRules={allRules} heading={heading+1}/>
+        </Fragment>
+      ))}
+    </div>
+  )
+}
