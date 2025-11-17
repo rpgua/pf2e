@@ -86,148 +86,148 @@ const weaponGroup = await getCollection("weaponGroup");
 const weatherHazard = await getCollection("weatherHazard");
 
 const allPosts = [
-  ...actions,
-  ...ancestry,
-  ...animalCompanion,
-  ...apparition,
-  ...arcaneSchool,
-  ...arcaneThesis,
-  ...archetype,
-  ...armor,
-  ...armorGroup,
-  ...article,
-  ...background,
-  ...bloodline,
-  ...campsiteMeal,
-  ...cause,
-  ...classes,
-  ...classKit,
-  ...classSample,
-  ...condition,
-  ...consciousMind,
-  ...creature,
-  ...creatureAbility,
-  ...creatureAdjustment,
-  ...creatureFamily,
-  ...cultActivity,
-  ...curse,
-  ...deity,
-  ...deityCategory,
-  ...disease,
-  ...doctrine,
-  ...domain,
-  ...druidicOrder,
-  ...eidolon,
-  ...element,
-  ...epithet,
-  ...equipment,
-  ...familiarAbility,
-  ...familiarSpecific,
-  ...feat,
-  ...hazard,
-  ...hellknightOrder,
-  ...heritage,
-  ...huntersEdge,
-  ...hybridStudy,
-  ...ikon,
-  ...implement,
-  ...innovation,
-  ...instinct,
-  ...kingdomEvent,
-  ...kingdomStructure,
-  ...language,
-  ...lesson,
-  ...methodology,
-  ...muse,
-  ...mystery,
-  ...mythicCalling,
-  ...patron,
-  ...plane,
-  ...practice,
-  ...racket,
-  ...relic,
-  ...researchField,
-  ...ritual,
-  ...rules,
-  ...setRelic,
-  ...shield,
-  ...siegeWeapon,
-  ...skill,
-  ...source,
-  ...spell,
-  ...style,
-  ...subconsciousMind,
-  ...tactic,
-  ...tenet,
-  ...tradition,
-  ...trait,
-  ...vehicle,
-  ...warfareArmy,
-  ...warfareTactic,
-  ...way,
-  ...weapon,
-  ...weaponGroup,
-  ...weatherHazard,
+    ...actions,
+    ...ancestry,
+    ...animalCompanion,
+    ...apparition,
+    ...arcaneSchool,
+    ...arcaneThesis,
+    ...archetype,
+    ...armor,
+    ...armorGroup,
+    ...article,
+    ...background,
+    ...bloodline,
+    ...campsiteMeal,
+    ...cause,
+    ...classes,
+    ...classKit,
+    ...classSample,
+    ...condition,
+    ...consciousMind,
+    ...creature,
+    ...creatureAbility,
+    ...creatureAdjustment,
+    ...creatureFamily,
+    ...cultActivity,
+    ...curse,
+    ...deity,
+    ...deityCategory,
+    ...disease,
+    ...doctrine,
+    ...domain,
+    ...druidicOrder,
+    ...eidolon,
+    ...element,
+    ...epithet,
+    ...equipment,
+    ...familiarAbility,
+    ...familiarSpecific,
+    ...feat,
+    ...hazard,
+    ...hellknightOrder,
+    ...heritage,
+    ...huntersEdge,
+    ...hybridStudy,
+    ...ikon,
+    ...implement,
+    ...innovation,
+    ...instinct,
+    ...kingdomEvent,
+    ...kingdomStructure,
+    ...language,
+    ...lesson,
+    ...methodology,
+    ...muse,
+    ...mystery,
+    ...mythicCalling,
+    ...patron,
+    ...plane,
+    ...practice,
+    ...racket,
+    ...relic,
+    ...researchField,
+    ...ritual,
+    ...rules,
+    ...setRelic,
+    ...shield,
+    ...siegeWeapon,
+    ...skill,
+    ...source,
+    ...spell,
+    ...style,
+    ...subconsciousMind,
+    ...tactic,
+    ...tenet,
+    ...tradition,
+    ...trait,
+    ...vehicle,
+    ...warfareArmy,
+    ...warfareTactic,
+    ...way,
+    ...weapon,
+    ...weaponGroup,
+    ...weatherHazard,
 ];
 
 const postsByCategory = allPosts.reduce(
-  (acc, post) => {
-    const category = post.data?.category;
-    if (!category) return acc;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(post);
-    return acc;
-  },
-  {} as Record<string, typeof allPosts>
+    (acc, post) => {
+        const category = post.data?.category;
+        if (!category) return acc;
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(post);
+        return acc;
+    },
+    {} as Record<string, typeof allPosts>,
 );
 ---
 
 <Layout>
-  <div>
-    <h1>Database</h1>
-    {
-      Object.entries(postsByCategory).map(([category, posts]) => (
-        <div>
-          <h2>{category.toUpperCase()}</h2>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Remaster</th>
-                <th>Traits</th>
-                <th>actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {posts.map((post) => (
-                <tr>
-                  <td>
-                    <a href={`/${post.data.category}/${post.id}`}>
-                      {post.data.name}
-                    </a>
-                  </td>
-                  <td>{post.data.legacy_id && "+"}</td>
-                  <td>
-                    <Trait
-                      trait={[
-                        post.data.rarity === "common"
-                          ? "Common"
-                          : post.data.rarity,
-                        ...(post.data.traits || []),
-                      ]}
-                    />
-                  </td>
-                  <td>
-                    {post.data?.actions}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))
-    }
-  </div>
+    <div>
+        <h1>Database</h1>
+        {
+            Object.entries(postsByCategory).map(([category, posts]) => (
+                <div>
+                    <h2>{category.toUpperCase()}</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Remaster</th>
+                                <th>Traits</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {posts.slice(0, 10).map((post) => (
+                                <tr>
+                                    <td>
+                                        <a
+                                            href={`/${post.data.category}/${post.id}`}
+                                        >
+                                            {post.data.name}
+                                        </a>
+                                    </td>
+                                    <td>{post.data.legacy_id && "+"}</td>
+                                    <td>
+                                        <Trait
+                                            trait={[
+                                                post.data.rarity === "common"
+                                                    ? "Common"
+                                                    : post.data.rarity,
+                                                ...(post.data.traits || []),
+                                            ]}
+                                        />
+                                    </td>
+                                    <td>{post.data?.actions}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            ))
+        }
+    </div>
 </Layout>

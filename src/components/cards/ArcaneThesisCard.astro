@@ -1,0 +1,12 @@
+---
+import BaseCard from "@components/cards/BaseCard.astro";
+import type { ArcaneThesis } from "../../types";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    item: CollectionEntry<"arcaneThesis">;
+}
+const { item } = Astro.props;
+const thesis: ArcaneThesis = item.data;
+---
+
+<BaseCard item={thesis} />
