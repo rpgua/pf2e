@@ -1,0 +1,58 @@
+---
+import { marked } from "marked";
+import BaseCard from "@components/cards/BaseCard.astro";
+import type { Ancestry } from "../../types";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    item: CollectionEntry<"ancestry">;
+}
+const { item } = Astro.props;
+const ancestry: Ancestry = item.data;
+
+const { hp, size, speed, attribute_boosts, attribute_flaw, languages, additional_languages, vision, additional_mechanics } = ancestry;
+
+---
+
+<BaseCard item={ancestry}>
+    <Fragment slot="before-content">
+        <h2>Mechanics</h2>
+        {hp && (
+        <h3>HP</h3>
+        <p>{hp}</p>
+        ) }
+        {size && (
+        <h3>Size</h3>
+        <p>{size.map((size) => size).join(", ")}</p>
+        )}
+        {speed && (
+        <h3>Speed</h3>
+        <Fragment>{Object.entries(speed).map(([speed, value]) => {
+            if (value !== null) return <p>{`${speed}: ${value}`}</p>
+            })}</Fragment>
+        )}
+        {attribute_boosts && (
+        <h3>Attribute Boosts</h3>
+        <p>{attribute_boosts.map((boost) => boost).join(", ")}</p>
+        )}
+        {attribute_flaw && (
+        <h3>Attribute Flaw</h3>
+        <p>{attribute_flaw.map((flaw) => flaw).join(", ")}</p>
+        )}
+        {languages && (
+        <h3>Languages</h3>
+        <p>{languages.map((language) => language).join(", ")}</p>
+        )}
+        {additional_languages && (
+        <p set:html={marked.parse(additional_languages)}></p>
+        )}
+        {vision && (
+        <h3>Darkvision</h3>
+        <p>{vision}</p>
+        )}
+        {additional_mechanics && (
+        <p set:html={marked.parse(additional_mechanics)}/>
+        )}
+        <hr class="not-prose my-2">
+        <h2>Description</h2>
+    </Fragment>
+</BaseCard>
