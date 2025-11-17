@@ -3,16 +3,16 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import RuleCard from "@components/cards/RuleCard.astro";
 export async function getStaticPaths() {
-  const rules = await getCollection("rules");
-  return rules.map((item) => ({
-    params: { id: item.id },
-    props: { item },
-  }));
+    const rules = await getCollection("rules");
+    return rules.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
 }
 
 const { item } = Astro.props;
 ---
 
 <Layout>
-  <RuleCard item={item} />
+    <RuleCard item={item} />
 </Layout>

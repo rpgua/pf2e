@@ -5,7 +5,7 @@ import type { Rules } from "../../types";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 interface Props {
-  item: CollectionEntry<"rules">;
+    item: CollectionEntry<"rules">;
 }
 const { item } = Astro.props;
 const rule: Rules = item.data;
@@ -14,7 +14,7 @@ const rulesData: Rules[] = rules.map((item) => item.data);
 ---
 
 <BaseCard item={rule}>
-  <Fragment slot='after-content'>
-    <RuleChildren parentId={rule.id} allRules={rulesData} heading={1}/>
-  </Fragment>
+    <Fragment slot="after-content">
+        <RuleChildren parentId={rule.id} allRules={rulesData} heading={1} />
+    </Fragment>
 </BaseCard>
