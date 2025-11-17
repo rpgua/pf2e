@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import HeritageCard from "@components/cards/HeritageCard.astro";
+export async function getStaticPaths() {
+    const heritages = await getCollection("heritage");
+    return heritages.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+---
+
+<Layout>
+    <HeritageCard item={item} />
+</Layout>

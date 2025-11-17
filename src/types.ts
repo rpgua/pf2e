@@ -125,3 +125,5 @@ export interface Ancestry extends BaseItem {
   additional_mechanics: string | null;
   content: string;
 }
+
+export type Heritage = BaseItem;
