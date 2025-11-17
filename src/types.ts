@@ -27,6 +27,7 @@ export interface Action extends BaseItem {
 }
 
 export interface AnimalCompanion extends BaseItem {
+  access?: string;
   size: string;
   attacks: string;
   attribute_modifiers: {
@@ -47,9 +48,9 @@ export interface AnimalCompanion extends BaseItem {
     fly: string | null;
     climb: string | null;
   };
-  special: string;
-  support_benefit: string;
-  advanced_maneuver: string;
+  special: string | null;
+  support_benefit: string | null;
+  advanced_maneuver: string | null;
 }
 
 export interface Apparition extends BaseItem {

@@ -1,0 +1,124 @@
+---
+import BaseCard from "@components/cards/BaseCard.astro";
+import type { AnimalCompanion } from "../../types";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    item: CollectionEntry<"animalCompanion">;
+}
+const { item } = Astro.props;
+const animalCompanion: AnimalCompanion = item.data;
+const {
+    access,
+    size,
+    attacks,
+    attribute_modifiers,
+    hp,
+    skill,
+    senses,
+    speed,
+    special,
+    support_benefit,
+    advanced_maneuver,
+} = animalCompanion;
+---
+
+<BaseCard item={animalCompanion}>
+    <Fragment slot="after-content">
+        {
+            access && (
+                <p>
+                    <b>Access:</b> {access}
+                </p>
+            )
+        }
+        {
+            size && (
+                <p>
+                    <b>Size:</b> {size}
+                </p>
+            )
+        }
+        {attacks && <p>Attacks: {attacks}</p>}
+        {
+            attribute_modifiers && (
+                <p>
+                    <b>Attribute Modifiers</b>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>STR</th>
+                                <th>DEX</th>
+                                <th>CON</th>
+                                <th>INT</th>
+                                <th>WIS</th>
+                                <th>CHA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {Object.entries(attribute_modifiers).map(
+                                    ([_, value]) => (
+                                        <td>{value === null ? 0 : value}</td>
+                                    ),
+                                )}
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+            )
+        }
+        {
+            hp && (
+                <p>
+                    <b>HP:</b> {hp}
+                </p>
+            )
+        }
+        {
+            skill && (
+                <p>
+                    <b>Skill:</b> {skill}
+                </p>
+            )
+        }
+        {
+            senses && (
+                <p>
+                    <b>Senses:</b> {senses}
+                </p>
+            )
+        }
+        {
+            speed && (
+                <p>
+                    <b>Speed</b>
+                    {Object.entries(speed).map(([speed, value]) => {
+                        if (value !== null)
+                            return <p>{`${speed}: ${value}`}</p>;
+                    })}
+                </p>
+            )
+        }
+        {
+            special && (
+                <p>
+                    <b>Special:</b> {special}
+                </p>
+            )
+        }
+        {
+            support_benefit && (
+                <p>
+                    <b>Support Benefit:</b> {support_benefit}
+                </p>
+            )
+        }
+        {
+            advanced_maneuver && (
+                <p>
+                    <b>Advanced Maneuver:</b> {advanced_maneuver}
+                </p>
+            )
+        }
+    </Fragment>
+</BaseCard>

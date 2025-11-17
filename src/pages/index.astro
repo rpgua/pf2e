@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Trait from "@components/Trait.astro";
+import Traits from "@components/Traits.astro";
+import getTraits from "@utils/getTraits";
 const actions = await getCollection("action");
 const ancestry = await getCollection("ancestry");
 const animalCompanion = await getCollection("animalCompanion");
@@ -211,15 +212,8 @@ const postsByCategory = allPosts.reduce(
                                         </a>
                                     </td>
                                     <td>{post.data.legacy_id && "+"}</td>
-                                    <td>
-                                        <Trait
-                                            trait={[
-                                                post.data.rarity === "common"
-                                                    ? "Common"
-                                                    : post.data.rarity,
-                                                ...(post.data.traits || []),
-                                            ]}
-                                        />
+                                    <td class="flex flex-row gap-2">
+                                        <Traits trait={getTraits(post.data)} />
                                     </td>
                                     <td>{post.data?.actions}</td>
                                 </tr>

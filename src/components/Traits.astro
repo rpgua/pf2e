@@ -1,0 +1,46 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface Props {
+    trait: string | string[] | undefined;
+}
+
+const { trait } = Astro.props;
+
+const RARITY_COLORS: Record<string, string> = {
+    common: "btn btn-soft",
+    uncommon: "btn btn-soft btn-warning",
+    rare: "btn btn-soft btn-primary",
+    unique: "btn btn-soft btn-secondary",
+};
+const DEFAULT_COLOR = RARITY_COLORS.common;
+
+function getTraitClass(traitEntry: CollectionEntry<"trait">): string {
+    const rarity = traitEntry.data.original_name?.toLowerCase();
+    return rarity && RARITY_COLORS[rarity]
+        ? RARITY_COLORS[rarity]
+        : DEFAULT_COLOR;
+}
+
+const allTraits = await getCollection("trait");
+
+const traitMap = new Map(allTraits.map((item) => [item.data.name, item]));
+
+const namesToFind = Array.isArray(trait) ? trait : trait ? [trait] : [];
+
+const traitData = namesToFind
+    .map((name) => traitMap.get(name))
+    .filter((t): t is CollectionEntry<"trait"> => t !== undefined);
+---
+
+{
+    traitData.length > 0 && (
+        <Fragment>
+            {traitData.map((t) => (
+                <a href={`/traits/${t.id}`} class={getTraitClass(t)}>
+                    {t.data.name}
+                </a>
+            ))}
+        </Fragment>
+    )
+}
