@@ -1,26 +1,18 @@
 ---
-import { getCollection, render } from "astro:content";
-import { marked } from "marked";
+import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-
-// 1. Generate a new path for every collection entry
+import RuleCard from "@components/cards/RuleCard.astro";
 export async function getStaticPaths() {
-  const posts = await getCollection("rules");
-
-  return posts.map((post) => ({
-    params: { id: post.id },
-    props: { post },
+  const rules = await getCollection("rules");
+  return rules.map((item) => ({
+    params: { id: item.id },
+    props: { item },
   }));
 }
-// 2. For your template, you can get the entry directly from the prop
-const { post } = Astro.props;
-const { Content } = await render(post);
+
+const { item } = Astro.props;
 ---
 
 <Layout>
-  <article>
-    <h1>{post.data.name ? post.data.name : "No title"} {post.data.id}</h1>
-    {post.data?.content && <div set:html={marked.parse(post.data?.content)} />}
-    <Content />
-  </article>
+  <RuleCard item={item} />
 </Layout>

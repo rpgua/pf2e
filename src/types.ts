@@ -100,3 +100,7 @@ export interface Armor  {
 export type Article = BaseItem
 
 export type Trait = BaseItem
+
+export interface Rules extends BaseItem {
+    parent: number[]
+}
