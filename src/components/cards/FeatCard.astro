@@ -1,0 +1,12 @@
+---
+import BaseCard from "@components/cards/BaseCard.astro";
+import type { Feat } from "../../types";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+    item: CollectionEntry<"feat">;
+}
+const { item } = Astro.props;
+const feat: Feat = item.data;
+---
+
+<BaseCard item={feat} />

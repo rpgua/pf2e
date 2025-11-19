@@ -8,45 +8,74 @@ export interface BaseItem {
   category: string;
   remaster_id?: number;
   legacy_id?: number;
-  rarity: string;
-  content: string;
+  rarity?: string;
   pfs?: boolean;
   traits?: string[];
+  spoilers?: string;
+  content: string;
+}
+// TODO Refactor this interface
+export interface Attack {
+  name: string;
 }
 
 export interface Action extends BaseItem {
   actions: number;
-  frequency: string;
-  triggers: string;
+  cost?: string;
+  element?: string;
+  school?: string;
+  frequency?: string;
+  requirements?: string;
+  triggers?: string;
   critical_success?: string;
   success?: string;
   failure?: string;
   critical_failure?: string;
-  content: string;
-  requirements?: string;
+}
+
+export interface Ancestry extends BaseItem {
+  hp: number;
+  size: string[];
+  speed: {
+    ground: number | null;
+    burrow: number | null;
+    swim: number | null;
+    fly: number | null;
+    climb: number | null;
+  };
+  languages: string[];
+  additional_languages: string | null;
+  attribute_boosts: string[];
+  attribute_flaw: string[];
+  vision?: string;
+  additional_mechanics: string | null;
+  type: string;
 }
 
 export interface AnimalCompanion extends BaseItem {
+  level: number;
+  mount?: boolean;
   access?: string;
-  size: string;
-  attacks: string;
+  element?: string[];
+  size: string[];
+  attacks: Attack[];
   attribute_modifiers: {
-    strength: string | null;
-    dexterity: string | null;
-    constitution: string | null;
-    intelligence: string | null;
-    wisdom: string | null;
-    charisma: string | null;
+    strength: number;
+    dexterity: number;
+    constitution: number;
+    intelligence: number;
+    wisdom: number;
+    charisma: number;
   };
-  hp: string;
-  skill: string;
-  senses: string;
+  hp: number;
+  skill: string[];
+  sense?: string;
   speed: {
-    ground: string | null;
-    burrow: string | null;
-    swim: string | null;
-    fly: string | null;
-    climb: string | null;
+    ground: number | null;
+    burrow: number | null;
+    swim: number | null;
+    fly: number | null;
+    climb: number | null;
   };
   special: string | null;
   support_benefit: string | null;
@@ -61,70 +90,107 @@ export interface Apparition extends BaseItem {
 
 export interface ArcaneSchool extends BaseItem {
   curriculum: {
-    0: string | null;
-    1: string | null;
-    2: string | null;
-    3: string | null;
-    4: string | null;
-    5: string | null;
-    6: string | null;
-    7: string | null;
-    8: string | null;
-    9: string | null;
-    initial: string | null;
-    advanced: string | null;
+    0: number[] | [];
+    1: number[] | [];
+    2: number[] | [];
+    3: number[] | [];
+    4: number[] | [];
+    5: number[] | [];
+    6: number[] | [];
+    7: number[] | [];
+    8: number[] | [];
+    9: number[] | [];
+    initial: number | null;
+    advanced: number | null;
   };
 }
 
 export type ArcaneThesis = BaseItem;
 
-export interface Archeinterface {
+export interface Archetype extends BaseItem {
+  level?: number;
   prerequisite?: string;
-  feats?: string[];
+  requirement?: string;
 }
 
-export interface Armor {
+export interface Armor extends BaseItem {
+  access: string;
+  level: number;
+  price: number;
   attributes: {
-    level: string;
-    strength: string;
-    price: string;
-    ac: string;
-    dex: string;
-    speed: number;
-    check_penalty: number;
-    bulk: string;
+    strength?: number;
+    ac: number;
+    dex_cap?: number;
+    speed_penalty?: number;
+    check_penalty?: number;
+    bulk: number;
     category: string;
-    group: string;
+    group?: string;
   };
 }
 
+export type ArmorGroup = BaseItem;
+
 export type Article = BaseItem;
+
+export interface Background extends BaseItem {
+  access?: string;
+  attributes: string[];
+  feats?: number[];
+  skills?: number[];
+  general?: boolean;
+  region?: string;
+}
+
+export interface Bloodline extends BaseItem {
+  skills?: number[];
+  spells?: number[];
+  tradition: string[];
+}
+
+export interface CampsiteMeal extends BaseItem {
+  level: number;
+  price?: number;
+  requirements?: string;
+}
+
+export interface Cause extends BaseItem {
+  alignment?: string;
+}
+
+export interface Class extends BaseItem {
+  attack_proficiency: string[];
+  defense_proficiency: string[];
+  fortitude_proficiency: string;
+  perception_proficiency: string;
+  reflex_proficiency: string;
+  will_proficiency: string;
+  skill_proficiency: string[];
+  traditions?: string[];
+  attributes: string[];
+  hp: number;
+}
+
+export interface ClassKit extends BaseItem {
+  bulk: number;
+  price: number;
+}
+
+export type Condition = BaseItem;
+
+export interface ConsciousMind extends BaseItem {
+  spell: number[];
+}
+
+export interface Feat {
+  prerequisites: string[];
+  benefits: string[];
+}
 
 export type Trait = BaseItem;
 
 export interface Rules extends BaseItem {
   parent: number[];
-}
-
-export interface Ancestry extends BaseItem {
-  hp: number;
-  size: string[];
-  speed: {
-    ground: number;
-    burrow: number | null;
-    swim: number | null;
-    fly: number | null;
-    climb: number | null;
-  };
-  languages: string[];
-  additional_languages: string | null;
-  traits: string[];
-  attribute_boosts: string[];
-  attribute_flaw: string[];
-  vision: string | null;
-  rarity: string;
-  additional_mechanics: string | null;
-  content: string;
 }
 
 export type Heritage = BaseItem;

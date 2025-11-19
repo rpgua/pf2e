@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import RuleCard from "@components/cards/RuleCard.astro";
+import collections from "@lib/collections";
 export async function getStaticPaths() {
-    const rules = await getCollection("rules");
+    const rules = collections.rules;
     return rules.map((item) => ({
         params: { id: item.id },
         props: { item },

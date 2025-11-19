@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import ArcaneThesisCard from "@components/cards/ArcaneThesisCard.astro";
+import collections from "@lib/collections";
 export async function getStaticPaths() {
-    const thesises = await getCollection("arcaneThesis");
+    const thesises = collections.arcaneThesis;
     return thesises.map((item) => ({
         params: { id: item.id },
         props: { item },

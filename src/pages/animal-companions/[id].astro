@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import AnimalCompanionCard from "@components/cards/AnimalCompanionCard.astro";
+import collections from "@lib/collections";
 export async function getStaticPaths() {
-    const animalCompanions = await getCollection("animalCompanion");
+    const animalCompanions = collections.animalCompanion;
     return animalCompanions.map((item) => ({
         params: { id: item.id },
         props: { item },

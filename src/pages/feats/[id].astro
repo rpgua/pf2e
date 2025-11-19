@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import TraitCard from "@components/cards/TraitCard.astro";
+import FeatCard from "@components/cards/FeatCard.astro";
 import collections from "@lib/collections";
 export async function getStaticPaths() {
-    const traits = collections.trait;
-    return traits.map((item) => ({
+    const feats = collections.feat;
+    return feats.map((item) => ({
         params: { id: item.id },
         props: { item },
     }));
@@ -14,5 +14,5 @@ const { item } = Astro.props;
 ---
 
 <Layout>
-    <TraitCard item={item} />
+    <FeatCard item={item} />
 </Layout>

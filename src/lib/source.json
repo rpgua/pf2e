@@ -1,0 +1,1598 @@
+[
+  {
+    "id": 1,
+    "name": "Core Rulebook",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 2,
+    "name": "Bestiary",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 3,
+    "name": "The Fall of Plaguestone",
+    "category": "Adventures",
+    "group": "The Fall of Plaguestone",
+    "release_date": "2019"
+  },
+  {
+    "id": 4,
+    "name": "Pathfinder #145: Hellknight Hill",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 5,
+    "name": "Age of Ashes Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 6,
+    "name": "World Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 7,
+    "name": "Pathfinder #146: Cult of Cinders",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 8,
+    "name": "Pathfinder #147: Tomorrow Must Burn",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 9,
+    "name": "PFS Scenario #1-03: Escaping the Grave",
+    "category": "Society",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 11,
+    "name": "PFS Quest #2: Unforgiving Fire",
+    "category": "Society",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 12,
+    "name": "Character Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2019"
+  },
+  {
+    "id": 13,
+    "name": "Pathfinder #148: Fires of the Haunted City",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 14,
+    "name": "Pathfinder #149: Against the Scarlet Triad",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 15,
+    "name": "Pathfinder #150: Broken Promises",
+    "category": "Adventure Paths",
+    "group": "Age of Ashes",
+    "release_date": "2019"
+  },
+  {
+    "id": 17,
+    "name": "Gods & Magic",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 19,
+    "name": "Gods & Magic - Web Supplement",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 20,
+    "name": "PFS Character Options",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 21,
+    "name": "Pathfinder #151: The Show Must Go On",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 22,
+    "name": "Gamemastery Guide",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 23,
+    "name": "Pathfinder #152: Legacy of the Lost God",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 25,
+    "name": "Extinction Curse Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 27,
+    "name": "PFS Quest #5: The Dragon Who Stole Evoking Day",
+    "category": "Society",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 28,
+    "name": "PFS Scenario #1-15: The Blooming Catastrophe",
+    "category": "Society",
+    "group": "Pathfinder Society",
+    "release_date": "2020"
+  },
+  {
+    "id": 29,
+    "name": "Pathfinder #153: Life's Long Shadows",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 30,
+    "name": "Friends in High Places",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 31,
+    "name": "Pathfinder #154: Siege of the Dinosaurs",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 32,
+    "name": "Bestiary 2",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 33,
+    "name": "Pathfinder #155: Lord of the Black Sands",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 34,
+    "name": "PFS Scenario #1-17: The Perennial Crown Part 2, The Thorned Monarch",
+    "category": "Society",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 35,
+    "name": "PFS Scenario #1-19: Iolite Squad Alpha",
+    "category": "Society",
+    "group": "Pathfinder Society",
+    "release_date": "2020"
+  },
+  {
+    "id": 36,
+    "name": "Pathfinder #156: The Apocalypse Prophet",
+    "category": "Adventure Paths",
+    "group": "Extinction Curse",
+    "release_date": "2020"
+  },
+  {
+    "id": 38,
+    "name": "Organized Play Foundation",
+    "category": "Society",
+    "group": "Pathfinder Society",
+    "release_date": "2019"
+  },
+  {
+    "id": 39,
+    "name": "Advanced Player's Guide",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 40,
+    "name": "Legends",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 41,
+    "name": "The Slithering",
+    "category": "Adventures",
+    "group": "The Slithering",
+    "release_date": "2020"
+  },
+  {
+    "id": 42,
+    "name": "Battle of the Pantheons Winner Announcement",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 43,
+    "name": "Agents of Edgewatch Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 45,
+    "name": "Pathfinder #157: Devil at the Dreaming Palace",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 46,
+    "name": "PFS Scenario #1-24: Lightning Strikes, Stars Fall",
+    "category": "Society",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 47,
+    "name": "Pathfinder #158: Sixty Feet Under",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 48,
+    "name": "Pathfinder #159: All or Nothing",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 49,
+    "name": "Pathfinder #160: Assault on Hunting Lodge Seven",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 50,
+    "name": "PFS Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 51,
+    "name": "Pathfinder #161: Belly of the Black Whale",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 52,
+    "name": "PFS Quest #10: The Broken Scales",
+    "category": "Society",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 53,
+    "name": "Little Trouble in Big Absalom",
+    "category": "Adventures",
+    "group": "Little Trouble in Big Absalom",
+    "release_date": "2020"
+  },
+  {
+    "id": 54,
+    "name": "Pathfinder #162: Ruins of the Radiant Siege",
+    "category": "Adventure Paths",
+    "group": "Agents of Edgewatch",
+    "release_date": "2020"
+  },
+  {
+    "id": 55,
+    "name": "Troubles in Otari",
+    "category": "Adventures",
+    "group": "Troubles in Otari",
+    "release_date": "2020"
+  },
+  {
+    "id": 56,
+    "name": "Redpitch Alchemy",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 57,
+    "name": "The Waters of Stone Ring Pond",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 58,
+    "name": "GM's Toolbox: Gravehall",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 59,
+    "name": "A Caroling Horse (Of Course. Of Course.)",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 60,
+    "name": "No-Prep Character: Duhgik",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 61,
+    "name": "No-Prep Character: Pr’rall",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 62,
+    "name": "No-Prep Character: Morlibint",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 63,
+    "name": "Pathfinder Beginner Box: Game Master's Guide",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 64,
+    "name": "Pathfinder Beginner Box: Hero's Handbook",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 65,
+    "name": "Pathfinder Encounter: Heaving Kobolds",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 66,
+    "name": "Bestiary 3",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 67,
+    "name": "GM's Toolkit: Secret Keeper's Mask",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 68,
+    "name": "No-Prep Character: Eleukas",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 69,
+    "name": "Abomination Vaults Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Abomination Vaults",
+    "release_date": "2021"
+  },
+  {
+    "id": 71,
+    "name": "Pathfinder #163: Ruins of Gauntlight",
+    "category": "Adventure Paths",
+    "group": "Abomination Vaults",
+    "release_date": "2021"
+  },
+  {
+    "id": 72,
+    "name": "No-Prep Character: Lisavet",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 73,
+    "name": "No-Prep Character: Urok",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 74,
+    "name": "Ancestry Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 75,
+    "name": "Pathfinder #164: Hands of the Devil",
+    "category": "Adventure Paths",
+    "group": "Abomination Vaults",
+    "release_date": "2021"
+  },
+  {
+    "id": 76,
+    "name": "Azarketi Ancestry Web Supplement",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 77,
+    "name": "No-Prep Character: Chea",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 78,
+    "name": "Pathfinder Bestiary 3 Bonus Monster",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 80,
+    "name": "Pathfinder Encounter: Phinelli's Miracle Elixir",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 81,
+    "name": "Pathfinder #165: Eyes of Empty Death",
+    "category": "Adventure Paths",
+    "group": "Abomination Vaults",
+    "release_date": "2021"
+  },
+  {
+    "id": 82,
+    "name": "Fists of the Ruby Phoenix Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Fists of the Ruby Phoenix",
+    "release_date": "2021"
+  },
+  {
+    "id": 83,
+    "name": "Come One, Come All, to the Extinction Curse Player's Guide!",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2020"
+  },
+  {
+    "id": 84,
+    "name": "No-Prep Character: Zhang Yong",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 85,
+    "name": "Pathfinder #166: Despair on Danger Island",
+    "category": "Adventure Paths",
+    "group": "Fists of the Ruby Phoenix",
+    "release_date": "2021"
+  },
+  {
+    "id": 86,
+    "name": "Pathfinder #167: Ready? Fight!",
+    "category": "Adventure Paths",
+    "group": "Fists of the Ruby Phoenix",
+    "release_date": "2021"
+  },
+  {
+    "id": 87,
+    "name": "Pathfinder #168: King of the Mountain",
+    "category": "Adventure Paths",
+    "group": "Fists of the Ruby Phoenix",
+    "release_date": "2021"
+  },
+  {
+    "id": 88,
+    "name": "Malevolence",
+    "category": "Adventures",
+    "group": "Malevolence",
+    "release_date": "2021"
+  },
+  {
+    "id": 89,
+    "name": "The Mwangi Expanse",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 90,
+    "name": "No-Prep Character: Wendlyn",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 91,
+    "name": "No-Prep Character: Gristleburst",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 92,
+    "name": "Gods of the Expanse",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 94,
+    "name": "Pathfinder #169: Kindled Magic",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 95,
+    "name": "Strength of Thousands Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 96,
+    "name": "Secrets of Magic",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 97,
+    "name": "Pathfinder #170: Spoken on the Song Wind",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 98,
+    "name": "Guns & Gears",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 99,
+    "name": "Night of the Gray Death",
+    "category": "Adventures",
+    "group": "Night of the Gray Death",
+    "release_date": "2021"
+  },
+  {
+    "id": 100,
+    "name": "Grand Bazaar",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 101,
+    "name": "Pathfinder #171: Hurricane's Howl",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 102,
+    "name": "Pathfinder #172: Secrets of the Temple City",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 103,
+    "name": "Pathfinder #173: Doorway to the Red Star",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2021"
+  },
+  {
+    "id": 105,
+    "name": "Pathfinder Special: Fumbus",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 107,
+    "name": "Monsters of Myth",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 108,
+    "name": "Absalom, City of Lost Omens",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2021"
+  },
+  {
+    "id": 109,
+    "name": "Threshold of Knowledge",
+    "category": "Adventures",
+    "group": "Threshold of Knowledge",
+    "release_date": "2021"
+  },
+  {
+    "id": 110,
+    "name": "Quest for the Frozen Flame Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Quest for the Frozen Flame",
+    "release_date": "2021"
+  },
+  {
+    "id": 112,
+    "name": "Pathfinder #175: Broken Tusk Moon",
+    "category": "Adventure Paths",
+    "group": "Quest for the Frozen Flame",
+    "release_date": "2022"
+  },
+  {
+    "id": 113,
+    "name": "Pathfinder #176: Lost Mammoth Valley",
+    "category": "Adventure Paths",
+    "group": "Quest for the Frozen Flame",
+    "release_date": "2022"
+  },
+  {
+    "id": 115,
+    "name": "Pathfinder #174: Shadows of the Ancients",
+    "category": "Adventure Paths",
+    "group": "Strength of Thousands",
+    "release_date": "2022"
+  },
+  {
+    "id": 116,
+    "name": "Pathfinder #177: Burning Tundra",
+    "category": "Adventure Paths",
+    "group": "Quest for the Frozen Flame",
+    "release_date": "2022"
+  },
+  {
+    "id": 117,
+    "name": "Outlaws of Alkenstar Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Outlaws of Alkenstar",
+    "release_date": "2022"
+  },
+  {
+    "id": 118,
+    "name": "Book of the Dead",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 119,
+    "name": "Pathfinder #178: Punks in a Powderkeg",
+    "category": "Adventure Paths",
+    "group": "Outlaws of Alkenstar",
+    "release_date": "2022"
+  },
+  {
+    "id": 120,
+    "name": "March of the Dead",
+    "category": "Adventures",
+    "group": "Book of the Dead",
+    "release_date": "2022"
+  },
+  {
+    "id": 121,
+    "name": "Shadows at Sundown",
+    "category": "Adventures",
+    "group": "Shadows at Sundown",
+    "release_date": "2022"
+  },
+  {
+    "id": 122,
+    "name": "Pathfinder #179: Cradle of Quartz",
+    "category": "Adventure Paths",
+    "group": "Outlaws of Alkenstar",
+    "release_date": "2022"
+  },
+  {
+    "id": 123,
+    "name": "Knights of Lastwall",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 124,
+    "name": "Abomination Vaults Hardcover",
+    "category": "Adventure Paths",
+    "group": "Abomination Vaults",
+    "release_date": "2022"
+  },
+  {
+    "id": 125,
+    "name": "Pathfinder #180: The Smoking Gun",
+    "category": "Adventure Paths",
+    "group": "Outlaws of Alkenstar",
+    "release_date": "2022"
+  },
+  {
+    "id": 127,
+    "name": "Blood Lords Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 128,
+    "name": "Pathfinder Society Year 4 Rule Updates",
+    "category": "Blog Posts",
+    "group": "Pathfinder Society",
+    "release_date": "2022"
+  },
+  {
+    "id": 129,
+    "name": "Dark Archive",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 130,
+    "name": "The Beast of Birchfrost",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 131,
+    "name": "Shaking the Helping Hand",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 132,
+    "name": "A Song of Making and Unmaking",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 133,
+    "name": "Lady of the Harvest",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 134,
+    "name": "The Verdure of Iblydos",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 135,
+    "name": "Wishes in Krasnoprudny",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 136,
+    "name": "Tomorrow's Feast",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 137,
+    "name": "The Last Dream",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 139,
+    "name": "Pathfinder #181: Zombie Feast",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 140,
+    "name": "A Fistful of Flowers",
+    "category": "Adventures",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 141,
+    "name": "Travel Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 143,
+    "name": "Pathfinder #182: Graveclaw",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 144,
+    "name": "In Darkness",
+    "category": "Adventures",
+    "group": "Dark Archive",
+    "release_date": "2022"
+  },
+  {
+    "id": 145,
+    "name": "Pathfinder #183: Field of Maidens",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 146,
+    "name": "Impossible Lands",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 147,
+    "name": "Pathfinder #184: The Ghouls Hunger",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 148,
+    "name": "Crown of the Kobold King",
+    "category": "Adventures",
+    "group": "Crown of the Kobold King",
+    "release_date": "2022"
+  },
+  {
+    "id": 149,
+    "name": "Celebrating Hispanic Heritage Month",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2022"
+  },
+  {
+    "id": 150,
+    "name": "Kingmaker Adventure Path",
+    "category": "Adventure Paths",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 151,
+    "name": "Kingmaker Companion Guide",
+    "category": "Adventure Paths",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 170,
+    "name": "Chapter 1: A Call for Heroes",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 171,
+    "name": "Chapter 2: Into the Wild",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 172,
+    "name": "Chapter 3: Stolen Land",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 173,
+    "name": "Chapter 4: Rivers Run Red",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 174,
+    "name": "Chapter 5: Cult of the Bloom",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 175,
+    "name": "Chapter 6: The Varnhold Vanishing",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 176,
+    "name": "Chapter 7: Blood for Blood",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 177,
+    "name": "Chapter 8: War of the River Kings",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 178,
+    "name": "Chapter 9: They Lurk Below",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 179,
+    "name": "Chapter 10: Sound of a Thousand Screams",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 180,
+    "name": "Chapter 11: Curse of the Lantern King",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 181,
+    "name": "The Blade's Legacy",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 182,
+    "name": "A Score to Settle",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 183,
+    "name": "The Inconsequent Debates",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 184,
+    "name": "To Ask for Forgiveness",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 185,
+    "name": "Heroes or Gods?",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 186,
+    "name": "Kingdom of the Cleansed",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 187,
+    "name": "False Faces",
+    "category": "Adventures",
+    "group": "Kingmaker",
+    "release_date": "2022"
+  },
+  {
+    "id": 188,
+    "name": "Pathfinder #185: A Taste of Ashes",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 189,
+    "name": "Pathfinder #186: Ghost King's Rage",
+    "category": "Adventure Paths",
+    "group": "Blood Lords",
+    "release_date": "2022"
+  },
+  {
+    "id": 190,
+    "name": "Gatewalkers Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Gatewalkers",
+    "release_date": "2023"
+  },
+  {
+    "id": 191,
+    "name": "Treasure Vault",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 192,
+    "name": "Pathfinder #187: The Seventh Arch",
+    "category": "Adventure Paths",
+    "group": "Gatewalkers",
+    "release_date": "2023"
+  },
+  {
+    "id": 193,
+    "name": "Fists of the Ruby Phoenix Hardcover",
+    "category": "Adventure Paths",
+    "group": "Fists of the Ruby Phoenix",
+    "release_date": "2023"
+  },
+  {
+    "id": 194,
+    "name": "Pathfinder #188: They Watched the Stars",
+    "category": "Adventure Paths",
+    "group": "Gatewalkers",
+    "release_date": "2023"
+  },
+  {
+    "id": 195,
+    "name": "Pathfinder #189: Dreamers of the Nameless Spires",
+    "category": "Adventure Paths",
+    "group": "Gatewalkers",
+    "release_date": "2023"
+  },
+  {
+    "id": 196,
+    "name": "Firebrands",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 197,
+    "name": "Stolen Fate Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Stolen Fate",
+    "release_date": "2023"
+  },
+  {
+    "id": 198,
+    "name": "Pathfinder #190: The Choosing",
+    "category": "Adventure Paths",
+    "group": "Stolen Fate",
+    "release_date": "2023"
+  },
+  {
+    "id": 199,
+    "name": "Pathfinder #191: The Destiny War",
+    "category": "Adventure Paths",
+    "group": "Stolen Fate",
+    "release_date": "2023"
+  },
+  {
+    "id": 200,
+    "name": "The Enmity Cycle",
+    "category": "Adventures",
+    "group": "The Enmity Cycle",
+    "release_date": "2023"
+  },
+  {
+    "id": 201,
+    "name": "Wake the Dead #1",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 202,
+    "name": "A Few Flowers More",
+    "category": "Adventures",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 203,
+    "name": "Pathfinder #192: Worst of All Possible Worlds",
+    "category": "Adventure Paths",
+    "group": "Stolen Fate",
+    "release_date": "2023"
+  },
+  {
+    "id": 204,
+    "name": "Highhelm",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 205,
+    "name": "Rage of Elements",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 206,
+    "name": "Pathfinder #193: Mantle of Gold",
+    "category": "Adventure Paths",
+    "group": "Sky King's Tomb",
+    "release_date": "2023"
+  },
+  {
+    "id": 207,
+    "name": "Wake the Dead #2",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 208,
+    "name": "Sky King's Tomb Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Sky King's Tomb",
+    "release_date": "2023"
+  },
+  {
+    "id": 209,
+    "name": "Pathfinder #194: Cult of the Cave Worm",
+    "category": "Adventure Paths",
+    "group": "Sky King's Tomb",
+    "release_date": "2023"
+  },
+  {
+    "id": 210,
+    "name": "Pathfinder #195: Heavy is the Crown",
+    "category": "Adventure Paths",
+    "group": "Sky King's Tomb",
+    "release_date": "2023"
+  },
+  {
+    "id": 212,
+    "name": "Wake the Dead #3",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 213,
+    "name": "Season of Ghosts Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Season of Ghosts",
+    "release_date": "2023"
+  },
+  {
+    "id": 214,
+    "name": "Pathfinder #196: The Summer That Never Was",
+    "category": "Adventure Paths",
+    "group": "Season of Ghosts",
+    "release_date": "2023"
+  },
+  {
+    "id": 215,
+    "name": "Rusthenge",
+    "category": "Adventures",
+    "group": "Rusthenge",
+    "release_date": "2023"
+  },
+  {
+    "id": 216,
+    "name": "Player Core",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 218,
+    "name": "GM Core",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 219,
+    "name": "Wake the Dead #4",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2023"
+  },
+  {
+    "id": 220,
+    "name": "Wake the Dead #5",
+    "category": "Comics",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 221,
+    "name": "Monster Core",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 222,
+    "name": "Pathfinder #197: Let the Leaves Fall",
+    "category": "Adventure Paths",
+    "group": "Season of Ghosts",
+    "release_date": "2023"
+  },
+  {
+    "id": 223,
+    "name": "Tian Xia World Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 224,
+    "name": "Pathfinder #198: No Breath to Cry",
+    "category": "Adventure Paths",
+    "group": "Season of Ghosts",
+    "release_date": "2023"
+  },
+  {
+    "id": 225,
+    "name": "Pathfinder #199: To Bloom Below the Web",
+    "category": "Adventure Paths",
+    "group": "Season of Ghosts",
+    "release_date": "2024"
+  },
+  {
+    "id": 226,
+    "name": "Howl of the Wild",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 227,
+    "name": "Player Core 2",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 229,
+    "name": "Pathfinder #200: Seven Dooms for Sandpoint",
+    "category": "Adventure Paths",
+    "group": "Seven Dooms for Sandpoint",
+    "release_date": "2024"
+  },
+  {
+    "id": 230,
+    "name": "Tian Xia Character Guide",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 231,
+    "name": "Prey for Death",
+    "category": "Adventures",
+    "group": "Prey for Death",
+    "release_date": "2024"
+  },
+  {
+    "id": 232,
+    "name": "War of Immortals",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 233,
+    "name": "War of Immortals Alternate Mythic Rules",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2024"
+  },
+  {
+    "id": 234,
+    "name": "Divine Mysteries",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 235,
+    "name": "Rival Academies",
+    "category": "Lost Omens",
+    "group": "Convocation",
+    "release_date": "2025"
+  },
+  {
+    "id": 236,
+    "name": "NPC Core",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 237,
+    "name": "Divine Mysteries Web Supplement",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 239,
+    "name": "Foolish Housekeeping and Other Articles",
+    "category": "Blog Posts",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 240,
+    "name": "Wardens of Wildwood Players Guide",
+    "category": "Adventure Paths",
+    "group": "Wardens of Wildwood",
+    "release_date": "2024"
+  },
+  {
+    "id": 241,
+    "name": "Pathfinder #201: Pactbreaker",
+    "category": "Adventure Paths",
+    "group": "Wardens of Wildwood",
+    "release_date": "2024"
+  },
+  {
+    "id": 242,
+    "name": "Pathfinder #202: Severed at the Root",
+    "category": "Adventure Paths",
+    "group": "Wardens of Wildwood",
+    "release_date": "2024"
+  },
+  {
+    "id": 243,
+    "name": "Pathfinder #203 Shepherd of Decay",
+    "category": "Adventure Paths",
+    "group": "Wardens of Wildwood",
+    "release_date": "2024"
+  },
+  {
+    "id": 244,
+    "name": "Curtain Call Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Curtain Call",
+    "release_date": "2024"
+  },
+  {
+    "id": 245,
+    "name": "Pathfinder #204: Stage Fright",
+    "category": "Adventure Paths",
+    "group": "Curtain Call",
+    "release_date": "2024"
+  },
+  {
+    "id": 246,
+    "name": "Pathfinder #205: Singer, Stalker, Skinsaw Man",
+    "category": "Adventure Paths",
+    "group": "Curtain Call",
+    "release_date": "2024"
+  },
+  {
+    "id": 247,
+    "name": "Pathfinder #206: Bring the House Down",
+    "category": "Adventure Paths",
+    "group": "Curtain Call",
+    "release_date": "2024"
+  },
+  {
+    "id": 248,
+    "name": "Triumph of the Tusk Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Triumph of the Tusk",
+    "release_date": "2024"
+  },
+  {
+    "id": 249,
+    "name": "Pathfinder #207: Resurrection Flood",
+    "category": "Adventure Paths",
+    "group": "Triumph of the Tusk",
+    "release_date": "2024"
+  },
+  {
+    "id": 250,
+    "name": "Pathfinder #208: Hoof, Cinder, and Storm",
+    "category": "Adventure Paths",
+    "group": "Triumph of the Tusk",
+    "release_date": "2024"
+  },
+  {
+    "id": 251,
+    "name": "Pathfinder #209: Destroyer's Doom",
+    "category": "Adventure Paths",
+    "group": "Triumph of the Tusk",
+    "release_date": "2024"
+  },
+  {
+    "id": 252,
+    "name": "Spore War Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Spore War",
+    "release_date": "2025"
+  },
+  {
+    "id": 253,
+    "name": "Pathfinder #210: Whispers in the Dirt",
+    "category": "Adventure Paths",
+    "group": "Spore War",
+    "release_date": "2025"
+  },
+  {
+    "id": 254,
+    "name": "Pathfinder #211: The Secret of Deathstalk Tower",
+    "category": "Adventure Paths",
+    "group": "Spore War",
+    "release_date": "2025"
+  },
+  {
+    "id": 255,
+    "name": "Pathfinder #212: A Voice in the Blight",
+    "category": "Adventure Paths",
+    "group": "Spore War",
+    "release_date": "2025"
+  },
+  {
+    "id": 256,
+    "name": "Shades of Blood Player's Guide",
+    "category": "Adventure Paths",
+    "group": "Shades of Blood",
+    "release_date": "2025"
+  },
+  {
+    "id": 257,
+    "name": "Pathfinder #213: Thirst for Blood",
+    "category": "Adventure Paths",
+    "group": "Shades of Blood",
+    "release_date": "2025"
+  },
+  {
+    "id": 258,
+    "name": "Pathfinder #214: The Broken Palace",
+    "category": "Adventure Paths",
+    "group": "Shades of Blood",
+    "release_date": "2025"
+  },
+  {
+    "id": 259,
+    "name": "Pathfinder #215: To Blot Out the Sun",
+    "category": "Adventure Paths",
+    "group": "Shades of Blood",
+    "release_date": "2025"
+  },
+  {
+    "id": 265,
+    "name": "Shining Kingdoms",
+    "category": "Lost Omens",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 266,
+    "name": "Claws of the Tyrant",
+    "category": "Adventures",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 268,
+    "name": "Battlecry!",
+    "category": "Rulebooks",
+    "group": null,
+    "release_date": "2025"
+  },
+  {
+    "id": 270,
+    "name": "Myth-Speakers Players Guide",
+    "category": "Adventure Paths",
+    "group": "Myth-Speakers",
+    "release_date": "2025"
+  },
+  {
+    "id": 271,
+    "name": "Pathfinder #216: The Acropolis Pyre",
+    "category": "Adventure Paths",
+    "group": "Myth-Speakers",
+    "release_date": "2025"
+  },
+  {
+    "id": 273,
+    "name": "Pathfinder #217: Death Sails a Wine-Dark Sea",
+    "category": "Adventure Paths",
+    "group": "Myth-Speakers",
+    "release_date": "2025"
+  },
+  {
+    "id": 274,
+    "name": "Pathfinder #218: Titanbane",
+    "category": "Adventure Paths",
+    "group": "Myth-Speakers",
+    "release_date": "2025"
+  },
+  {
+    "id": 275,
+    "name": "Pathfinder Game Night: Dawn of the Frogs (Deluxe Adventure)",
+    "category": "Adventures",
+    "group": "Dawn of the Frogs",
+    "release_date": "2025"
+  }
+]

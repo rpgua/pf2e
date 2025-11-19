@@ -1,174 +1,91 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Traits from "@components/Traits.astro";
-import getTraits from "@utils/getTraits";
-const actions = await getCollection("action");
-const ancestry = await getCollection("ancestry");
-const animalCompanion = await getCollection("animalCompanion");
-const apparition = await getCollection("apparition");
-const arcaneSchool = await getCollection("arcaneSchool");
-const arcaneThesis = await getCollection("arcaneThesis");
-const archetype = await getCollection("archetype");
-const armor = await getCollection("armor");
-const armorGroup = await getCollection("armorGroup");
-const article = await getCollection("article");
-const background = await getCollection("background");
-const bloodline = await getCollection("bloodline");
-const campsiteMeal = await getCollection("campsiteMeal");
-const cause = await getCollection("cause");
-const classes = await getCollection("classes");
-const classKit = await getCollection("classKit");
-const classSample = await getCollection("classSample");
-const condition = await getCollection("condition");
-const consciousMind = await getCollection("consciousMind");
-const creature = await getCollection("creature");
-const creatureAbility = await getCollection("creatureAbility");
-const creatureAdjustment = await getCollection("creatureAdjustment");
-const creatureFamily = await getCollection("creatureFamily");
-const cultActivity = await getCollection("cultActivity");
-const curse = await getCollection("curse");
-const deity = await getCollection("deity");
-const deityCategory = await getCollection("deityCategory");
-const disease = await getCollection("disease");
-const doctrine = await getCollection("doctrine");
-const domain = await getCollection("domain");
-const druidicOrder = await getCollection("druidicOrder");
-const eidolon = await getCollection("eidolon");
-const element = await getCollection("element");
-const epithet = await getCollection("epithet");
-const equipment = await getCollection("equipment");
-const familiarAbility = await getCollection("familiarAbility");
-const familiarSpecific = await getCollection("familiarSpecific");
-const feat = await getCollection("feat");
-const hazard = await getCollection("hazard");
-const hellknightOrder = await getCollection("hellknightOrder");
-const heritage = await getCollection("heritage");
-const huntersEdge = await getCollection("huntersEdge");
-const hybridStudy = await getCollection("hybridStudy");
-const ikon = await getCollection("ikon");
-const implement = await getCollection("implement");
-const innovation = await getCollection("innovation");
-const instinct = await getCollection("instinct");
-const kingdomEvent = await getCollection("kingdomEvent");
-const kingdomStructure = await getCollection("kingdomStructure");
-const language = await getCollection("language");
-const lesson = await getCollection("lesson");
-const methodology = await getCollection("methodology");
-const muse = await getCollection("muse");
-const mystery = await getCollection("mystery");
-const mythicCalling = await getCollection("mythicCalling");
-const patron = await getCollection("patron");
-const plane = await getCollection("plane");
-const practice = await getCollection("practice");
-const racket = await getCollection("racket");
-const relic = await getCollection("relic");
-const researchField = await getCollection("researchField");
-const ritual = await getCollection("ritual");
-const rules = await getCollection("rules");
-const setRelic = await getCollection("setRelic");
-const shield = await getCollection("shield");
-const siegeWeapon = await getCollection("siegeWeapon");
-const skill = await getCollection("skill");
-const source = await getCollection("source");
-const spell = await getCollection("spell");
-const style = await getCollection("style");
-const subconsciousMind = await getCollection("subconsciousMind");
-const tactic = await getCollection("tactic");
-const tenet = await getCollection("tenet");
-const tradition = await getCollection("tradition");
-const trait = await getCollection("trait");
-const vehicle = await getCollection("vehicle");
-const warfareArmy = await getCollection("warfareArmy");
-const warfareTactic = await getCollection("warfareTactic");
-const way = await getCollection("way");
-const weapon = await getCollection("weapon");
-const weaponGroup = await getCollection("weaponGroup");
-const weatherHazard = await getCollection("weatherHazard");
+import getTraits from "@lib/getTraits";
+import collections from "@lib/collections";
 
 const allPosts = [
-    ...actions,
-    ...ancestry,
-    ...animalCompanion,
-    ...apparition,
-    ...arcaneSchool,
-    ...arcaneThesis,
-    ...archetype,
-    ...armor,
-    ...armorGroup,
-    ...article,
-    ...background,
-    ...bloodline,
-    ...campsiteMeal,
-    ...cause,
-    ...classes,
-    ...classKit,
-    ...classSample,
-    ...condition,
-    ...consciousMind,
-    ...creature,
-    ...creatureAbility,
-    ...creatureAdjustment,
-    ...creatureFamily,
-    ...cultActivity,
-    ...curse,
-    ...deity,
-    ...deityCategory,
-    ...disease,
-    ...doctrine,
-    ...domain,
-    ...druidicOrder,
-    ...eidolon,
-    ...element,
-    ...epithet,
-    ...equipment,
-    ...familiarAbility,
-    ...familiarSpecific,
-    ...feat,
-    ...hazard,
-    ...hellknightOrder,
-    ...heritage,
-    ...huntersEdge,
-    ...hybridStudy,
-    ...ikon,
-    ...implement,
-    ...innovation,
-    ...instinct,
-    ...kingdomEvent,
-    ...kingdomStructure,
-    ...language,
-    ...lesson,
-    ...methodology,
-    ...muse,
-    ...mystery,
-    ...mythicCalling,
-    ...patron,
-    ...plane,
-    ...practice,
-    ...racket,
-    ...relic,
-    ...researchField,
-    ...ritual,
-    ...rules,
-    ...setRelic,
-    ...shield,
-    ...siegeWeapon,
-    ...skill,
-    ...source,
-    ...spell,
-    ...style,
-    ...subconsciousMind,
-    ...tactic,
-    ...tenet,
-    ...tradition,
-    ...trait,
-    ...vehicle,
-    ...warfareArmy,
-    ...warfareTactic,
-    ...way,
-    ...weapon,
-    ...weaponGroup,
-    ...weatherHazard,
+    ...collections.action,
+    ...collections.ancestry,
+    ...collections.animalCompanion,
+    ...collections.apparition,
+    ...collections.arcaneSchool,
+    ...collections.arcaneThesis,
+    ...collections.archetype,
+    ...collections.armor,
+    ...collections.armorGroup,
+    ...collections.article,
+    ...collections.background,
+    ...collections.bloodline,
+    ...collections.campsiteMeal,
+    ...collections.cause,
+    ...collections.class_,
+    ...collections.classKit,
+    ...collections.classSample,
+    ...collections.condition,
+    ...collections.consciousMind,
+    ...collections.creature,
+    ...collections.creatureAbility,
+    ...collections.creatureAdjustment,
+    ...collections.creatureFamily,
+    ...collections.curse,
+    ...collections.deity,
+    ...collections.deityCategory,
+    ...collections.disease,
+    ...collections.doctrine,
+    ...collections.domain,
+    ...collections.druidicOrder,
+    ...collections.eidolon,
+    ...collections.element,
+    ...collections.epithet,
+    ...collections.equipment,
+    ...collections.familiarAbility,
+    ...collections.familiarSpecific,
+    ...collections.feat,
+    ...collections.hazard,
+    ...collections.hellknightOrder,
+    ...collections.heritage,
+    ...collections.huntersEdge,
+    ...collections.hybridStudy,
+    ...collections.ikon,
+    ...collections.implement,
+    ...collections.innovation,
+    ...collections.instinct,
+    ...collections.kingdomEvent,
+    ...collections.kingdomStructure,
+    ...collections.language,
+    ...collections.lesson,
+    ...collections.methodology,
+    ...collections.muse,
+    ...collections.mystery,
+    ...collections.mythicCalling,
+    ...collections.patron,
+    ...collections.plane,
+    ...collections.practice,
+    ...collections.racket,
+    ...collections.relic,
+    ...collections.researchField,
+    ...collections.ritual,
+    ...collections.rules,
+    ...collections.setRelic,
+    ...collections.shield,
+    ...collections.siegeWeapon,
+    ...collections.skill,
+    ...collections.source,
+    ...collections.spell,
+    ...collections.style,
+    ...collections.subconsciousMind,
+    ...collections.tactic,
+    ...collections.tenet,
+    ...collections.tradition,
+    ...collections.trait,
+    ...collections.vehicle,
+    ...collections.warfareArmy,
+    ...collections.warfareTactic,
+    ...collections.way,
+    ...collections.weapon,
+    ...collections.weaponGroup,
+    ...collections.weatherHazard,
 ];
 
 const postsByCategory = allPosts.reduce(

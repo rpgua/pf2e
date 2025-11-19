@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import HeritageCard from "@components/cards/HeritageCard.astro";
+import collections from "@lib/collections";
 export async function getStaticPaths() {
-    const heritages = await getCollection("heritage");
+    const heritages = collections.heritage;
     return heritages.map((item) => ({
         params: { id: item.id },
         props: { item },

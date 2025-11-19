@@ -2,17 +2,45 @@
 interface Props {
     actions: number;
 }
-const {actions} = Astro.props;
-console.log(actions)
+const { actions } = Astro.props;
 ---
 
-{actions === 0 && <span class="font-[PFIcons] text-3xl justify-self-start">[free-action]</span>}
+{
+    actions === 0 && (
+        <span class="font-[PFIcons] text-3xl justify-self-start">
+            [free-action]
+        </span>
+    )
+}
 
-{actions === 1 && <span class="font-[PFIcons] text-3xl justify-self-start">[one-action]</span>}
+{
+    actions === 1 && (
+        <span class="font-[PFIcons] text-3xl justify-self-start">
+            [one-action]
+        </span>
+    )
+}
 
-{actions === 2 && <span class="font-[PFIcons] text-3xl justify-self-start">[two-actions]</span>}
+{
+    actions === 2 && (
+        <span class="font-[PFIcons] text-3xl justify-self-start">
+            [two-actions]
+        </span>
+    )
+}
 
-{actions === 3 && <span class="font-[PFIcons] text-3xl justify-self-start">[three-actions]</span>}
+{
+    actions === 3 && (
+        <span class="font-[PFIcons] text-3xl justify-self-start">
+            [three-actions]
+        </span>
+    )
+}
 
-{actions === 4 && <span class="font-[PFIcons] text-3xl justify-self-start">[reaction]</span>}
-
+{
+    actions === 4 && (
+        <span class="font-[PFIcons] text-3xl justify-self-start">
+            [reaction]
+        </span>
+    )
+}

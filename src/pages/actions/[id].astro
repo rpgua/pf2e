@@ -1,18 +1,18 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import ActionCard from "@components/cards/ActionCard.astro";
+import collections from "@lib/collections";
 export async function getStaticPaths() {
-  const actions = await getCollection("action");
-  return actions.map((item) => ({
-    params: { id: item.id },
-    props: { item },
-  }));
+    const actions = collections.action;
+    return actions.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
 }
 
 const { item } = Astro.props;
 ---
 
 <Layout>
-  <ActionCard item={item} />
+    <ActionCard item={item} />
 </Layout>
