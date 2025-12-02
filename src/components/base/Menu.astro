@@ -1,51 +1,55 @@
 ---
 import menu from "../../menu.json";
-
-interface Props {
-  mobile?: boolean;
-}
-
 type Menu = {
-  name: string;
-  link: string;
-  children?: Menu[];
+    name: string;
+    link: string;
+    children?: Menu[];
 };
 
-const { mobile } = Astro.props;
+import HouseLogo from "@assets/icons/lucide--home.svg";
+import FamilyTreeLogo from "@assets/icons/game-icons--family-tree.svg";
+import DualityMaskLogo from "@assets/icons/game-icons--duality-mask.svg";
+import ScrollQuillLogo from "@assets/icons/game-icons--scroll-quill.svg";
+import CrossedSwordsLogo from "@assets/icons/game-icons--crossed-swords.svg";
+import JugglerLogo from "@assets/icons/game-icons--juggler.svg";
+import BackpackLogo from "@assets/icons/game-icons--backpack.svg";
+import StarMedalLogo from "@assets/icons/game-icons--star-medal.svg";
+import DiceTwentyFacesTwentyLogo from "@assets/icons/game-icons--dice-twenty-faces-twenty.svg";
+import ScalesLogo from "@assets/icons/game-icons--scales.svg";
+import WorldLogo from "@assets/icons/game-icons--world.svg";
+import SpellBookLogo from "@assets/icons/game-icons--spell-book.svg";
+import BookshelfLogo from "@assets/icons/game-icons--bookshelf.svg";
+
+const icons = {
+    "lucide--home": HouseLogo,
+    "game-icons:family-tree": FamilyTreeLogo,
+    "game-icons:duality-mask": DualityMaskLogo,
+    "game-icons:scroll-quill": ScrollQuillLogo,
+    "game-icons:crossed-swords": CrossedSwordsLogo,
+    "game-icons:juggler": JugglerLogo,
+    "game-icons:backpack": BackpackLogo,
+    "game-icons:star-medal": StarMedalLogo,
+    "game-icons:dice-twenty-faces-twenty": DiceTwentyFacesTwentyLogo,
+    "game-icons:scales": ScalesLogo,
+    "game-icons:world": WorldLogo,
+    "game-icons:spell-book": SpellBookLogo,
+    "game-icons:bookshelf": BookshelfLogo,
+};
 ---
 
 {
-  menu.map((item) => {
-    if (!item.children) {
-      return (
-        <li>
-          <a href={item.link}>{item.name}</a>
-        </li>
-      );
-    }
+    menu.map((item) => {
+        const Icon = icons[item.icon as keyof typeof icons];
+        return (
+            <li>
+                <button
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip={item.name}>
+                    {Icon && <Icon class="my-1.5 inline-block size-4" />}
 
-    const subMenu = (
-      <ul class="p-2">
-        {item.children.map((child) => (
-          <li>
-            <a href={child.link}>{child.name}</a>
-          </li>
-        ))}
-      </ul>
-    );
-
-    return (
-      <li>
-        {mobile ? (
-          <a>{item.name}</a>
-        ) : (
-          <details>
-            <summary>{item.name}</summary>
-            {subMenu}
-          </details>
-        )}
-        {mobile && subMenu}
-      </li>
-    );
-  })
+                    <span class="is-drawer-close:hidden">{item.name}</span>
+                </button>
+            </li>
+        );
+    })
 }

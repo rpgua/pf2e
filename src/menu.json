@@ -1,24 +1,67 @@
 [
     {
-        "name": "About",
-        "link": "#"
+        "name": "Головна",
+        "link": "#",
+        "icon": "lucide--home"
     },
     {
-        "name": "Rulebooks",
+        "name": "Ancestry",
         "link": "#",
-        "children": [
-            {
-                "name": "Rulebook 1",
-                "link": "#"
-            },
-            {
-                "name": "Rulebook 2",
-                "link": "#"
-            },
-            {
-                "name": "Rulebook 3",
-                "link": "#"
-            }
-        ]
+        "icon": "game-icons:family-tree"
+    },
+    {
+        "name": "Archetype",
+        "link": "#",
+        "icon": "game-icons:duality-mask"
+    },
+    {
+        "name": "Background",
+        "link": "#",
+        "icon": "game-icons:scroll-quill"
+    },
+    {
+        "name": "Class",
+        "link": "#",
+        "icon": "game-icons:crossed-swords"
+    },
+    {
+        "name": "Skill",
+        "link": "#",
+        "icon": "game-icons:juggler"
+    },
+    {
+        "name": "Equipment",
+        "link": "#",
+        "icon": "game-icons:backpack"
+    },
+    {
+        "name": "Feat",
+        "link": "#",
+        "icon": "game-icons:star-medal"
+    },
+    {
+        "name": "GMing",
+        "link": "#",
+        "icon": "game-icons:dice-twenty-faces-twenty"
+    },
+    {
+        "name": "Rules",
+        "link": "#",
+        "icon": "game-icons:scales"
+    },
+    {
+        "name": "Settings",
+        "link": "#",
+        "icon": "game-icons:world"
+    },
+    {
+        "name": "Spells",
+        "link": "#",
+        "icon": "game-icons:spell-book"
+    },
+    {
+        "name": "Source",
+        "link": "#",
+        "icon": "game-icons:bookshelf"
     }
 ]

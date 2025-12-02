@@ -1,0 +1,20 @@
+---
+import changelogs from "../../changelogs.json";
+import ChangelogCard from "@components/home/ChangelogCard.astro";
+const isDebug = import.meta.env.DEV;
+const changelogList = isDebug
+    ? changelogs
+    : changelogs.filter((changelog) => !changelog.draft);
+---
+
+{
+    changelogList.map((changelog) => (
+        <ChangelogCard
+            title={changelog.title}
+            version={changelog.version}
+            description={changelog.description}
+            link={changelog.link}
+            date={changelog.date}
+        />
+    ))
+}

@@ -1,6 +1,57 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, pf2e-remaster;
+}
+
+@plugin "daisyui/theme" {
+  name: "pf2e-remaster";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dark";
+
+  /* Основной цвет: "Remaster Green" (яркий изумрудный, как на обложке Player Core) */
+  --color-primary: oklch(62% 0.19 145);
+  --color-primary-content: oklch(98% 0.01 145);
+
+  /* Вторичный цвет: "Gold" (золотые рамки и логотипы) */
+  --color-secondary: oklch(78% 0.16 85);
+  --color-secondary-content: oklch(20% 0.04 85);
+
+  /* Акцент: "Critical Red" (цвет GM Core и опасности) */
+  --color-accent: oklch(56% 0.21 27);
+  --color-accent-content: oklch(98% 0.01 27);
+
+  /* Нейтральный: Темный сланец/чернила */
+  --color-neutral: oklch(28% 0.04 145);
+  --color-neutral-content: oklch(95% 0.02 145);
+
+  /* Фон: Глубокий темно-зеленый/серый (текстура книги) */
+  --color-base-100: oklch(23% 0.03 145);
+  --color-base-200: oklch(20% 0.03 145);
+  --color-base-300: oklch(17% 0.03 145);
+  --color-base-content: oklch(94% 0.02 145);
+  /* Беловатый пергамент для текста */
+
+  /* Статусные цвета */
+  --color-info: oklch(65% 0.14 240);
+  --color-success: oklch(65% 0.18 145);
+  --color-warning: oklch(80% 0.15 85);
+  --color-error: oklch(60% 0.20 27);
+  --color-error-content: oklch(98% 0.01 27);
+
+  /* Настройки интерфейса: Remaster имеет чистый, более современный стиль верстки */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+  /* Стиль Remaster чистый, без "шума" старых книг */
+}
 
 @font-face {
   font-family: PFIcons;

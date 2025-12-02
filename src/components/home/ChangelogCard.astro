@@ -1,0 +1,40 @@
+---
+import GithubLogo from "@assets/icons/fa6-brands--github.svg";
+
+interface Props {
+    title: string;
+    version: string;
+    description: string;
+    link?: string;
+    date?: string;
+    draft?: boolean;
+}
+
+const {
+    title = "Test",
+    description = "Test",
+    version = "1.0.0",
+    link = "#",
+    date = "12.12.2025",
+} = Astro.props;
+---
+
+<div class="card card-border bg-base-300">
+    <div class="card-body">
+        <h2 class="card-title">
+            {title}
+            <span class="text-sm badge badge-sm badge-secondary">{version}</span
+            >
+        </h2>
+        <span class="text-sm">{date}</span>
+        <p>
+            {description}
+        </p>
+
+        <div class="card-actions justify-end items-center">
+            <a href={link} target="_blank" class="btn btn-neutral">
+                <GithubLogo class="w-6 h-6" />
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,144 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Traits from "@components/Traits.astro";
-import getTraits from "@lib/getTraits";
-import collections from "@lib/collections";
-
-const allPosts = [
-    ...collections.action,
-    ...collections.ancestry,
-    ...collections.animalCompanion,
-    ...collections.apparition,
-    ...collections.arcaneSchool,
-    ...collections.arcaneThesis,
-    ...collections.archetype,
-    ...collections.armor,
-    ...collections.armorGroup,
-    ...collections.article,
-    ...collections.background,
-    ...collections.bloodline,
-    ...collections.campsiteMeal,
-    ...collections.cause,
-    ...collections.class_,
-    ...collections.classKit,
-    ...collections.classSample,
-    ...collections.condition,
-    ...collections.consciousMind,
-    ...collections.creature,
-    ...collections.creatureAbility,
-    ...collections.creatureAdjustment,
-    ...collections.creatureFamily,
-    ...collections.curse,
-    ...collections.deity,
-    ...collections.deityCategory,
-    ...collections.disease,
-    ...collections.doctrine,
-    ...collections.domain,
-    ...collections.druidicOrder,
-    ...collections.eidolon,
-    ...collections.element,
-    ...collections.epithet,
-    ...collections.equipment,
-    ...collections.familiarAbility,
-    ...collections.familiarSpecific,
-    ...collections.feat,
-    ...collections.hazard,
-    ...collections.hellknightOrder,
-    ...collections.heritage,
-    ...collections.huntersEdge,
-    ...collections.hybridStudy,
-    ...collections.ikon,
-    ...collections.implement,
-    ...collections.innovation,
-    ...collections.instinct,
-    ...collections.kingdomEvent,
-    ...collections.kingdomStructure,
-    ...collections.language,
-    ...collections.lesson,
-    ...collections.methodology,
-    ...collections.muse,
-    ...collections.mystery,
-    ...collections.mythicCalling,
-    ...collections.patron,
-    ...collections.plane,
-    ...collections.practice,
-    ...collections.racket,
-    ...collections.relic,
-    ...collections.researchField,
-    ...collections.ritual,
-    ...collections.rules,
-    ...collections.setRelic,
-    ...collections.shield,
-    ...collections.siegeWeapon,
-    ...collections.skill,
-    ...collections.source,
-    ...collections.spell,
-    ...collections.style,
-    ...collections.subconsciousMind,
-    ...collections.tactic,
-    ...collections.tenet,
-    ...collections.tradition,
-    ...collections.trait,
-    ...collections.vehicle,
-    ...collections.warfareArmy,
-    ...collections.warfareTactic,
-    ...collections.way,
-    ...collections.weapon,
-    ...collections.weaponGroup,
-    ...collections.weatherHazard,
-];
-
-const postsByCategory = allPosts.reduce(
-    (acc, post) => {
-        const category = post.data?.category;
-        if (!category) return acc;
-        if (!acc[category]) {
-            acc[category] = [];
-        }
-        acc[category].push(post);
-        return acc;
-    },
-    {} as Record<string, typeof allPosts>,
-);
+import SocialCard from "@components/home/SocialCard.astro";
+import UpdatesCard from "@components/home/UpdatesCard.astro";
+import ChangelogList from "@components/home/ChangelogList.astro";
 ---
 
 <Layout>
-    <div>
-        <h1>Database</h1>
-        {
-            Object.entries(postsByCategory).map(([category, posts]) => (
-                <div>
-                    <h2>{category.toUpperCase()}</h2>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Remaster</th>
-                                <th>Traits</th>
-                                <th>actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {posts.slice(0, 10).map((post) => (
-                                <tr>
-                                    <td>
-                                        <a
-                                            href={`/${post.data.category}/${post.id}`}
-                                        >
-                                            {post.data.name}
-                                        </a>
-                                    </td>
-                                    <td>{post.data.legacy_id && "+"}</td>
-                                    <td class="flex flex-row gap-2">
-                                        <Traits trait={getTraits(post.data)} />
-                                    </td>
-                                    <td>{post.data?.actions}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            ))
-        }
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <div id="updates" class="flex flex-col gap-2">
+            <h2 class="text-xl font-bold">Оновлення</h2>
+            <UpdatesCard />
+        </div>
+        <div id="changelog" class="flex flex-col gap-2">
+            <h2 class="text-xl font-bold">Changelog</h2>
+            <ChangelogList />
+        </div>
+        <div id="media" class="flex flex-col gap-2">
+            <h2 class="text-xl font-bold">Медіа</h2>
+            <SocialCard />
+        </div>
     </div>
 </Layout>

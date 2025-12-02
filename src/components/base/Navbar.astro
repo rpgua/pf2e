@@ -1,41 +1,27 @@
 ---
-import Menu from "./Menu.astro";
 import Search from "./Search.astro";
 ---
 
-<header>
-  <div class="navbar bg-base-100 shadow-sm">
-    <div class="navbar-start">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"></path>
-          </svg>
-        </div>
-        <ul
-          tabindex="-1"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          <Menu mobile/>
-        </ul>
-      </div>
-      <a href="/" class="btn btn-ghost text-xl">PF2DB</a>
-    </div>
-    <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
-        <Menu/>
-      </ul>
-    </div>
-    <div class="navbar-end">
-        <Search/>
-    </div>
-  </div>
-</header>
+<nav class="navbar w-full bg-base-300">
+  <label
+    for="my-drawer-4"
+    aria-label="open sidebar"
+    class="btn btn-square btn-ghost">
+    <!-- Sidebar toggle icon -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke-width="2"
+      fill="none"
+      stroke="currentColor"
+      class="my-1.5 inline-block size-4"
+      ><path
+        d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+      ></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg
+    >
+  </label>
+  <div class="px-4 w-full">PF2EDB</div>
+  <div><Search /></div>
+</nav>

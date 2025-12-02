@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import lastBook from "@assets/books/playercore.jpg";
+---
+
+<div class="card lg:card-side bg-base-300 shadow-sm">
+    <figure class="w-full lg:w-1/3">
+        <Image
+            src={lastBook}
+            alt="Last Book"
+            width={988}
+            height={1280}
+            class="w-full h-full object-cover"
+        />
+    </figure>
+    <div class="card-body lg:w-2/3">
+        <h2 class="card-title">Переклад Player Core завершено!</h2>
+        <p>
+            Pathfinder Player Core містить усе, що необхідно гравцеві! Обирайте
+            з-поміж восьми родоводів, восьми класів та сотень здібностей і
+            заклинань, щоб створити унікальних персонажів, готових до
+            смертельних пригод у світі, сповненому магії та зла! Цей фоліант —
+            вичерпне джерело правил для всіх гравців у Pathfinder Другої
+            редакції!
+        </p>
+        <span class="text-sm badge badge-secondary my-4">12.12.2025</span>
+    </div>
+</div>
