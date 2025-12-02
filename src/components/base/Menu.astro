@@ -42,13 +42,14 @@ const icons = {
         const Icon = icons[item.icon as keyof typeof icons];
         return (
             <li>
-                <button
+                <a
+                    href={item.link}
                     class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                     data-tip={item.name}>
                     {Icon && <Icon class="my-1.5 inline-block size-4" />}
 
                     <span class="is-drawer-close:hidden">{item.name}</span>
-                </button>
+                </a>
             </li>
         );
     })

@@ -5,17 +5,22 @@ import Navbar from "@components/base/Navbar.astro";
 import Scripts from "@components/base/Scripts.astro";
 import "../styles/global.css";
 import Sidebar from "@components/base/Sidebar.astro";
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head />
+  <Head title={title} />
   <body class="antialiased">
     <div class="drawer lg:drawer-open">
       <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col min-h-dvh">
         <Navbar />
-        <main class="container mx-auto grow" data-pagefind-body>
+        <main class="container mx-auto grow p-2" data-pagefind-body>
           <slot />
         </main>
         <Footer />

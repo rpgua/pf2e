@@ -11,19 +11,15 @@ interface Props {
 
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-
 const { parentId, allRules, heading } = Astro.props;
 const children = allRules.filter((rule) => rule.parent.includes(parentId));
 
-const TitleElement = ("h" + String(heading+1)) as Heading;
-const SubTitleElement = ("h" + String(heading+2)) as Heading;
+const TitleElement = ("h" + String(heading + 1)) as Heading;
 
 const rulebook = await getCollection(
   "source",
-  (source) => source.data.id === children[0]?.rulebook_id
+  (source) => source.data.id === children[0]?.rulebook_id,
 );
-
-
 ---
 
 {
@@ -32,13 +28,19 @@ const rulebook = await getCollection(
       {children.map((child) => (
         <Fragment>
           <TitleElement>{child.name}</TitleElement>
-          <SubTitleElement>{child.original_name}</SubTitleElement>
+          <span>{child.original_name}</span>
           <div id="info">
-            <p>{rulebook[0].data.name} pg. {child.page_number}</p>
-            </div>
-          <hr class="not-prose"/>
+            <p>
+              {rulebook[0].data.name} pg. {child.page_number}
+            </p>
+          </div>
+          <hr class="not-prose" />
           <div set:html={marked.parse(child.content)} />
-          <Astro.self parentId={child.id} allRules={allRules} heading={heading+1}/>
+          <Astro.self
+            parentId={child.id}
+            allRules={allRules}
+            heading={heading + 1}
+          />
         </Fragment>
       ))}
     </div>

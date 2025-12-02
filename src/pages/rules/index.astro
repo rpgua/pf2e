@@ -1,0 +1,206 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import collections from "@lib/collections";
+import type { Rules, Source } from "../../types";
+
+const rawRules = collections.rules.map((rule) => rule.data as Rules);
+const rulebooks = collections.source.map((rulebook) => rulebook.data as Source);
+
+const rules = rawRules.map((rule) => {
+    const children = rawRules.filter((child) => child.parent.includes(rule.id));
+    return {
+        ...rule,
+        children,
+    };
+});
+
+const mainRulebooksIds = [
+    216, // Player Core
+    218, // GM Core
+    221, // Monster Core
+    227, // Player Core 2
+    236, // NPC Core
+];
+
+const mainRulebooks = rulebooks.filter((rulebook) =>
+    mainRulebooksIds.includes(rulebook.id),
+);
+---
+
+<BasePage title="Правила">
+    <h1 class="text-4xl font-bold">Правила</h1>
+    <h2 class="text-2xl font-bold my-4">Книги правил</h2>
+    <div class="join join-vertical bg-base-100 w-full lg:w-2/3">
+        {
+            mainRulebooks.map((rulebook) => {
+                const currentRules = rules.filter(
+                    (rule) => rule.rulebook_id === rulebook.id,
+                );
+
+                if (currentRules.length === 0) {
+                    return null;
+                }
+
+                return (
+                    <div class="collapse collapse-arrow join-item border-base-300 border bg-base-200">
+                        <input type="radio" name="my-accordion-4" />
+                        <div class="collapse-title font-semibold">
+                            {rulebook.name}{" "}
+                            {new Date(rulebook.release) <
+                                new Date("2023-08-02") && (
+                                <span class="badge badge-warning">legacy</span>
+                            )}
+                        </div>
+                        <div class="collapse-content text-sm">
+                            <ul class="menu rounded-box w-full">
+                                {rules
+                                    .filter(
+                                        (rule) =>
+                                            rule.rulebook_id === rulebook.id &&
+                                            rule.parent.length === 0,
+                                    )
+                                    .map((rule) => {
+                                        if (rule.children.length > 0) {
+                                            return (
+                                                <li>
+                                                    <a
+                                                        href={`/rules/${rule.id}`}>
+                                                        {rule.name}
+                                                    </a>
+                                                    <ul>
+                                                        {rule.children.map(
+                                                            (child) => {
+                                                                const childRule =
+                                                                    rules.find(
+                                                                        (
+                                                                            rule,
+                                                                        ) =>
+                                                                            rule.id ===
+                                                                            child.id,
+                                                                    );
+                                                                if (
+                                                                    !childRule
+                                                                ) {
+                                                                    return null;
+                                                                }
+                                                                return (
+                                                                    <li>
+                                                                        <a
+                                                                            href={`/rules/${childRule.id}`}>
+                                                                            {
+                                                                                childRule.name
+                                                                            }
+                                                                        </a>
+                                                                    </li>
+                                                                );
+                                                            },
+                                                        )}
+                                                    </ul>
+                                                </li>
+                                            );
+                                        } else {
+                                            return (
+                                                <li>
+                                                    <a
+                                                        href={`/rules/${rule.id}`}>
+                                                        {rule.name}
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
+                                    })}
+                            </ul>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+    <h2 class="text-2xl font-bold my-4">Усі правила</h2>
+    <div class="join join-vertical bg-base-100 w-full lg:w-2/3">
+        {
+            rulebooks.map((rulebook) => {
+                const currentRules = rules.filter(
+                    (rule) => rule.rulebook_id === rulebook.id,
+                );
+
+                if (currentRules.length === 0) {
+                    return null;
+                }
+
+                return (
+                    <div class="collapse collapse-arrow join-item border-base-300 border bg-base-200">
+                        <input type="radio" name="my-accordion-4" />
+                        <div class="collapse-title font-semibold">
+                            {rulebook.name}{" "}
+                            {new Date(rulebook.release) <
+                                new Date("2023-08-02") && (
+                                <span class="badge badge-warning">legacy</span>
+                            )}
+                        </div>
+                        <div class="collapse-content text-sm">
+                            <ul class="menu rounded-box w-full">
+                                {rules
+                                    .filter(
+                                        (rule) =>
+                                            rule.rulebook_id === rulebook.id &&
+                                            rule.parent.length === 0,
+                                    )
+                                    .map((rule) => {
+                                        if (rule.children.length > 0) {
+                                            return (
+                                                <li>
+                                                    <a
+                                                        href={`/rules/${rule.id}`}>
+                                                        {rule.name}
+                                                    </a>
+                                                    <ul>
+                                                        {rule.children.map(
+                                                            (child) => {
+                                                                const childRule =
+                                                                    rules.find(
+                                                                        (
+                                                                            rule,
+                                                                        ) =>
+                                                                            rule.id ===
+                                                                            child.id,
+                                                                    );
+                                                                if (
+                                                                    !childRule
+                                                                ) {
+                                                                    return null;
+                                                                }
+                                                                return (
+                                                                    <li>
+                                                                        <a
+                                                                            href={`/rules/${childRule.id}`}>
+                                                                            {
+                                                                                childRule.name
+                                                                            }
+                                                                        </a>
+                                                                    </li>
+                                                                );
+                                                            },
+                                                        )}
+                                                    </ul>
+                                                </li>
+                                            );
+                                        } else {
+                                            return (
+                                                <li>
+                                                    <a
+                                                        href={`/rules/${rule.id}`}>
+                                                        {rule.name}
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
+                                    })}
+                            </ul>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+</BasePage>
