@@ -1,33 +1,107 @@
 ---
 import BasePage from "@components/pages/BasePage.astro";
 import collections from "@lib/collections";
-import type { Class } from "../../types";
+import type { Ancestry, Source } from "../../types";
+import getTraits from "@lib/getTraits";
+import Trait from "@components/Trait.astro";
+import { Image } from "astro:assets";
+import AoN from "@components/AoN.astro";
 
-const rawClasses = collections.class_.map((class_) => class_.data as Class);
-const classes = rawClasses.sort((a, b) => a.name.localeCompare(b.name));
+const rawAncestries = collections.ancestry.map(
+    (ancestry) => ancestry.data as Ancestry,
+);
+const ancestries = rawAncestries.sort((a, b) => a.name.localeCompare(b.name));
+
+const rulebooks = collections.source.map((source) => source.data as Source);
+
+ancestries.map((ancestry) => console.log(ancestry.name));
 ---
 
 <BasePage title="Класи">
     <h1 class="text-4xl font-bold">Класи</h1>
 
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        {
-            classes.map((class_) => (
-                <div class="card card-border bg-base-200 w-full">
-                    <div class="card-body">
-                        <h2 class="card-title">{class_.name}</h2>
-                        <p>{class_.original_name}</p>
-                        <div class="card-actions justify-end">
-                            <a
-                                href={`/classes/${class_.id}`}
-                                class="btn btn-primary">
-                                Більше
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            ))
-        }
+    <div class="overflow-x-auto">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Назва</th>
+                    <th>Джерело</th>
+                    <th>Риси</th>
+                    <th>AoN</th>
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    ancestries.map((ancestry) => (
+                        <tr>
+                            <td>
+                                <div class="flex items-center gap-3">
+                                    <div class="avatar">
+                                        <div class="mask mask-squircle h-12 w-12">
+                                            <Image
+                                                src={
+                                                    "/images/icons/ancestries/" +
+                                                    ancestry.name +
+                                                    ".webp"
+                                                }
+                                                alt={ancestry.name}
+                                                width={48}
+                                                height={48}
+                                                onerror="this.onerror = null; this.src = '/images/icons/default.webp'"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">
+                                            <a
+                                                class="link link-hover"
+                                                href={`/ancestries/${ancestry.id}`}>
+                                                {ancestry.name}
+                                            </a>
+                                        </div>
+                                        <div class="text-sm opacity-50">
+                                            {ancestry.original_name}
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <a href={`/sources/${ancestry.rulebook_id}`}>
+                                    {
+                                        rulebooks.find(
+                                            (rulebook) =>
+                                                rulebook.id ===
+                                                ancestry.rulebook_id,
+                                        )?.name
+                                    }
+                                </a>
+                                <br />
+                                <span class="badge badge-ghost badge-sm">
+                                    ст.{ancestry.page_number}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="flex flex-wrap gap-2">
+                                    {getTraits(ancestry).map((trait) => (
+                                        <Trait trait={trait} />
+                                    ))}
+                                </div>
+                            </td>
+                            <td>
+                                <AoN url={ancestry.aon} />
+                            </td>
+                        </tr>
+                    ))
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Назва</th>
+                    <th>Джерело</th>
+                    <th>Риси</th>
+                    <th>AoN</th>
+                </tr>
+            </tfoot>
+        </table>
     </div>
 </BasePage>

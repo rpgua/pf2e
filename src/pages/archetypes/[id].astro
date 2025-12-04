@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import AncestryCard from "@components/cards/AncestryCard.astro";
+import collections from "@lib/collections";
+export async function getStaticPaths() {
+    const ancestries = collections.ancestry;
+    return ancestries.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+
+const { item } = Astro.props;
+---
+
+<Layout>
+    <AncestryCard item={item} />
+</Layout>
