@@ -12,8 +12,8 @@ export const ACTIVE_BOOKS_IDS = [
     // ...legacyBooks, 
     // ...remasterBooks
     216, // Player Core
-    // 218, // GM Core
-    // 221, // Monster Core
-    // 227, // Player Core 2
-    // 236, // NPC Core
+    218, // GM Core
+    221, // Monster Core
+    227, // Player Core 2
+    236, // NPC Core
 ];

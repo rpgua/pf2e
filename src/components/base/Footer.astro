@@ -1,5 +1,6 @@
 ---
-
+const cup = `https://paizo.com/community/communityuse`;
+const paizo = `https://paizo.com`;
 ---
 
 <footer class="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
@@ -11,9 +12,20 @@
         </p>
     </aside>
     <nav>
-        <h6 class="footer-title">Право</h6>
-        <a class="link link-hover">Community Use Policy</a>
-        <a class="link link-hover">OGL / ORC License</a>
-        <a class="link link-hover">Інші ліцензії</a>
+        <h6 class="footer-title">Правова інформація</h6>
+        <a href="/license" class="link link-hover"
+            >Повний текст ліцензій (OGL/ORC)</a
+        >
+        <a href={cup} class="link link-hover" target="_blank"
+            >Paizo Community Use Policy</a
+        >
     </nav>
+    <p class="text-xs opacity-70 px-10 columns-auto flex flex-row flex-wrap">
+        This website uses trademarks and/or copyrights owned by Paizo Inc., used
+        under Paizo's Community Use Policy (paizo.com/communityuse). We are
+        expressly prohibited from charging you to use or access this content.
+        This website is not published, endorsed, or specifically approved by
+        Paizo. For more information about Paizo Inc. and Paizo products, visit
+        paizo.com.
+    </p>
 </footer>
