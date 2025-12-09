@@ -1,0 +1,44 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Archetype } from "../../../types";
+import { useTranslations } from "@i18n/utils";
+const t = useTranslations(Astro.defaultLocale);
+
+interface Props {
+    item: CollectionEntry<"archetype">;
+}
+const { item } = Astro.props;
+const archetype: Archetype = item.data;
+
+const { level, prerequisite } = archetype;
+---
+
+<BasePage item={archetype}>
+    <Fragment slot="before-content">
+        <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">{t("page.titles.mechanics")}</h2>
+            {
+                level && (
+                    <div>
+                        <strong class="font-bold text-md">
+                            {t("archetype.level")}:
+                        </strong>
+                        <span>{level}</span>
+                    </div>
+                )
+            }
+            {
+                prerequisite && (
+                    <div>
+                        <strong class="font-bold text-md">
+                            {t("archetype.prerequisite")}:
+                        </strong>
+                        <span>{prerequisite}</span>
+                    </div>
+                )
+            }
+        </div>
+        <hr />
+    </Fragment>
+</BasePage>

@@ -1,107 +1,38 @@
 ---
 import Page from "@components/pages/Page.astro";
 import collections from "@lib/collections";
-import type { Ancestry, Source } from "../../types";
-import getTraits from "@lib/getTraits";
-import Trait from "@components/Trait.astro";
-import { Image } from "astro:assets";
-import AoN from "@components/AoN.astro";
-
+import type { Ancestry } from "../../types";
+import Table from "@components/table/Table.astro";
+import { useTranslations } from "@i18n/utils";
+import TableAoN from "@components/table/TableAoN.astro";
+import TableTraits from "@components/table/TableTraits.astro";
+import TableRulebook from "@components/table/TableRulebook.astro";
+import TableName from "@components/table/TableName.astro";
+const t = useTranslations();
 const rawAncestries = collections.ancestry.map(
     (ancestry) => ancestry.data as Ancestry,
 );
 const ancestries = rawAncestries.sort((a, b) => a.name.localeCompare(b.name));
-
-const rulebooks = collections.source.map((source) => source.data as Source);
-
-ancestries.map((ancestry) => console.log(ancestry.name));
 ---
 
-<Page title="Класи">
-    <h1 class="text-4xl font-bold">Класи</h1>
-
-    <div class="overflow-x-auto">
-        <table class="table">
-            <thead>
+<Page title={t("pages.ancestries")}>
+    <h1 class="text-4xl font-bold">{t("pages.ancestries")}</h1>
+    <Table
+        titles={[
+            t("tables.name"),
+            t("tables.source"),
+            t("tables.traits"),
+            "AoN",
+        ]}>
+        {
+            ancestries.map((ancestry) => (
                 <tr>
-                    <th>Назва</th>
-                    <th>Джерело</th>
-                    <th>Риси</th>
-                    <th>AoN</th>
+                    <TableName item={ancestry} customIcon />
+                    <TableRulebook item={ancestry} />
+                    <TableTraits item={ancestry} />
+                    <TableAoN item={ancestry} />
                 </tr>
-            </thead>
-            <tbody>
-                {
-                    ancestries.map((ancestry) => (
-                        <tr>
-                            <td>
-                                <div class="flex items-center gap-3">
-                                    <div class="avatar">
-                                        <div class="mask mask-squircle h-12 w-12">
-                                            <Image
-                                                src={
-                                                    "/images/icons/ancestries/" +
-                                                    ancestry.name +
-                                                    ".webp"
-                                                }
-                                                alt={ancestry.name}
-                                                width={48}
-                                                height={48}
-                                                onerror="onerror=null;src='/images/icons/default.webp'"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="font-bold">
-                                            <a
-                                                class="link link-hover"
-                                                href={`/ancestries/${ancestry.id}`}>
-                                                {ancestry.name}
-                                            </a>
-                                        </div>
-                                        <div class="text-sm opacity-50">
-                                            {ancestry.original_name}
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a href={`/sources/${ancestry.rulebook_id}`}>
-                                    {
-                                        rulebooks.find(
-                                            (rulebook) =>
-                                                rulebook.id ===
-                                                ancestry.rulebook_id,
-                                        )?.name
-                                    }
-                                </a>
-                                <br />
-                                <span class="badge badge-ghost badge-sm">
-                                    ст.{ancestry.page_number}
-                                </span>
-                            </td>
-                            <td>
-                                <div class="flex flex-wrap gap-2">
-                                    {getTraits(ancestry).map((trait) => (
-                                        <Trait trait={trait} />
-                                    ))}
-                                </div>
-                            </td>
-                            <td>
-                                <AoN url={ancestry.aon} />
-                            </td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th>Назва</th>
-                    <th>Джерело</th>
-                    <th>Риси</th>
-                    <th>AoN</th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+            ))
+        }
+    </Table>
 </Page>

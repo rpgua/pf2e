@@ -1,0 +1,25 @@
+---
+interface Props {
+    titles: string[];
+}
+
+const { titles } = Astro.props;
+---
+
+<div class="overflow-x-auto">
+    <table class="table">
+        <thead>
+            <tr>
+                {titles.map((title: string) => <th>{title}</th>)}
+            </tr>
+        </thead>
+        <tbody>
+            <slot />
+        </tbody>
+        <tfoot>
+            <tr>
+                {titles.map((title: string) => <th>{title}</th>)}
+            </tr>
+        </tfoot>
+    </table>
+</div>

@@ -1,0 +1,12 @@
+---
+import AoN from "@components/AoN.astro";
+interface Props {
+    item: unknown;
+}
+
+const { item } = Astro.props;
+---
+
+<td>
+    <AoN url={item.aon} />
+</td>

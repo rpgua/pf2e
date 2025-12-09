@@ -4,14 +4,13 @@ import BasePage from "@components/pages/BasePage.astro";
 import type { CollectionEntry } from "astro:content";
 import type { Ancestry } from "../../../types";
 import { useTranslations } from "@i18n/utils";
+const t = useTranslations(Astro.defaultLocale);
+
 interface Props {
     item: CollectionEntry<"ancestry">;
 }
 const { item } = Astro.props;
 const ancestry: Ancestry = item.data;
-
-console.log(Astro.defaultLocale);
-const t = useTranslations(Astro.defaultLocale);
 
 const {
     hp,
@@ -29,7 +28,7 @@ const {
 <BasePage item={ancestry}>
     <Fragment slot="before-content">
         <div class="flex flex-col gap-4">
-            <h2 class="text-2xl font-bold">Mechanics</h2>
+            <h2 class="text-2xl font-bold">{t("page.titles.mechanics")}</h2>
             {
                 hp && (
                     <div>

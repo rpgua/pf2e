@@ -1,0 +1,15 @@
+---
+import Trait from "@components/Trait.astro";
+import getTraits from "@lib/getTraits";
+interface Props {
+    item: unknown;
+}
+
+const { item } = Astro.props;
+---
+
+<td>
+    <div class="flex flex-wrap gap-2">
+        {getTraits(item).map((trait) => <Trait trait={trait} />)}
+    </div>
+</td>

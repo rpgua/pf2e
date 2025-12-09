@@ -61,7 +61,12 @@ const pfs = {
                 <ul class="w-full flex flex-col gap-2">
                     <li class="flex flex-row gap-2 items-center">
                         <Icons.Source class="size-4" />
-                        <a class="link" href={item.category + "/" + item.id}>
+                        <a
+                            class="link"
+                            href={"/" +
+                                rulebook?.data.category +
+                                "/" +
+                                rulebook?.id}>
                             {rulebook?.data.name}
                         </a> pg. {item.page_number}
                     </li>
@@ -100,6 +105,19 @@ const pfs = {
     </aside>
     <section
         class="flex flex-col gap-2 col-span-full lg:col-span-4 xl:col-span-9">
+        <div id="breadcrumbs" class="flex flex-row gap-2">
+            <div class="breadcrumbs text-sm">
+                <ul>
+                    <li><a href="/">{t("nav.home")}</a></li>
+                    <li>
+                        <a href={`/${item.category}`}
+                            >{t(`pages.${item.category}`)}</a
+                        >
+                    </li>
+                    <li>{item.name}</li>
+                </ul>
+            </div>
+        </div>
         <div id="alerts" class="flex flex-col gap-2">
             {
                 item.spoilers && (

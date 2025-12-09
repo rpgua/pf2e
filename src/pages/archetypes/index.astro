@@ -1,0 +1,41 @@
+---
+import Page from "@components/pages/Page.astro";
+import collections from "@lib/collections";
+import type { Archetype } from "../../types";
+import { useTranslations } from "@i18n/utils";
+import Table from "@components/table/Table.astro";
+import TableRulebook from "@components/table/TableRulebook.astro";
+import TableTraits from "@components/table/TableTraits.astro";
+import TableAoN from "@components/table/TableAoN.astro";
+import TableName from "@components/table/TableName.astro";
+
+const t = useTranslations();
+const rawArchetypes = collections.archetype.map(
+    (archetype) => archetype.data as Archetype,
+);
+const archetypes = rawArchetypes.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Page title={t("pages.archetypes")}>
+    <h1 class="text-4xl font-bold">{t("pages.archetypes")}</h1>
+    <Table
+        titles={[
+            t("tables.name"),
+            t("tables.level"),
+            t("tables.source"),
+            t("tables.traits"),
+            "AoN",
+        ]}>
+        {
+            archetypes.map((archetype) => (
+                <tr>
+                    <TableName item={archetype} />
+                    <td>{archetype.level}</td>
+                    <TableRulebook item={archetype} />
+                    <TableTraits item={archetype} />
+                    <TableAoN item={archetype} />
+                </tr>
+            ))
+        }
+    </Table>
+</Page>

@@ -1,0 +1,20 @@
+---
+import collections from "@lib/collections";
+import { Source } from "../../types";
+
+interface Props {
+    item: unknown;
+}
+
+const { item } = Astro.props;
+
+const rulebooks = collections.source.map((source) => source.data as Source);
+---
+
+<td>
+    <a href={`/sources/${item.id}`}>
+        {rulebooks.find((rulebook) => rulebook.id === item.rulebook_id)?.name}
+    </a>
+    <br />
+    <span class="badge badge-ghost badge-sm">ст.{item.page_number}</span>
+</td>
