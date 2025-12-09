@@ -1,0 +1,30 @@
+---
+import { useTranslations } from "@i18n/utils";
+import DisplayInfo from "./DisplayInfo.astro";
+const t = useTranslations();
+interface Props {
+    items: { title: string; content: any }[];
+}
+const { items } = Astro.props;
+
+const isEmptyList = (items: { title: string; content: any }[]) =>
+    items.every((item) => !item.content);
+---
+
+{
+    !isEmptyList(items) && (
+        <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">{t("page.titles.mechanics")}</h2>
+            {items.map(
+                (item) =>
+                    item.content && (
+                        <DisplayInfo
+                            title={item.title}
+                            content={item.content}
+                        />
+                    ),
+            )}
+        </div>
+        <hr />
+    )
+}

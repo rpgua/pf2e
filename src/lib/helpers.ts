@@ -31,3 +31,26 @@ export const getSpeed = (speed: any): string => {
             return `${t(`speed.${type}`)} ─ ${value} ${t("speed.unit")}`;
     }).join(", ");
 }
+
+export const getActionIcons = (actions: number): string => {
+    switch (actions) {
+        case 0:
+
+            return "[free-action]"
+        case 1:
+
+            return "[one-action]"
+        case 2:
+
+            return "[two-actions]"
+        case 3:
+
+            return "[three-actions]"
+        case 4:
+
+            return "[reaction]"
+
+        default:
+            return "";
+    }
+}

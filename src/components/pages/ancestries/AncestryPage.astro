@@ -4,7 +4,8 @@ import BasePage from "@components/pages/BasePage.astro";
 import type { CollectionEntry } from "astro:content";
 import type { Ancestry } from "../../../types";
 import { useTranslations } from "@i18n/utils";
-const t = useTranslations(Astro.defaultLocale);
+import DisplayInfoList from "../DisplayInfoList.astro";
+const t = useTranslations();
 
 interface Props {
     item: CollectionEntry<"ancestry">;
@@ -23,109 +24,34 @@ const {
     vision,
     additional_mechanics,
 } = ancestry;
+
+const mechanics = [
+    { title: t("ancestry.hp"), content: hp },
+    { title: t("ancestry.size"), content: size },
+    {
+        title: t("ancestry.speed"),
+        content: speed && getSpeed(speed),
+    },
+    {
+        title: t("ancestry.attribute_boosts"),
+        content: attribute_boosts.join(", "),
+    },
+    { title: t("ancestry.attribute_flaw"), content: attribute_flaw.join(", ") },
+    { title: t("ancestry.languages"), content: languages.join(", ") },
+    {
+        title: t("ancestry.additional_languages"),
+        content: additional_languages,
+    },
+    { title: t("ancestry.vision"), content: vision },
+    {
+        title: t("ancestry.additional_mechanics"),
+        content: additional_mechanics,
+    },
+];
 ---
 
 <BasePage item={ancestry}>
     <Fragment slot="before-content">
-        <div class="flex flex-col gap-4">
-            <h2 class="text-2xl font-bold">{t("page.titles.mechanics")}</h2>
-            {
-                hp && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.hp")}:
-                        </strong>
-                        <span>{hp}</span>
-                    </div>
-                )
-            }
-            {
-                size && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.size")}:
-                        </strong>
-                        <span>{size.map((size) => size).join(", ")}</span>
-                    </div>
-                )
-            }
-            {
-                speed && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.speed")}:
-                        </strong>
-                        <p class="ml-4">{getSpeed(speed)}</p>
-                    </div>
-                )
-            }
-            {
-                attribute_boosts && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.attribute_boosts")}:
-                        </strong>
-                        <span>
-                            {attribute_boosts.map((boost) => boost).join(", ")}
-                        </span>
-                    </div>
-                )
-            }
-            {
-                attribute_flaw && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.attribute_flaw")}:
-                        </strong>
-                        <span>
-                            {attribute_flaw.map((flaw) => flaw).join(", ")}
-                        </span>
-                    </div>
-                )
-            }
-            {
-                languages && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.languages")}:
-                        </strong>
-                        <span>
-                            {languages.map((language) => language).join(", ")}
-                        </span>
-                    </div>
-                )
-            }
-            {
-                additional_languages && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.additional_languages")}:
-                        </strong>
-                        <span>{additional_languages}</span>
-                    </div>
-                )
-            }
-            {
-                vision && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.vision")}:
-                        </strong>
-                        <span>{vision}</span>
-                    </div>
-                )
-            }
-            {
-                additional_mechanics && (
-                    <div>
-                        <strong class="font-bold text-md">
-                            {t("ancestry.additional_mechanics")}:
-                        </strong>
-                        <span>{additional_mechanics}</span>
-                    </div>
-                )
-            }
-        </div>
-        <hr />
+        <DisplayInfoList items={mechanics} />
     </Fragment>
 </BasePage>

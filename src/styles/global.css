@@ -12,3 +12,7 @@
   font-display: swap;
   src: url("/fonts/Pathfinder-Icons.ttf") format("truetype");
 }
+
+@theme {
+  --font-pf-icons: "PFIcons";
+}

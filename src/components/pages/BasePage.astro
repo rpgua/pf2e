@@ -37,6 +37,7 @@ const pfs = {
     <header class="col-span-full">
         <h1 id="title" class="text-4xl xl:text-6xl font-bold">
             {item.name ? item.name : "No title"}
+            <slot name="after-title" />
         </h1>
         <slot name="header" />
     </header>

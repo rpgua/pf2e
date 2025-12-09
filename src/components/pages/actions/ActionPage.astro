@@ -1,0 +1,41 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import DisplayInfoList from "@components/pages/DisplayInfoList.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Action } from "../../../types";
+import { useTranslations } from "@i18n/utils";
+import { getActionIcons } from "@lib/helpers";
+const t = useTranslations();
+
+interface Props {
+    item: CollectionEntry<"action">;
+}
+const { item } = Astro.props;
+const action: Action = item.data;
+
+const { frequency, requirements, triggers, school, element, cost } = action;
+
+const mechanics = [
+    { title: t("action.frequency"), content: frequency },
+    { title: t("action.requirements"), content: requirements },
+    { title: t("action.triggers"), content: triggers },
+    { title: t("action.school"), content: school },
+    { title: t("action.element"), content: element },
+    { title: t("action.cost"), content: cost },
+];
+---
+
+<BasePage item={action}>
+    <Fragment slot="before-content">
+        <DisplayInfoList items={mechanics} />
+    </Fragment>
+    {
+        action.actions && (
+            <Fragment slot="after-title">
+                <span class="font-pf-icons">
+                    {getActionIcons(action.actions)}
+                </span>
+            </Fragment>
+        )
+    }
+</BasePage>

@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ActionPage from "@components/pages/actions/ActionPage.astro";
+export async function getStaticPaths() {
+    const actions = collections.action;
+    return actions.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout>
+    <ActionPage item={item} />
+</Layout>
