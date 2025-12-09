@@ -4,13 +4,13 @@
 
 const sourceJson = await import("../lib/source.json");
 
-const legacyBooks = sourceJson.default.filter((book) => book.id < 205).map((book) => book.id);
+// const legacyBooks = sourceJson.default.filter((book) => book.id < 205).map((book) => book.id);
 
 const remasterBooks = sourceJson.default.filter((book) => book.id >= 205).map((book) => book.id);
 
 export const ACTIVE_BOOKS_IDS = [
     // ...legacyBooks, 
-    // ...remasterBooks
+    // ...remasterBooks,
     216, // Player Core
     218, // GM Core
     221, // Monster Core

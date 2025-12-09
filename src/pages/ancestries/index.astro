@@ -1,5 +1,5 @@
 ---
-import BasePage from "@components/pages/BasePage.astro";
+import Page from "@components/pages/Page.astro";
 import collections from "@lib/collections";
 import type { Ancestry, Source } from "../../types";
 import getTraits from "@lib/getTraits";
@@ -17,7 +17,7 @@ const rulebooks = collections.source.map((source) => source.data as Source);
 ancestries.map((ancestry) => console.log(ancestry.name));
 ---
 
-<BasePage title="Класи">
+<Page title="Класи">
     <h1 class="text-4xl font-bold">Класи</h1>
 
     <div class="overflow-x-auto">
@@ -47,7 +47,7 @@ ancestries.map((ancestry) => console.log(ancestry.name));
                                                 alt={ancestry.name}
                                                 width={48}
                                                 height={48}
-                                                onerror="this.onerror = null; this.src = '/images/icons/default.webp'"
+                                                onerror="onerror=null;src='/images/icons/default.webp'"
                                             />
                                         </div>
                                     </div>
@@ -104,4 +104,4 @@ ancestries.map((ancestry) => console.log(ancestry.name));
             </tfoot>
         </table>
     </div>
-</BasePage>
+</Page>

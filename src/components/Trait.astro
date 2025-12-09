@@ -8,10 +8,11 @@ interface Props {
 const { trait } = Astro.props;
 
 const RARITY_COLORS: Record<string, string> = {
-    common: "btn btn-soft",
-    uncommon: "btn btn-soft btn-warning",
-    rare: "btn btn-soft btn-primary",
-    unique: "btn btn-soft btn-secondary",
+    common: "btn btn-soft btn-xs lg:btn-sm 4xl:btn-md",
+    // common: "p-1 border-borde",
+    uncommon: "btn btn-soft btn-warning btn-xs lg:btn-sm 4xl:btn-md",
+    rare: "btn btn-soft btn-primary btn-xs lg:btn-sm 4xl:btn-md",
+    unique: "btn btn-soft btn-secondary btn-xs lg:btn-sm 4xl:btn-md",
 };
 const DEFAULT_COLOR = RARITY_COLORS.common;
 

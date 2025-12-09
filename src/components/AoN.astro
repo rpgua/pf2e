@@ -7,10 +7,12 @@ interface Props {
 const { url } = Astro.props;
 ---
 
-<a
-  id="original_name"
-  href={`https://2e.aonprd.com${url}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="opacity-30 hover:opacity-100"><AonLogo width={32} height={32} /></a
->
+<div class="fab">
+  <a
+    href={`https://2e.aonprd.com${url}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="btn btn-lg btn-circle btn-primary"
+    ><AonLogo width={32} height={32} /></a
+  >
+</div>

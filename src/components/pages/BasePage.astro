@@ -1,13 +1,171 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import type { BaseItem } from "../../types";
+import Traits from "@components/Trait.astro";
+import { marked } from "marked";
+import getTraits from "@lib/getTraits";
+import { getPFS } from "@lib/helpers";
+import collections from "@lib/collections";
+import { useTranslations } from "@i18n/utils";
+import { Icons } from "@lib/iconMap";
+
+const lang = "en";
+
+const t = useTranslations(lang);
 
 interface Props {
-    title: string;
+    item: BaseItem;
 }
 
-const { title } = Astro.props;
+const { item } = Astro.props;
+
+const rulebook = collections.source.find(
+    (source) => source.data.id === item.rulebook_id,
+);
+
+const totalTraits = getTraits(item);
+
+const rawPFS = getPFS(item.pfs);
+const pfs = {
+    name: rawPFS?.name,
+    class: rawPFS?.class,
+    description: rawPFS?.description,
+};
 ---
 
-<Layout title={title}>
-    <slot />
-</Layout>
+<article
+    class="grid grid-cols-1 lg:grid-cols-6 xl:grid-cols-12 max-w-full p-2 gap-4">
+    <header class="col-span-full">
+        <h1 id="title" class="text-4xl xl:text-6xl font-bold">
+            {item.name ? item.name : "No title"}
+        </h1>
+        <slot name="header" />
+    </header>
+
+    <aside
+        id="sidebar"
+        class="not-prose flex flex-col col-span-full lg:col-span-2 xl:col-span-3">
+        <div class="card bg-base-200">
+            <div class="card-body">
+                <p class="card-title">Table of Contents</p>
+                <p>
+                    {
+                        totalTraits && (
+                            <div
+                                id="traits"
+                                class="flex flex-row flex-wrap gap-2 not-prose">
+                                <Traits trait={totalTraits} />
+                            </div>
+                        )
+                    }
+                </p>
+                <ul class="w-full flex flex-col gap-2">
+                    <li class="flex flex-row gap-2 items-center">
+                        <Icons.Source class="size-4" />
+                        <a class="link" href={item.category + "/" + item.id}>
+                            {rulebook?.data.name}
+                        </a> pg. {item.page_number}
+                    </li>
+                    {
+                        item.original_name && (
+                            <li
+                                class="flex flex-row gap-2 items-center"
+                                title={t("terms.original")}>
+                                <Icons.Original class="size-4" />
+                                {item.original_name}
+                            </li>
+                        )
+                    }
+                    {
+                        item.pfs && (
+                            <li
+                                class="flex flex-row gap-2 items-center"
+                                title={t("element.base.pfs")}>
+                                <span class={pfs.class}>P</span>
+                                {pfs.name}
+                            </li>
+                        )
+                    }
+                    <slot name="sidebar" />
+                    <li>
+                        <a
+                            class="btn w-full btn-primary"
+                            href={`https://2e.aonprd.com${item.aon}`}
+                            target="_blank">
+                            See on AoN
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <section
+        class="flex flex-col gap-2 col-span-full lg:col-span-4 xl:col-span-9">
+        <div id="alerts" class="flex flex-col gap-2">
+            {
+                item.spoilers && (
+                    <div
+                        id="spoilers"
+                        class="alert alert-error text-error-content">
+                        <em class="font-bold">{t("element.base.spoilers")}!</em>{" "}
+                        {item.spoilers}
+                    </div>
+                )
+            }
+            {
+                item.remaster_id && (
+                    <div id="legacy" class="alert alert-warning alert-outline">
+                        <span>
+                            <em class="text-warning font-bold">
+                                {t("terms.legacy")}!
+                            </em>
+                            {t("terms.legacy.description", {
+                                page: (
+                                    <a
+                                        class="link text-warning font-bold"
+                                        href={`https://2e.aonprd.com${item.aon}`}>
+                                        this
+                                    </a>
+                                ),
+                            })}
+                        </span>
+                    </div>
+                )
+            }
+            {
+                item.legacy_id && (
+                    <div
+                        id="remaster"
+                        class="alert alert-success alert-outline">
+                        <span>
+                            <em class="text-success font-bold">
+                                {t("terms.remaster")}!
+                            </em>
+                            {t("terms.remaster.description", {
+                                page: (
+                                    <a
+                                        class="link text-success font-bold"
+                                        href={`https://2e.aonprd.com${item.aon}`}>
+                                        this
+                                    </a>
+                                ),
+                            })}
+                        </span>
+                    </div>
+                )
+            }
+        </div>
+        <hr />
+        <slot name="before-content" />
+        {
+            item.content && (
+                <div
+                    id="content"
+                    class="prose lg:prose-xl"
+                    set:html={marked.parse(item.content)}
+                />
+            )
+        }
+        <slot name="after-content" />
+        <slot name="footer" />
+    </section>
+</article>

@@ -3,9 +3,9 @@
 ---
 
 <script defer is:inline>
-  window.addEventListener("DOMContentLoaded", (event) => {
+  window.addEventListener("DOMContentLoaded", () => {
     let pagefind;
-    document.querySelector("#search").addEventListener("focus", async (e) => {
+    document.querySelector("#search").addEventListener("focus", async () => {
       if (!pagefind) {
         pagefind = await import("/pagefind/pagefind.js");
         await pagefind.options({

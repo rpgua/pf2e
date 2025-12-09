@@ -17,7 +17,7 @@ export interface BaseItem {
   remaster_id?: number;
   legacy_id?: number;
   rarity?: string;
-  pfs?: boolean;
+  pfs?: string;
   traits?: string[];
   spoilers?: string;
   content: string;

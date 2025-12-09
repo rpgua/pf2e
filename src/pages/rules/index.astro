@@ -1,5 +1,5 @@
 ---
-import BasePage from "@components/pages/BasePage.astro";
+import Page from "@components/pages/Page.astro";
 import collections from "@lib/collections";
 import type { Rules, Source } from "../../types";
 
@@ -27,7 +27,7 @@ const mainRulebooks = rulebooks.filter((rulebook) =>
 );
 ---
 
-<BasePage title="Правила">
+<Page title="Правила">
     <h1 class="text-4xl font-bold">Правила</h1>
     <h2 class="text-2xl font-bold my-4">Книги правил</h2>
     <div class="join join-vertical bg-base-100 w-full lg:w-2/3">
@@ -203,4 +203,4 @@ const mainRulebooks = rulebooks.filter((rulebook) =>
             })
         }
     </div>
-</BasePage>
+</Page>

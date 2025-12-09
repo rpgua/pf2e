@@ -1,0 +1,26 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { BaseItem } from "../types";
+import Layout from "@layouts/Layout.astro";
+const baseItem: BaseItem = {
+    id: 123,
+    aon: "/asdasd.aps?=12",
+    name: "Test name",
+    original_name: "Original name",
+    rulebook_id: 216,
+    page_number: 12,
+    category: "ancestry",
+    content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    remaster_id: 12,
+    legacy_id: 12,
+    traits: ["trait1", "trait2"],
+    rarity: "common",
+    pfs: "Restricted",
+    spoilers: "Spoiler 1",
+};
+---
+
+<Layout>
+    <BasePage item={baseItem} />
+</Layout>
