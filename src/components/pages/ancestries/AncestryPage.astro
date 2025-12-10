@@ -4,7 +4,9 @@ import BasePage from "@components/pages/BasePage.astro";
 import type { CollectionEntry } from "astro:content";
 import type { Ancestry } from "../../../types";
 import { useTranslations } from "@i18n/utils";
-import DisplayInfoList from "../DisplayInfoList.astro";
+import DisplayInfoList from "@components/pages/DisplayInfoList.astro";
+import type { DisplayInfoProps } from "@components/pages/DisplayInfo.astro";
+
 const t = useTranslations();
 
 interface Props {
@@ -25,12 +27,13 @@ const {
     additional_mechanics,
 } = ancestry;
 
-const mechanics = [
+const mechanics: DisplayInfoProps[] = [
     { title: t("ancestry.hp"), content: hp },
     { title: t("ancestry.size"), content: size },
     {
         title: t("ancestry.speed"),
-        content: speed && getSpeed(speed),
+        content: speed && speed,
+        type: "speed",
     },
     {
         title: t("ancestry.attribute_boosts"),

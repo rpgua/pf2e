@@ -1,14 +1,47 @@
 ---
-interface Props {
+import { getAttributeModifiers, getSpeed } from "@lib/helpers";
+import { useTranslations } from "@i18n/utils";
+
+export interface DisplayInfoProps {
     title: string;
-    content: string;
+    content?: any;
+    type?: "default" | "attributes" | "speed" | "languages" | null;
 }
-const { title, content } = Astro.props;
+
+const t = useTranslations();
+const { title, content, type = "default" } = Astro.props;
 ---
 
 <div>
     <strong class="font-bold text-md">
         {title}:
     </strong>
-    <span>{content}</span>
+    {
+        type === "attributes" && (
+            <div class="grid grid-cols-3 xl:grid-cols-6 w-full xl:w-1/2 mt-2">
+                {getAttributeModifiers(content).map(([type, value]) => (
+                    <span class="bg-base-200 px-1 py-0.5 border border-base-300">
+                        <span class="font-bold">
+                            {type.toString().toUpperCase().slice(0, 3)}
+                        </span>
+                        {value}
+                    </span>
+                ))}
+            </div>
+        )
+    }
+    {
+        type === "speed" && (
+            <div class="grid grid-cols-3 xl:grid-cols-6 w-full xl:w-1/2 mt-2">
+                {getSpeed(content).map(([type, value]) => (
+                    <span class="bg-base-200 px-1 py-0.5 border border-base-300">
+                        <span class="font-bold">{type}</span>
+                        {value + " " + t("speed.unit")}
+                    </span>
+                ))}
+            </div>
+        )
+    }
+    {type === "languages" && <span class="text-green-500 mt-2">{content}</span>}
+    {type === "default" && <span>{content}</span>}
 </div>

@@ -1,0 +1,43 @@
+---
+import Page from "@components/pages/Page.astro";
+import collections from "@lib/collections";
+import type { AnimalCompanion } from "../../types";
+import { useTranslations } from "@i18n/utils";
+import Table from "@components/table/Table.astro";
+import TableRulebook from "@components/table/TableRulebook.astro";
+import TableTraits from "@components/table/TableTraits.astro";
+import TableAoN from "@components/table/TableAoN.astro";
+import TableName from "@components/table/TableName.astro";
+
+const t = useTranslations();
+const rawAnimalCompanions = collections.animalCompanion.map(
+    (animalCompanion) => animalCompanion.data as AnimalCompanion,
+);
+const animalCompanions = rawAnimalCompanions.sort((a, b) =>
+    a.name.localeCompare(b.name),
+);
+---
+
+<Page title={t("pages.animal-companions")}>
+    <h1 class="text-4xl font-bold">{t("pages.animal-companions")}</h1>
+    <Table
+        titles={[
+            t("tables.name"),
+            t("tables.source"),
+            t("tables.level"),
+            t("tables.traits"),
+            "AoN",
+        ]}>
+        {
+            animalCompanions.map((animalCompanion) => (
+                <tr>
+                    <TableName item={animalCompanion} />
+                    <TableRulebook item={animalCompanion} />
+                    <td>{animalCompanion.level}</td>
+                    <TableTraits item={animalCompanion} />
+                    <TableAoN item={animalCompanion} />
+                </tr>
+            ))
+        }
+    </Table>
+</Page>

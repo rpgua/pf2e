@@ -1,13 +1,13 @@
 ---
 import { useTranslations } from "@i18n/utils";
-import DisplayInfo from "./DisplayInfo.astro";
+import DisplayInfo, { type DisplayInfoProps } from "./DisplayInfo.astro";
 const t = useTranslations();
 interface Props {
-    items: { title: string; content: any }[];
+    items: DisplayInfoProps[];
 }
 const { items } = Astro.props;
 
-const isEmptyList = (items: { title: string; content: any }[]) =>
+const isEmptyList = (items: DisplayInfoProps[]) =>
     items.every((item) => !item.content);
 ---
 
@@ -21,6 +21,7 @@ const isEmptyList = (items: { title: string; content: any }[]) =>
                         <DisplayInfo
                             title={item.title}
                             content={item.content}
+                            type={item.type}
                         />
                     ),
             )}

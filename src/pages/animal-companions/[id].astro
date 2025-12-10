@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import collections from "@lib/collections";
-import ArchetypePage from "@components/pages/archetypes/ArchetypePage.astro";
+import AnimalCompanionPage from "@components/pages/animal-companions/AnimalCompanionPage.astro";
 export async function getStaticPaths() {
-    const archetypes = collections.archetype;
-    return archetypes.map((item) => ({
+    const animalCompanions = collections.animalCompanion;
+    return animalCompanions.map((item) => ({
         params: { id: item.id },
         props: { item },
     }));
@@ -13,5 +13,5 @@ const { item } = Astro.props;
 ---
 
 <Layout title={item.data.name}>
-    <ArchetypePage item={item} />
+    <AnimalCompanionPage item={item} />
 </Layout>

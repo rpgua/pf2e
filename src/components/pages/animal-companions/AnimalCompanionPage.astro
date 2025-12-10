@@ -1,0 +1,70 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import DisplayInfoList from "@components/pages/DisplayInfoList.astro";
+import type { CollectionEntry } from "astro:content";
+import type { AnimalCompanion } from "../../../types";
+import { useTranslations } from "@i18n/utils";
+import type { DisplayInfoProps } from "../DisplayInfo.astro";
+
+const t = useTranslations();
+
+interface Props {
+    item: CollectionEntry<"animalCompanion">;
+}
+const { item } = Astro.props;
+const animalCompanion: AnimalCompanion = item.data;
+
+const {
+    level,
+    mount,
+    access,
+    element,
+    size,
+    attacks,
+    attribute_modifiers,
+    hp,
+    skill,
+    sense,
+    speed,
+    special,
+    support_benefit,
+    advanced_maneuver,
+} = animalCompanion;
+
+const mechanics: DisplayInfoProps[] = [
+    { title: t("animalCompanion.level"), content: level },
+    { title: t("animalCompanion.mount"), content: mount },
+    { title: t("animalCompanion.access"), content: access },
+    { title: t("animalCompanion.element"), content: element },
+    { title: t("animalCompanion.size"), content: size },
+    { title: t("animalCompanion.attacks"), content: attacks },
+    {
+        title: t("animalCompanion.attribute_modifiers"),
+        content: attribute_modifiers,
+        type: "attributes",
+    },
+    { title: t("animalCompanion.hp"), content: hp },
+    { title: t("animalCompanion.skill"), content: skill },
+    { title: t("animalCompanion.sense"), content: sense },
+    {
+        title: t("animalCompanion.speed"),
+        content: speed && speed,
+        type: "speed",
+    },
+    { title: t("animalCompanion.special"), content: special },
+    {
+        title: t("animalCompanion.support_benefit"),
+        content: support_benefit,
+    },
+    {
+        title: t("animalCompanion.advanced_maneuver"),
+        content: advanced_maneuver,
+    },
+];
+---
+
+<BasePage item={animalCompanion}>
+    <Fragment slot="before-content">
+        <DisplayInfoList items={mechanics} />
+    </Fragment>
+</BasePage>

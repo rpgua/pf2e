@@ -1,8 +1,6 @@
 import { useTranslations } from "@i18n/utils";
 
-const lang = "en";
-
-const t = useTranslations(lang);
+const t = useTranslations();
 
 type PFS = "Standard" | "Limited" | "Restricted";
 type PFSItem = {
@@ -25,11 +23,18 @@ export const getPFS = (pfs: PFS | string | undefined): PFSItem | null => {
     }
 }
 
-export const getSpeed = (speed: any): string => {
+export const getSpeed = (speed: { [key: string]: number | null }) => {
     return Object.entries(speed).map(([type, value]) => {
         if (value !== null)
-            return `${t(`speed.${type}`)} ─ ${value} ${t("speed.unit")}`;
-    }).join(", ");
+            return [t(`speed.${type}`), value];
+    }).filter((item) => item !== undefined);
+}
+
+export const getAttributeModifiers = (attributeModifiers: { [key: string]: number | null }) => {
+    return Object.entries(attributeModifiers).map(([type, value]) => {
+        if (value !== null)
+            return [t(`attribute.${type}`), value];
+    }).filter((item) => item !== undefined);
 }
 
 export const getActionIcons = (actions: number): string => {
