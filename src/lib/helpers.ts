@@ -64,7 +64,6 @@ export const getActionIcons = (actions: number): string => {
 export const getLanguages = (languages: string[] | null) => {
     if (languages === null)
         return [];
-    console.log(languages);
     const langs = collections.language
 
     const result = languages.map((language) => {

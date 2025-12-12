@@ -1,5 +1,5 @@
 ---
-import { getAttributeModifiers, getSpeed } from "@lib/helpers";
+import { getAttributeModifiers, getLanguages, getSpeed } from "@lib/helpers";
 import { useTranslations } from "@i18n/utils";
 
 export interface DisplayInfoProps {
@@ -32,7 +32,7 @@ const { title, content, type = "default" } = Astro.props;
     }
     {
         type === "speed" && (
-            <div class="grid grid-cols-3 xl:grid-cols-6 w-full xl:w-1/2 mt-2">
+            <div class="grid grid-cols-3 xl:grid-cols-6 w-full mt-2">
                 {getSpeed(content).map(([type, value]) => (
                     <span class="bg-base-200 px-1 py-0.5 border border-base-300">
                         <span class="font-bold">{type}</span>
@@ -45,7 +45,7 @@ const { title, content, type = "default" } = Astro.props;
     {
         type === "languages" && (
             <span>
-                {content.map(
+                {getLanguages(content).map(
                     (language: [string | number, string][], index: number) => {
                         const [id, name] = language;
                         const total = content.length;
