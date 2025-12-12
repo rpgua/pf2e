@@ -1,4 +1,5 @@
 import { useTranslations } from "@i18n/utils";
+import collections from "./collections";
 
 const t = useTranslations();
 
@@ -58,4 +59,20 @@ export const getActionIcons = (actions: number): string => {
         default:
             return "";
     }
+}
+
+export const getLanguages = (languages: string[] | null) => {
+    if (languages === null)
+        return [];
+    console.log(languages);
+    const langs = collections.language
+
+    const result = languages.map((language) => {
+        const lang = langs.find((lang) => lang.data.name === language);
+        if (lang) {
+            return [lang.id, lang.data.name];
+        }
+        return [null, language];
+    });
+    return result;
 }

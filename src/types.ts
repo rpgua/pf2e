@@ -43,10 +43,10 @@ export interface Ancestry extends BaseItem {
   hp: number;
   size: string[];
   speed: Speed;
-  languages: string[];
+  languages: string[] | null;
   additional_languages: string | null;
   attribute_boosts: string[];
-  attribute_flaw: string[];
+  attribute_flaw: string[] | null;
   vision?: string;
   additional_mechanics: string | null;
   type: string;

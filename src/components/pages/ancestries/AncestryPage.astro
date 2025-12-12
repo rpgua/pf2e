@@ -1,5 +1,5 @@
 ---
-import { getSpeed } from "@lib/helpers";
+import { getLanguages, getSpeed } from "@lib/helpers";
 import BasePage from "@components/pages/BasePage.astro";
 import type { CollectionEntry } from "astro:content";
 import type { Ancestry } from "../../../types";
@@ -37,18 +37,25 @@ const mechanics: DisplayInfoProps[] = [
     },
     {
         title: t("ancestry.attribute_boosts"),
-        content: attribute_boosts.join(", "),
+        content: attribute_boosts && attribute_boosts.join(", "),
     },
-    { title: t("ancestry.attribute_flaw"), content: attribute_flaw.join(", ") },
-    { title: t("ancestry.languages"), content: languages.join(", ") },
+    {
+        title: t("ancestry.attribute_flaw"),
+        content: attribute_flaw && attribute_flaw.join(", "),
+    },
+    {
+        title: t("ancestry.languages"),
+        content: languages && getLanguages(languages),
+        type: "languages",
+    },
     {
         title: t("ancestry.additional_languages"),
-        content: additional_languages,
+        content: additional_languages && additional_languages,
     },
     { title: t("ancestry.vision"), content: vision },
     {
         title: t("ancestry.additional_mechanics"),
-        content: additional_mechanics,
+        content: additional_mechanics && additional_mechanics,
     },
 ];
 ---

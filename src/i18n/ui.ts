@@ -124,6 +124,7 @@ export const ui = {
         'pages.archetypes': 'Archetypes',
         'pages.actions': 'Actions',
         'pages.animal-companions': 'Animal Companions',
+        'pages.languages': 'Languages',
         'page.titles.mechanics': 'Mechanics',
         'archetype.level': 'Level',
         'archetype.prerequisite': 'Prerequisite',

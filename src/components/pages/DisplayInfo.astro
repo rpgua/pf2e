@@ -42,6 +42,28 @@ const { title, content, type = "default" } = Astro.props;
             </div>
         )
     }
-    {type === "languages" && <span class="text-green-500 mt-2">{content}</span>}
+    {
+        type === "languages" && (
+            <span>
+                {content.map(
+                    (language: [string | number, string][], index: number) => {
+                        const [id, name] = language;
+                        const total = content.length;
+                        if (id === null) {
+                            return name + (index < total - 1 ? ", " : "");
+                        }
+                        return (
+                            <>
+                                <a href={`/languages/${id}`} class="link">
+                                    {name}
+                                </a>
+                                {index < total - 1 && ", "}
+                            </>
+                        );
+                    },
+                )}
+            </span>
+        )
+    }
     {type === "default" && <span>{content}</span>}
 </div>

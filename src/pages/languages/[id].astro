@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import LanguagePage from "@components/pages/languages/LanguagePage.astro";
+export async function getStaticPaths() {
+    const languages = collections.language;
+    return languages.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <LanguagePage item={item} />
+</Layout>

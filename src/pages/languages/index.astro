@@ -1,0 +1,39 @@
+---
+import Page from "@components/pages/Page.astro";
+import collections from "@lib/collections";
+import type { Language } from "../../types";
+import { useTranslations } from "@i18n/utils";
+import Table from "@components/table/Table.astro";
+import TableRulebook from "@components/table/TableRulebook.astro";
+import TableTraits from "@components/table/TableTraits.astro";
+import TableAoN from "@components/table/TableAoN.astro";
+import TableName from "@components/table/TableName.astro";
+
+const t = useTranslations();
+const rawLanguages = collections.language.map(
+    (language) => language.data as Language,
+);
+const languages = rawLanguages.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Page title={t("pages.languages")}>
+    <h1 class="text-4xl font-bold">{t("pages.languages")}</h1>
+    <Table
+        titles={[
+            t("tables.name"),
+            t("tables.source"),
+            t("tables.traits"),
+            "AoN",
+        ]}>
+        {
+            languages.map((language) => (
+                <tr>
+                    <TableName item={language} />
+                    <TableRulebook item={language} />
+                    <TableTraits item={language} />
+                    <TableAoN item={language} />
+                </tr>
+            ))
+        }
+    </Table>
+</Page>
