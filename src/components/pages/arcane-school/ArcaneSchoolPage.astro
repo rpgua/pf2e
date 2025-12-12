@@ -1,0 +1,32 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import DisplayInfoList from "@components/pages/DisplayInfoList.astro";
+import type { CollectionEntry } from "astro:content";
+import type { ArcaneSchool } from "../../../types";
+import { useTranslations } from "@i18n/utils";
+import type { DisplayInfoProps } from "../DisplayInfo.astro";
+
+const t = useTranslations();
+
+interface Props {
+    item: CollectionEntry<"arcaneSchool">;
+}
+const { item } = Astro.props;
+const arcaneSchool: ArcaneSchool = item.data;
+
+const { curriculum } = arcaneSchool;
+
+const mechanics: DisplayInfoProps[] = [
+    {
+        title: t("arcaneSchool.curriculum"),
+        content: curriculum,
+        type: "curriculum",
+    },
+];
+---
+
+<BasePage item={arcaneSchool}>
+    <Fragment slot="before-content">
+        <DisplayInfoList items={mechanics} />
+    </Fragment>
+</BasePage>

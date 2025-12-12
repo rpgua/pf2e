@@ -75,3 +75,45 @@ export const getLanguages = (languages: string[] | null) => {
     });
     return result;
 }
+
+type Curriculum = {
+    "0": string[],
+    "1": string[],
+    "2": string[],
+    "3": string[],
+    "4": string[],
+    "5": string[],
+    "6": string[],
+    "7": string[],
+    "8": string[],
+    "9": string[],
+    "initial": string,
+    "advanced": string
+}
+
+export const getCurriculum = (curriculum: Curriculum) => {
+    const dbSpells = collections.spell;
+    const result: [string, [string | null, string][]][] = [];
+    Object.entries(curriculum).forEach(([level, spells]) => {
+        if (Array.isArray(spells)) {
+            const subSpells: [string | null, string][] = [];
+            spells.forEach((s) => {
+                const spell = dbSpells.find((spell) => spell.data.name === s);
+                if (spell) {
+                    subSpells.push([spell.id, spell.data.name]);
+                } else if (s) {
+                    subSpells.push([null, s])
+                }
+            });
+            result.push([level, subSpells]);
+        } else {
+            const spell = dbSpells.find((spell) => spell.data.name === spells);
+            console.log(spell)
+            if (spell) {
+                result.push([level, [spell.id, spell.data.name]]);
+            }
+        }
+    });
+    console.log(result);
+    return result;
+}

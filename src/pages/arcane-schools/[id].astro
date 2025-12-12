@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ArcaneSchoolPage from "@components/pages/arcane-school/ArcaneSchoolPage.astro";
+export async function getStaticPaths() {
+    const arcaneSchools = collections.arcaneSchool;
+    return arcaneSchools.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <ArcaneSchoolPage item={item} />
+</Layout>

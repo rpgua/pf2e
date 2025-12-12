@@ -1,11 +1,22 @@
 ---
-import { getAttributeModifiers, getLanguages, getSpeed } from "@lib/helpers";
+import {
+    getAttributeModifiers,
+    getCurriculum,
+    getLanguages,
+    getSpeed,
+} from "@lib/helpers";
 import { useTranslations } from "@i18n/utils";
 
 export interface DisplayInfoProps {
     title: string;
     content?: any;
-    type?: "default" | "attributes" | "speed" | "languages" | null;
+    type?:
+        | "default"
+        | "attributes"
+        | "speed"
+        | "languages"
+        | "curriculum"
+        | null;
 }
 
 const t = useTranslations();
@@ -63,6 +74,82 @@ const { title, content, type = "default" } = Astro.props;
                     },
                 )}
             </span>
+        )
+    }
+    {
+        type === "curriculum" && (
+            <div class="join join-vertical bg-base-100 w-full mt-2">
+                {getCurriculum(content).map(([level, spells]) => (
+                    <>
+                        <div class="flex flex-row flex-wrap space-x-2">
+                            <div class="font-bold w-full my-4">
+                                {level === "0"
+                                    ? t("arcaneSchool.cantrips").toUpperCase()
+                                    : level === "initial"
+                                      ? t("arcaneSchool.initial").toUpperCase()
+                                      : level === "advanced"
+                                        ? t(
+                                              "arcaneSchool.advanced",
+                                          ).toUpperCase()
+                                        : t(
+                                              "arcaneSchool.level",
+                                          ).toUpperCase() +
+                                          " " +
+                                          level.toUpperCase()}
+                            </div>
+                            {["initial", "advanced"].includes(level) ? (
+                                <div class="flex flex-row gap-2 my-2">
+                                    <div>
+                                        <img
+                                            class="size-6 rounded-box"
+                                            src={
+                                                "/images/icons/spells/" +
+                                                spells[0] +
+                                                ".webp"
+                                            }
+                                            onerror="onerror=null;src='/images/icons/default.webp'"
+                                        />
+                                    </div>
+                                    <div>
+                                        <a
+                                            href={`/spells/${spells[0]}`}
+                                            class="link">
+                                            {spells[1]}
+                                        </a>
+                                    </div>
+                                </div>
+                            ) : (
+                                spells.map(([id, name]) => (
+                                    <div class="flex flex-row gap-2 my-2">
+                                        <div>
+                                            <img
+                                                class="size-6 rounded-box"
+                                                src={
+                                                    "/images/icons/spells/" +
+                                                    id +
+                                                    ".webp"
+                                                }
+                                                onerror="onerror=null;src='/images/icons/default.webp'"
+                                            />
+                                        </div>
+                                        <div>
+                                            {id !== null ? (
+                                                <a
+                                                    href={`/spells/${id}`}
+                                                    class="link">
+                                                    {name}
+                                                </a>
+                                            ) : (
+                                                <span>{name}</span>
+                                            )}
+                                        </div>
+                                    </div>
+                                ))
+                            )}
+                        </div>
+                    </>
+                ))}
+            </div>
         )
     }
     {type === "default" && <span>{content}</span>}
