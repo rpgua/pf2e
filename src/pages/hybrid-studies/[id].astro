@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import HybridStudyPage from "@components/pages/hybrid-studies/HybridStudyPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.hybridStudy;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <HybridStudyPage item={item} />
+</Layout>

@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { ResearchField } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"researchField">;
+}
+const { item } = Astro.props;
+const researchField: ResearchField = item.data;
+---
+
+<BasePage item={researchField} />

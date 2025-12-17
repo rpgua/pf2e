@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import MethodologyPage from "@components/pages/methodologies/MethodologyPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.methodology;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <MethodologyPage item={item} />
+</Layout>

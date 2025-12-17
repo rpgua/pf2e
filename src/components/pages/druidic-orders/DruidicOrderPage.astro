@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { DruidicOrder } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"druidicOrder">;
+}
+const { item } = Astro.props;
+const druidicOrder: DruidicOrder = item.data;
+---
+
+<BasePage item={druidicOrder} />

@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import MonsterAdjustmentPage from "@components/pages/monster-adjustments/MonsterAdjustmentPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.creatureAdjustment;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <MonsterAdjustmentPage item={item} />
+</Layout>

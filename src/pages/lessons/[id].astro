@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import LessonPage from "@components/pages/lessons/LessonPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.lesson;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <LessonPage item={item} />
+</Layout>

@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Tradition } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"tradition">;
+}
+const { item } = Astro.props;
+const tradition: Tradition = item.data;
+---
+
+<BasePage item={tradition} />

@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import StylePage from "@components/pages/styles/StylePage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.style;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <StylePage item={item} />
+</Layout>

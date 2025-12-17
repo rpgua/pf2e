@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Tenet } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"tenet">;
+}
+const { item } = Astro.props;
+const tenet: Tenet = item.data;
+---
+
+<BasePage item={tenet} />

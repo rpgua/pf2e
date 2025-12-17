@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { HuntersEdge } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"huntersEdge">;
+}
+const { item } = Astro.props;
+const huntersEdge: HuntersEdge = item.data;
+---
+
+<BasePage item={huntersEdge} />

@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Epithet } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"epithet">;
+}
+const { item } = Astro.props;
+const epithet: Epithet = item.data;
+---
+
+<BasePage item={epithet} />

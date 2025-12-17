@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Lesson } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"lesson">;
+}
+const { item } = Astro.props;
+const lesson: Lesson = item.data;
+---
+
+<BasePage item={lesson} />

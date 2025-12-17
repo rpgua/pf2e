@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { HybridStudy } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"hybridStudy">;
+}
+const { item } = Astro.props;
+const hybridStudy: HybridStudy = item.data;
+---
+
+<BasePage item={hybridStudy} />

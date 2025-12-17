@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { WeaponGroup } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"weaponGroup">;
+}
+const { item } = Astro.props;
+const weaponGroup: WeaponGroup = item.data;
+---
+
+<BasePage item={weaponGroup} />

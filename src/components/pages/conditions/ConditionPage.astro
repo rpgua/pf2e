@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Condition } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"condition">;
+}
+const { item } = Astro.props;
+const condition: Condition = item.data;
+---
+
+<BasePage item={condition} />

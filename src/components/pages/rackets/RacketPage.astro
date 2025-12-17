@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Racket } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"racket">;
+}
+const { item } = Astro.props;
+const racket: Racket = item.data;
+---
+
+<BasePage item={racket} />

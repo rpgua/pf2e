@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { MonsterFamily } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"creatureFamily">;
+}
+const { item } = Astro.props;
+const monsterFamily: MonsterFamily = item.data;
+---
+
+<BasePage item={monsterFamily} />

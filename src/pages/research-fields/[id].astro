@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ResearchFieldPage from "@components/pages/research-fields/ResearchFieldPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.researchField;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <ResearchFieldPage item={item} />
+</Layout>

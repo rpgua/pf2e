@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import HeritagePage from "@components/pages/heritages/HeritagePage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.heritage;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <HeritagePage item={item} />
+</Layout>

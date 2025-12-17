@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import EpithetPage from "@components/pages/epithets/EpithetPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.epithet;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <EpithetPage item={item} />
+</Layout>

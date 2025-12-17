@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Doctrine } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"doctrine">;
+}
+const { item } = Astro.props;
+const doctrine: Doctrine = item.data;
+---
+
+<BasePage item={doctrine} />

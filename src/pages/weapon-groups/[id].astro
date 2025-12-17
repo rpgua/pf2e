@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import WeaponGroupPage from "@components/pages/weapon-groups/WeaponGroupPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.weaponGroup;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <WeaponGroupPage item={item} />
+</Layout>

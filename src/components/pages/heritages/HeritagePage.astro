@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Heritage } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"heritage">;
+}
+const { item } = Astro.props;
+const heritage: Heritage = item.data;
+---
+
+<BasePage item={heritage} />

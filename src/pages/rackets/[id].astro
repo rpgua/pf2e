@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import RacketPage from "@components/pages/rackets/RacketPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.racket;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <RacketPage item={item} />
+</Layout>

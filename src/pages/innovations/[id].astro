@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import InnovationPage from "@components/pages/innovations/InnovationPage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.innovation;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <InnovationPage item={item} />
+</Layout>

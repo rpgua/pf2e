@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Innovation } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"innovation">;
+}
+const { item } = Astro.props;
+const innovation: Innovation = item.data;
+---
+
+<BasePage item={innovation} />

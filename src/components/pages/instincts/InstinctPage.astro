@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Instinct } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"instinct">;
+}
+const { item } = Astro.props;
+const instinct: Instinct = item.data;
+---
+
+<BasePage item={instinct} />

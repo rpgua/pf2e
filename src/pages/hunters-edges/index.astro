@@ -1,0 +1,39 @@
+---
+import Page from "@components/pages/Page.astro";
+import collections from "@lib/collections";
+import type { HuntersEdge } from "../../types";
+import { useTranslations } from "@i18n/utils";
+import Table from "@components/table/Table.astro";
+import TableRulebook from "@components/table/TableRulebook.astro";
+import TableTraits from "@components/table/TableTraits.astro";
+import TableAoN from "@components/table/TableAoN.astro";
+import TableName from "@components/table/TableName.astro";
+
+const t = useTranslations();
+const rawItems = collections.huntersEdge.map(
+    (item) => item.data as HuntersEdge,
+);
+const items = rawItems.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Page title={t("pages.hunters-edges")}>
+    <h1 class="text-4xl font-bold">{t("pages.hunters-edges")}</h1>
+    <Table
+        titles={[
+            t("tables.name"),
+            t("tables.source"),
+            t("tables.traits"),
+            "AoN",
+        ]}>
+        {
+            items.map((item) => (
+                <tr>
+                    <TableName item={item} />
+                    <TableRulebook item={item} />
+                    <TableTraits item={item} />
+                    <TableAoN item={item} />
+                </tr>
+            ))
+        }
+    </Table>
+</Page>

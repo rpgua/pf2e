@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ArticlePage from "@components/pages/articles/ArticlePage.astro";
+
+export async function getStaticPaths() {
+    const articles = collections.article;
+    return articles.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <ArticlePage item={item} />
+</Layout>

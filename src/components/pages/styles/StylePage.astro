@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Style } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"style">;
+}
+const { item } = Astro.props;
+const style: Style = item.data;
+---
+
+<BasePage item={style} />

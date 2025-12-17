@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Implement } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"implement">;
+}
+const { item } = Astro.props;
+const implement: Implement = item.data;
+---
+
+<BasePage item={implement} />
