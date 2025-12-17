@@ -133,6 +133,7 @@ export const ui = {
         'pages.animal-companions': 'Animal Companions',
         'pages.languages': 'Languages',
         'pages.arcane-schools': 'Arcane Schools',
+        'pages.arcane-thesises': 'Arcane Thesises',
         'page.titles.mechanics': 'Mechanics',
         'archetype.level': 'Level',
         'archetype.prerequisite': 'Prerequisite',

@@ -1,0 +1,13 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { ArcaneThesis } from "../../../types";
+
+interface Props {
+    item: CollectionEntry<"arcaneThesis">;
+}
+const { item } = Astro.props;
+const arcaneThesis: ArcaneThesis = item.data;
+---
+
+<BasePage item={arcaneThesis} />

@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ArcaneThesisPage from "@components/pages/arcane-thesises/ArcaneThesisPage.astro";
+export async function getStaticPaths() {
+    const arcaneThesises = collections.arcaneThesis;
+    return arcaneThesises.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <ArcaneThesisPage item={item} />
+</Layout>
