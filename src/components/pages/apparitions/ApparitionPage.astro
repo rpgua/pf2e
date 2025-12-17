@@ -1,0 +1,24 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Apparition } from "../../../types";
+import DisplayInfoList from "../DisplayInfoList.astro";
+import { useTranslations } from "@i18n/utils";
+import type { DisplayInfoProps } from "../DisplayInfo.astro";
+const t = useTranslations();
+interface Props {
+    item: CollectionEntry<"apparition">;
+}
+const { item } = Astro.props;
+const apparition: Apparition = item.data;
+const { skill } = apparition;
+const mechanics: DisplayInfoProps[] = [
+    { title: t("apparition.skill"), content: skill, type: "list" },
+];
+---
+
+<BasePage item={apparition}>
+    <Fragment slot="before-content">
+        <DisplayInfoList items={mechanics} />
+    </Fragment>
+</BasePage>

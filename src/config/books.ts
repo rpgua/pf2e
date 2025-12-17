@@ -15,5 +15,7 @@ export const ACTIVE_BOOKS_IDS = [
     218, // GM Core
     221, // Monster Core
     227, // Player Core 2
+    232, // War of Immortals
+    234, // War of Immortals
     236, // NPC Core
 ];

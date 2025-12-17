@@ -24,7 +24,11 @@ export interface BaseItem {
 }
 // TODO Refactor this interface
 export interface Attack {
-  name: string;
+  name: string,
+  type: "bludgeoning" | "piercing" | "slashing",
+  damage: string,
+  additional?: string,
+  traits?: string[],
 }
 export interface Action extends BaseItem {
   actions: number;
@@ -38,6 +42,7 @@ export interface Action extends BaseItem {
   success?: string;
   failure?: string;
   critical_failure?: string;
+  effect?: string;
 }
 export interface Ancestry extends BaseItem {
   hp: number;
@@ -76,8 +81,6 @@ export interface AnimalCompanion extends BaseItem {
 }
 export interface Apparition extends BaseItem {
   skill: string;
-  senses: string;
-  spell: string;
 }
 export interface ArcaneSchool extends BaseItem {
   curriculum: {

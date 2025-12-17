@@ -1,0 +1,17 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import ApparitionPage from "@components/pages/apparitions/ApparitionPage.astro";
+export async function getStaticPaths() {
+    const apparitions = collections.apparition;
+    return apparitions.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <ApparitionPage item={item} />
+</Layout>

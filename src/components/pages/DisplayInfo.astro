@@ -12,6 +12,7 @@ export interface DisplayInfoProps {
     content?: any;
     type?:
         | "default"
+        | "list"
         | "attributes"
         | "speed"
         | "languages"
@@ -153,4 +154,13 @@ const { title, content, type = "default" } = Astro.props;
         )
     }
     {type === "default" && <span>{content}</span>}
+    {
+        type === "list" && (
+            <ul class="list">
+                {content.map((item: unknown) => (
+                    <li>{item}</li>
+                ))}
+            </ul>
+        )
+    }
 </div>
