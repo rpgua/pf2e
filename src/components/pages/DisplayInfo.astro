@@ -1,7 +1,7 @@
 ---
 import {
     getAttributeModifiers,
-    getCurriculum,
+    getSpells,
     getLanguages,
     getSpeed,
     getFeat,
@@ -21,7 +21,7 @@ export interface DisplayInfoProps {
         | "attributes"
         | "speed"
         | "languages"
-        | "curriculum"
+        | "spells"
         | "featsIds"
         | "skillsIds"
         | "trueFalse"
@@ -86,33 +86,27 @@ const { title, content, type = "default" } = Astro.props;
         )
     }
     {
-        type === "curriculum" && (
+        type === "spells" && (
             <div class="join join-vertical bg-base-100 w-full mt-2">
-                {getCurriculum(content).map(([level, spells]) => (
+                {getSpells(content).map(([level, spells]) => (
                     <>
                         <div class="flex flex-row flex-wrap space-x-2">
                             <div class="font-bold w-full my-4">
                                 {level === "0"
-                                    ? t("arcaneSchool.cantrips").toUpperCase()
+                                    ? t("spells.cantrips").toUpperCase()
                                     : level === "initial"
-                                      ? t("arcaneSchool.initial").toUpperCase()
+                                      ? t("spells.initial").toUpperCase()
                                       : level === "advanced"
-                                        ? t(
-                                              "arcaneSchool.advanced",
-                                          ).toUpperCase()
-                                        : t(
-                                              "arcaneSchool.level",
-                                          ).toUpperCase() +
-                                          " " +
-                                          level.toUpperCase()}
+                                        ? t("spells.advanced").toUpperCase()
+                                        : level === "greater"
+                                          ? t("spells.greater").toUpperCase()
+                                          : t("spells.level").toUpperCase() +
+                                            " " +
+                                            level.toUpperCase()}
                             </div>
-                            {["initial", "advanced"].includes(level) ? (
-                                <SpellLink id={spells[0]} name={spells[1]} />
-                            ) : (
-                                spells.map(([id, name]) => (
-                                    <SpellLink id={id} name={name} />
-                                ))
-                            )}
+                            {spells.map(([id, name]) => {
+                                return <SpellLink id={id} name={name} />;
+                            })}
                         </div>
                     </>
                 ))}

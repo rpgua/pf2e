@@ -1,0 +1,18 @@
+---
+import Layout from "@layouts/Layout.astro";
+import collections from "@lib/collections";
+import BloodlinePage from "@components/pages/bloodlines/BloodlinePage.astro";
+
+export async function getStaticPaths() {
+    const items = collections.bloodline;
+    return items.map((item) => ({
+        params: { id: item.id },
+        props: { item },
+    }));
+}
+const { item } = Astro.props;
+---
+
+<Layout title={item.data.name}>
+    <BloodlinePage item={item} />
+</Layout>

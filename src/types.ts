@@ -130,9 +130,26 @@ export interface Background extends BaseItem {
   region?: string;
 }
 export interface Bloodline extends BaseItem {
-  skills?: number[];
-  spells?: number[];
   tradition: string[];
+  skills?: number[];
+  gifts?: {
+    0: number,
+    1: number,
+    2: number,
+    3: number,
+    4: number,
+    5: number,
+    6: number,
+    7: number,
+    8: number,
+    9: number,
+  };
+  spells?: {
+    initial: number,
+    advanced: number,
+    greater: number
+  };
+  magic?: string;
 }
 export interface CampsiteMeal extends BaseItem {
   level: number;

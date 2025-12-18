@@ -78,25 +78,26 @@ export const getLanguages = (languages: string[] | null) => {
 }
 
 type Curriculum = {
-    "0": string[],
-    "1": string[],
-    "2": string[],
-    "3": string[],
-    "4": string[],
-    "5": string[],
-    "6": string[],
-    "7": string[],
-    "8": string[],
-    "9": string[],
-    "initial": string,
-    "advanced": string
+    "0": string[] | string | number | number[],
+    "1": string[] | string | number | number[],
+    "2": string[] | string | number | number[],
+    "3": string[] | string | number | number[],
+    "4": string[] | string | number | number[],
+    "5": string[] | string | number | number[],
+    "6": string[] | string | number | number[],
+    "7": string[] | string | number | number[],
+    "8": string[] | string | number | number[],
+    "9": string[] | string | number | number[],
+    "initial": string[] | string | number | number[],
+    "advanced": string[] | string | number | number[],
+    "greater": string[] | string | number | number[],
 }
 
-export const getCurriculum = (curriculum: Curriculum) => {
+export const getSpells = (spells: Curriculum) => {
     const dbSpells = collections.spell;
-    const result: [string, [string | null, string][]][] = [];
-    Object.entries(curriculum).forEach(([level, spells]) => {
-        if (Array.isArray(spells)) {
+    const result: [string, [string | null, string | number][]][] = [];
+    Object.entries(spells).forEach(([level, spells]) => {
+        if (Array.isArray(spells) && spells.every(it => typeof it === 'string')) {
             const subSpells: [string | null, string][] = [];
             spells.forEach((s) => {
                 const spell = dbSpells.find((spell) => spell.data.name === s);
@@ -107,15 +108,32 @@ export const getCurriculum = (curriculum: Curriculum) => {
                 }
             });
             result.push([level, subSpells]);
-        } else {
+        } else if (Array.isArray(spells) && spells.every(it => typeof it === 'number')) {
+            const subSpells: [string | null, number][] = [];
+            spells.forEach((s) => {
+                const spell = dbSpells.find((spell) => spell.data.id === s);
+                if (spell) {
+                    subSpells.push([spell.id, spell.data.id]);
+                }
+            });
+            result.push([level, subSpells]);
+        } else if (typeof spells === 'string') {
             const spell = dbSpells.find((spell) => spell.data.name === spells);
-            console.log(spell)
             if (spell) {
-                result.push([level, [spell.id, spell.data.name]]);
+                result.push([level, [[spell.id, spell.data.name]]]);
+            } else {
+                result.push([level, [[null, spells]]]);
+            }
+        } else if (typeof spells === 'number') {
+            const spell = dbSpells.find((spell) => spell.data.id === spells);
+            if (spell) {
+                result.push([level, [[spell.id, spell.data.name]]]);
+            } else {
+                result.push([level, [[null, spells]]]);
             }
         }
     });
-    console.log(result);
+    console.log(result)
     return result;
 }
 
@@ -123,8 +141,6 @@ export const getFeat = (featId: number): Feat | null => {
     try {
         const dbFeats = collections.feat;
         const feat = dbFeats.filter((feat) => feat.data.id === featId);
-        console.log(featId)
-        console.log(feat)
         return feat[0].data as Feat;
     } catch (error) {
         return null
