@@ -1,0 +1,63 @@
+---
+import BasePage from "@components/pages/BasePage.astro";
+import type { CollectionEntry } from "astro:content";
+import type { Armor } from "../../../types";
+import type { DisplayInfoProps } from "../DisplayInfo.astro";
+import DisplayInfoList from "../DisplayInfoList.astro";
+import { useTranslations } from "@i18n/utils";
+
+interface Props {
+    item: CollectionEntry<"armor">;
+}
+const { item } = Astro.props;
+const armor: Armor = item.data;
+
+const { access, attributes } = armor;
+
+const t = useTranslations();
+
+const mechanics: DisplayInfoProps[] = [
+    {
+        title: t("armor.access"),
+        content: access,
+    },
+    {
+        title: t("armor.ac"),
+        content: attributes.ac,
+    },
+    {
+        title: t("armor.strength"),
+        content: attributes.strength,
+    },
+    {
+        title: t("armor.dex_cap"),
+        content: attributes.dex_cap,
+    },
+    {
+        title: t("armor.speed_penalty"),
+        content: attributes.speed_penalty,
+    },
+    {
+        title: t("armor.check_penalty"),
+        content: attributes.check_penalty,
+    },
+    {
+        title: t("armor.bulk"),
+        content: attributes.bulk,
+    },
+    {
+        title: t("armor.category"),
+        content: attributes.category,
+    },
+    {
+        title: t("armor.group"),
+        content: attributes.group,
+    },
+];
+---
+
+<BasePage item={armor}>
+    <Fragment slot="before-content">
+        <DisplayInfoList items={mechanics} />
+    </Fragment>
+</BasePage>

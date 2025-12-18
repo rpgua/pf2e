@@ -1,0 +1,24 @@
+---
+const { id, name } = Astro.props;
+---
+
+<div class="flex flex-row gap-2">
+    <div>
+        <img
+            class="size-6 rounded-box"
+            src={"/images/icons/feats/" + id + ".webp"}
+            onerror="onerror=null;src='/images/icons/default.webp'"
+        />
+    </div>
+    <div>
+        {
+            id ? (
+                <a href={`/feats/${id}`} class="link">
+                    {name}
+                </a>
+            ) : (
+                <span>{name}</span>
+            )
+        }
+    </div>
+</div>

@@ -4,8 +4,13 @@ import {
     getCurriculum,
     getLanguages,
     getSpeed,
+    getFeat,
+    getSkill,
 } from "@lib/helpers";
 import { useTranslations } from "@i18n/utils";
+import SpellLink from "@components/links/SpellLink.astro";
+import FeatLink from "@components/links/FeatLink.astro";
+import TrueFalse from "@components/statuses/TrueFalse.astro";
 
 export interface DisplayInfoProps {
     title: string;
@@ -17,6 +22,9 @@ export interface DisplayInfoProps {
         | "speed"
         | "languages"
         | "curriculum"
+        | "featsIds"
+        | "skillsIds"
+        | "trueFalse"
         | null;
 }
 
@@ -99,52 +107,10 @@ const { title, content, type = "default" } = Astro.props;
                                           level.toUpperCase()}
                             </div>
                             {["initial", "advanced"].includes(level) ? (
-                                <div class="flex flex-row gap-2 my-2">
-                                    <div>
-                                        <img
-                                            class="size-6 rounded-box"
-                                            src={
-                                                "/images/icons/spells/" +
-                                                spells[0] +
-                                                ".webp"
-                                            }
-                                            onerror="onerror=null;src='/images/icons/default.webp'"
-                                        />
-                                    </div>
-                                    <div>
-                                        <a
-                                            href={`/spells/${spells[0]}`}
-                                            class="link">
-                                            {spells[1]}
-                                        </a>
-                                    </div>
-                                </div>
+                                <SpellLink id={spells[0]} name={spells[1]} />
                             ) : (
                                 spells.map(([id, name]) => (
-                                    <div class="flex flex-row gap-2 my-2">
-                                        <div>
-                                            <img
-                                                class="size-6 rounded-box"
-                                                src={
-                                                    "/images/icons/spells/" +
-                                                    id +
-                                                    ".webp"
-                                                }
-                                                onerror="onerror=null;src='/images/icons/default.webp'"
-                                            />
-                                        </div>
-                                        <div>
-                                            {id !== null ? (
-                                                <a
-                                                    href={`/spells/${id}`}
-                                                    class="link">
-                                                    {name}
-                                                </a>
-                                            ) : (
-                                                <span>{name}</span>
-                                            )}
-                                        </div>
-                                    </div>
+                                    <SpellLink id={id} name={name} />
                                 ))
                             )}
                         </div>
@@ -163,4 +129,29 @@ const { title, content, type = "default" } = Astro.props;
             </ul>
         )
     }
+    {
+        type === "featsIds" && (
+            <ul class="list">
+                {content.map((item: number) => (
+                    <li>
+                        <FeatLink id={item} name={getFeat(item)?.name} />
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+    {
+        type === "skillsIds" && (
+            <ul class="list">
+                {content.map((item: number) => (
+                    <li>
+                        <a href={`/skills/${item}`} class="link">
+                            {getSkill(item)?.name}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+    {type === "trueFalse" && <TrueFalse value={content} />}
 </div>

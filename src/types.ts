@@ -312,7 +312,7 @@ export interface FamiliarSpecific extends BaseItem {
   familiar_ability?: string;
   required_abilities?: number;
 }
-export interface Feat {
+export interface Feat extends BaseItem {
   access?: string;
   actions?: number;
   archetype?: string[];

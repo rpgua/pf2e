@@ -1,0 +1,15 @@
+---
+import CheckIcon from "@assets/icons/lucide--circle-check.svg";
+import XIcon from "@assets/icons/lucide--circle-x.svg";
+const { value } = Astro.props;
+---
+
+<span>
+    {
+        value ? (
+            <CheckIcon class="w-5 h-5 text-success" />
+        ) : (
+            <XIcon class="w-5 h-5 text-error" />
+        )
+    }
+</span>

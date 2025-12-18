@@ -1,5 +1,6 @@
 import { useTranslations } from "@i18n/utils";
 import collections from "./collections";
+import type { Feat, Skill } from "../types";
 
 const t = useTranslations();
 
@@ -116,4 +117,27 @@ export const getCurriculum = (curriculum: Curriculum) => {
     });
     console.log(result);
     return result;
+}
+
+export const getFeat = (featId: number): Feat | null => {
+    try {
+        const dbFeats = collections.feat;
+        const feat = dbFeats.filter((feat) => feat.data.id === featId);
+        console.log(featId)
+        console.log(feat)
+        return feat[0].data as Feat;
+    } catch (error) {
+        return null
+    }
+
+}
+
+export const getSkill = (skillId: number): Skill | null => {
+    try {
+        const dbSkills = collections.skill;
+        const skill = dbSkills.filter((skill) => skill.data.id === skillId);
+        return skill[0].data as Skill;
+    } catch (error) {
+        return null
+    }
 }
